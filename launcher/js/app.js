@@ -135,7 +135,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 focusedEl.classList.add('focused');
                 const btnAction = focusedEl.getAttribute('data-action');
                 focusedAppNameEl.textContent = focusedEl.querySelector('span').textContent;
-                if (btnAction === 'livetv') {
+                if (btnAction === 'arcade') {
+                    focusedAppDescEl.textContent = '60fps Retro Classics & Custom ROM Player · Press OK';
+                    setAmbientGlow('rgba(236, 72, 153, 0.45)');
+                } else if (btnAction === 'livetv') {
                     focusedAppDescEl.textContent = 'Free Public Broadcasts from All Countries · Press OK to watch';
                     setAmbientGlow('rgba(56, 189, 248, 0.45)');
                 } else if (btnAction === 'artmode') {
@@ -179,6 +182,8 @@ document.addEventListener('DOMContentLoaded', function() {
             else if (state.currentModal === 'remote') activeModalEl = document.getElementById('remote-modal');
             else if (state.currentModal === 'cinema') activeModalEl = document.getElementById('cinema-modal');
             else if (state.currentModal === 'diag') activeModalEl = document.getElementById('diag-modal');
+            else if (state.currentModal === 'arcade') activeModalEl = document.getElementById('arcade-modal');
+            else if (state.currentModal === 'gamepad') activeModalEl = document.getElementById('gamepad-modal');
 
             if (activeModalEl) {
                 const modalItems = activeModalEl.querySelectorAll('.modal-nav-item');
@@ -226,6 +231,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (app) {
+            if (app.id === "cleanyourtv.retroarcade" || app.aliasId === "retroarcade") {
+                if (window.RetroArcade) RetroArcade.open();
+                return;
+            }
+            if (app.id === "cleanyourtv.gamepadtester" || app.aliasId === "gamepadtester") {
+                if (window.GamepadManager) GamepadManager.open();
+                return;
+            }
             if (app.id === "cleanyourtv.livetv" || app.id === "livetv") {
                 if (window.IPTVPlayer) IPTVPlayer.open(0, 'ALL');
                 return;
@@ -258,7 +271,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function executeTopAction() {
         const btn = topActionBtns[state.topIndex];
         const action = btn.getAttribute('data-action');
-        if (action === 'livetv') {
+        if (action === 'arcade') {
+            if (window.RetroArcade) RetroArcade.open();
+        } else if (action === 'livetv') {
             if (window.IPTVPlayer) IPTVPlayer.open(0, 'ALL');
         } else if (action === 'artmode') {
             if (window.ArtMode) ArtMode.open(0);
@@ -297,6 +312,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (cinemaEl) cinemaEl.style.display = 'flex';
         } else if (type === 'diag') {
             if (window.NetworkDiagnostic) NetworkDiagnostic.open();
+        } else if (type === 'arcade') {
+            if (window.RetroArcade) RetroArcade.open();
+        } else if (type === 'gamepad') {
+            if (window.GamepadManager) GamepadManager.open();
         }
         updateFocus();
     }
@@ -311,6 +330,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const cinemaEl = document.getElementById('cinema-modal');
         if (cinemaEl) cinemaEl.style.display = 'none';
         if (window.NetworkDiagnostic) NetworkDiagnostic.close();
+        if (window.RetroArcade) RetroArcade.close();
+        if (window.GamepadManager) GamepadManager.close();
         state.currentModal = null;
         state.currentZone = 'TOP';
         updateFocus();
@@ -337,6 +358,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (settingKey === 'diag') {
                 closeModal();
                 openModal('diag');
+            } else if (settingKey === 'gamepad') {
+                closeModal();
+                openModal('gamepad');
             } else if (settingKey === 'remote') {
                 closeModal();
                 openModal('remote');
@@ -424,6 +448,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (window.AmbientMusic && AmbientMusic.isOpen) {
             if (AmbientMusic.handleKeyDown(e)) {
+                return;
+            }
+        }
+
+        if (window.RetroArcade && RetroArcade.isOpen) {
+            if (RetroArcade.handleKeyDown(e)) {
+                return;
+            }
+        }
+
+        if (window.GamepadManager && GamepadManager.isOpen) {
+            if (GamepadManager.handleKeyDown(e)) {
                 return;
             }
         }

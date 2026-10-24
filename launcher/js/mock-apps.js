@@ -20,10 +20,30 @@ const APP_ICONS = {
     browser: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%231A73E8"/><circle cx="50" cy="50" r="26" fill="none" stroke="%23FFF" stroke-width="4"/><ellipse cx="50" cy="50" rx="14" ry="26" fill="none" stroke="%23FFF" stroke-width="4"/><line x1="24" y1="50" x2="76" y2="50" stroke="%23FFF" stroke-width="4"/></svg>',
     hdmi: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%2330363D"/><rect x="28" y="38" width="44" height="26" rx="4" fill="none" stroke="%23FFF" stroke-width="4"/><text x="50" y="56" font-family="-apple-system, sans-serif" font-size="14" font-weight="700" fill="%23FFF" text-anchor="middle">HDMI</text></svg>',
     cinema: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%237C3AED"/><path d="M26 26h48v48H26z" fill="none" stroke="%23FFF" stroke-width="4"/><path d="M26 38h48M26 62h48M38 26v12M50 26v12M62 26v12M38 62v12M50 62v12M62 62v12" stroke="%23FFF" stroke-width="4"/></svg>',
-    lofi: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%23D97706"/><circle cx="50" cy="50" r="26" fill="none" stroke="%23FFF" stroke-width="4"/><circle cx="50" cy="50" r="10" fill="%23FFF"/><path d="M72 28l-8 8" stroke="%23FFF" stroke-width="4" stroke-linecap="round"/></svg>'
+    lofi: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%23D97706"/><circle cx="50" cy="50" r="26" fill="none" stroke="%23FFF" stroke-width="4"/><circle cx="50" cy="50" r="10" fill="%23FFF"/><path d="M72 28l-8 8" stroke="%23FFF" stroke-width="4" stroke-linecap="round"/></svg>',
+    arcade: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%23EC4899"/><path d="M28 42h44v32H28z" rx="6" fill="%230F172A"/><circle cx="62" cy="54" r="4.5" fill="%23EF4444"/><circle cx="52" cy="62" r="4.5" fill="%2338BDF8"/><path d="M38 52v12M32 58h12" stroke="%23FFF" stroke-width="3.5" stroke-linecap="round"/><circle cx="38" cy="30" r="6" fill="%23FACC15"/><line x1="38" y1="36" x2="38" y2="42" stroke="%23FFF" stroke-width="3"/></svg>',
+    gamepad: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%236366F1"/><path d="M30 36h40c8 0 14 6 12 16l-3 18c-1 6-7 10-13 10-5 0-9-3-11-8l-2-6h-6l-2 6c-2 5-6 8-11 8-6 0-12-4-13-10l-3-18c-2-10 4-16 12-16z" fill="%230F172A"/><path d="M36 46v10M31 51h10" stroke="%2338BDF8" stroke-width="3" stroke-linecap="round"/><circle cx="68" cy="48" r="3" fill="%23EF4444"/><circle cx="62" cy="54" r="3" fill="%2310B981"/></svg>'
 };
 
 const DEFAULT_CATALOG = [
+    {
+        id: "cleanyourtv.retroarcade",
+        aliasId: "retroarcade",
+        name: "Retro Arcade 4K",
+        desc: "Built-in 60fps Retro Classics & ROM Player · Controller & Remote Ready",
+        icon: APP_ICONS.arcade,
+        color: "rgba(236, 72, 153, 0.45)",
+        isDock: true
+    },
+    {
+        id: "cleanyourtv.gamepadtester",
+        aliasId: "gamepadtester",
+        name: "Gamepad & Drift Hub",
+        desc: "Zero-Latency Analog Stick Drift Radar, Trigger Pressure & Haptics",
+        icon: APP_ICONS.gamepad,
+        color: "rgba(99, 102, 241, 0.45)",
+        isDock: false
+    },
     {
         id: "cleanyourtv.livetv",
         aliasId: "livetv",

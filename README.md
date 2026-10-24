@@ -1,5 +1,6 @@
 <p align="center">
-  <a href="https://github.com/smartjaganrao/cleanyourtv-samsung/releases/latest"><img src="https://img.shields.io/badge/Download%20.WGT-v1.3.0%20Latest-10b981?style=for-the-badge&logo=samsung&labelColor=15181e" alt="Download .WGT"></a>
+  <a href="https://github.com/smartjaganrao/cleanyourtv-samsung/releases/latest"><img src="https://img.shields.io/badge/Download%20.WGT-v1.4.0%20Latest-10b981?style=for-the-badge&logo=samsung&labelColor=15181e" alt="Download .WGT"></a>
+  <a href="#-retro-arcade-4k--gamepad-drift-hub"><img src="https://img.shields.io/badge/Youth%20Gaming-Retro%20Arcade%20%26%20Drift%20Radar-ec4899?style=for-the-badge&logo=gamepad&labelColor=15181e" alt="Retro Arcade"></a>
   <a href="docs/ADFREE_YOUTUBE.md"><img src="https://img.shields.io/badge/Ad--Free%20YouTube-SponsorBlock-e11d48?style=for-the-badge&logo=youtube&labelColor=15181e" alt="Ad-Free YouTube"></a>
   <a href="docs/ART_MODE.md"><img src="https://img.shields.io/badge/The%20Frame-Art%20Mode-f59e0b?style=for-the-badge&logo=artstation&labelColor=15181e" alt="Art Mode"></a>
   <a href="docs/LIVETV.md"><img src="https://img.shields.io/badge/Free%20IPTV-350%2B%20Channels-ec4899?style=for-the-badge&logo=tv&labelColor=15181e" alt="Free Live IPTV"></a>
@@ -16,7 +17,7 @@
 
 <p align="center">
   <strong>Transform any Samsung Smart TV into a bloat-free, ad-free, 60fps Apple TV-style display over Wi-Fi.</strong><br>
-  Includes <strong>Ad-Free YouTube with SponsorBlock</strong>, free <strong>"The Frame" 4K Ambient Art Mode</strong>, <strong>350+ Free Live World IPTV channels</strong>, <strong>1-Click Bedtime Sleep Timer</strong>, <strong>24/7 Lo-Fi & Background Music (with OLED screen blanking)</strong>, <strong>TV Network Speed Diagnostic</strong>, <strong>Free Cinema Hub</strong>, and <strong>zero-install Phone Remote</strong>.
+  Includes <strong>Built-in 60fps Retro Arcade (5 games)</strong>, <strong>Zero-Latency Gamepad &amp; Stick Drift Radar</strong>, <strong>Ad-Free YouTube with SponsorBlock</strong>, free <strong>"The Frame" 4K Ambient Art Mode</strong>, <strong>350+ Free Live World IPTV channels</strong>, <strong>1-Click Bedtime Sleep Timer</strong>, <strong>24/7 Lo-Fi &amp; Background Music (with OLED screen blanking)</strong>, <strong>TV Speed Diagnostics</strong>, and <strong>zero-install Phone Remote</strong>.
 </p>
 
 <p align="center">
@@ -25,14 +26,16 @@
 
 ---
 
-## ⚡ Why CleanYourTV? (Save \$400+/Year)
+## ⚡ Why CleanYourTV? (Save \$450+/Year)
 
-Retail Samsung Smart TVs inject banner ads into the home menu, auto-play sponsored trailers, secretly log every HDMI input via ACR (Automatic Content Recognition), bury the sleep timer in 6 submenus, and charge \$4.99/month for art subscriptions. Third-party IPTV apps charge \$15–\$35 activation fees, Spotify/Apple Music apps burn OLED pixels without pure black blanking, and YouTube Premium costs \$13.99/month.
+Retail Samsung Smart TVs inject banner ads into the home menu, auto-play sponsored trailers, secretly log every HDMI input via ACR (Automatic Content Recognition), bury the sleep timer in 6 submenus, forbid retro game emulators, and charge \$4.99/month for art subscriptions. Third-party IPTV apps charge \$15–\$35 activation fees, Spotify/Apple Music apps burn OLED pixels without pure black blanking, and YouTube Premium costs \$13.99/month.
 
 **CleanYourTV replaces the bloated Smart Hub with an open-source, private, native experience:**
 
 | Feature / Paid Service | Typical Paid Solution | CleanYourTV Samsung | Annual Savings |
 | :--- | :--- | :--- | :--- |
+| 🕹️ **Retro Arcade & Game Engine** | Raspberry Pi 4 / Retro Box (\$60 – \$120) | **100% Free Built-in** (5 games + 60fps canvas + 8-bit synth + custom ROM loader) | **\$60 – \$120** |
+| 🎯 **Gamepad & Stick Drift Radar** | Third-party PC calibration software | **100% Free** (Zero-latency drift radar, trigger gauge & dual rumble test) | **Priceless** |
 | 📺 **Ad-Free YouTube + SponsorBlock** | YouTube Premium (\$13.99/mo) | **100% Free** (Zero video ads + auto SponsorBlock + 4K HDR) | **\$168 / yr** |
 | 📡 **Live World IPTV Player** | Smart IPTV / IBO Player (\$8 – \$35 activation) | **100% Free** (350+ global streams + Custom M3U + Favorites) | **\$15 – \$35** |
 | 🖼️ **Ambient Art Mode** | Samsung Art Store on The Frame (\$4.99/mo) | **100% Free** (4K Museum Masterpieces + OLED Burn-in Protection) | **\$60 / yr** |
@@ -42,7 +45,7 @@ Retail Samsung Smart TVs inject banner ads into the home menu, auto-play sponsor
 | 🎬 **Free Cinema & VOD Hub** | Scattered apps with slow loading | **One-Tap Access** (Curated Pluto, Tubi, FilmRise, Crackle) | **Included** |
 | 🛡️ **Ad & Telemetry Blocker** | AdGuard DNS VIP / NextDNS Pro (\$20 – \$40/yr) | **Included Free** (70+ Samsung ad domains blocked at DNS level) | **\$20 – \$40** |
 | 📱 **Smartphone Web Remote** | Paid App Store TV Remotes (\$9.99 – \$29.99) | **Included Free** (Scan QR code on TV for instant mobile trackpad) | **\$10 – \$30** |
-| 💰 **Total Annual Cost** | **\$410 – \$470 / year** | **\$0.00 (Free & Open Source)** | **Save \$400+/yr** |
+| 💰 **Total Annual Cost** | **\$470 – \$570 / year** | **\$0.00 (Free & Open Source)** | **Save \$450+/yr** |
 
 ---
 
@@ -50,29 +53,32 @@ Retail Samsung Smart TVs inject banner ads into the home menu, auto-play sponsor
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────┐
-│ [Live TV]  [Art]  [Lo-Fi Radio]  [Sleep: Off]  [Inputs]  [Settings]      12:00   │
+│ [Arcade]  [Live TV]  [Art]  [Lo-Fi]  [Sleep: Off]  [Inputs]  [Settings]   12:00  │
 │                                                                                  │
-│                                   NETFLIX                                        │
+│                                RETRO ARCADE 4K                                   │
 │                             Press OK to launch                                   │
 │                                                                                  │
 │    ╭──────╮      ╭──────╮      ╭──────╮      ╭──────╮      ╭──────╮      ╭──────╮│
-│    │  N   │      │  YT  │      │PRIME │      │ PLEX │      │CINEMA│      │HDMI 1││
+│    │ARCADE│      │  N   │      │  YT  │      │PRIME │      │ PLEX │      │HDMI 1││
 │    ╰──────╯      ╰──────╯      ╰──────╯      ╰──────╯      ╰──────╯      ╰──────╯│
 │       ▲             ▲             ▲             ▲             ▲             ▲    │
 │   (Apple TV-style glass dock with fluid floating physics highlight)              │
 └──────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-1. **🚀 60fps Native Tizen Web App (`.wgt`):** Sub-50ms cold-start written in pure vanilla HTML5/CSS3/ES6. Zero bloated npm frameworks. Runs at a locked 60fps even on entry-level Samsung Crystal UHD chipsets.
-2. **📺 Ad-Free YouTube (TizenTube + SponsorBlock):** Blocks all video ads, auto-skips sponsored promotions, and provides 4K HDR 60fps playback with background audio support.
-3. **🖼️ "The Frame" Ambient Art Mode:** Transforms your living room into an art gallery with 4K public domain museum masterpieces (Van Gogh, Monet, Vermeer, Hokusai, NASA JWST) and active OLED pixel-shift burn-in protection.
-4. **📡 Free Live World IPTV (iptv-org):** 350+ curated, tested, geo-unblocked live streams across 26 countries (News, Sports, Movies, Animation, Kids).
-5. **⏱️ 1-Click Bedtime Sleep Timer:** Replaces Samsung's 6-step buried menu with a simple 1-click toggle (`15m` · `30m` · `45m` · `60m` · `90m` · `120m`) featuring on-screen countdown and soft screen shutdown.
-6. **🎵 24/7 Lo-Fi & Background Music:** Commercial-free stream radio stations with real-time audio visualizer and **OLED Screen-Off mode** (turns off all panel pixels while keeping sound playing).
-7. **⚡ TV Network Speed & Buffer Diagnostic:** Direct Cloudflare CDN edge speed test measuring actual download bandwidth, ping latency, and 4K HDR buffer health in seconds.
-8. **🎬 Free Cinema & VOD Hub:** 1-tap fast access to legal free on-demand movie & TV services (Pluto TV, Tubi, FilmRise, Crackle, Freevee).
-9. **📂 Custom M3U & Xtream Codes Support:** Load your own private M3U/M3U8 playlists or free community feeds with 1-click **Favorites (`★`)**.
-10. **📱 Zero-Install Mobile Web Remote:** Scan a TV QR code with your phone to use a mobile keyboard and trackpad over local Wi-Fi without installing any app.
+1. **🎮 60fps Web Retro Arcade Engine:** 5 built-in playable retro classics (Brick Breaker 4K, Space Defenders 1984, Cyber Snake, Retro Pong Pro 2-player, Falling Blocks Tetriminos) with Web Audio 8-bit sound synth and CRT monitor filter.
+2. **🎯 Gamepad Input & Stick Drift Radar:** Zero-latency HTML5 Gamepad HUD for PS5 DualSense, PS4, Xbox Wireless, and 8BitDo controllers. Detects analog stick drift in seconds with deadzone radar rings (5%, 15%) and dual-rumble vibration tests.
+3. **🛋️ Couch Gamepad Navigation:** Browse the entire CleanYourTV interface using your Xbox or PlayStation controller's D-pad and Left Stick without touching the Samsung remote.
+4. **🚀 60fps Native Tizen Web App (`.wgt`):** Sub-50ms cold-start written in pure vanilla HTML5/CSS3/ES6. Zero bloated npm frameworks. Runs at a locked 60fps even on entry-level Samsung Crystal UHD chipsets.
+5. **📺 Ad-Free YouTube (TizenTube + SponsorBlock):** Blocks all video ads, auto-skips sponsored promotions, and provides 4K HDR 60fps playback with background audio support.
+6. **🖼️ "The Frame" Ambient Art Mode:** Transforms your living room into an art gallery with 4K public domain museum masterpieces (Van Gogh, Monet, Vermeer, Hokusai, NASA JWST) and active OLED pixel-shift burn-in protection.
+7. **📡 Free Live World IPTV (iptv-org):** 350+ curated, tested, geo-unblocked live streams across 26 countries (News, Sports, Movies, Animation, Kids).
+8. **⏱️ 1-Click Bedtime Sleep Timer:** Replaces Samsung's 6-step buried menu with a simple 1-click toggle (`15m` · `30m` · `45m` · `60m` · `90m` · `120m`) featuring on-screen countdown and soft screen shutdown.
+9. **🎵 24/7 Lo-Fi & Background Music:** Commercial-free stream radio stations with real-time audio visualizer and **OLED Screen-Off mode** (turns off all panel pixels while keeping sound playing).
+10. **⚡ TV Network Speed & Buffer Diagnostic:** Direct Cloudflare CDN edge speed test measuring actual download bandwidth, ping latency, and 4K HDR buffer health in seconds.
+11. **🎬 Free Cinema & VOD Hub:** 1-tap fast access to legal free on-demand movie & TV services (Pluto TV, Tubi, FilmRise, Crackle, Freevee).
+12. **📂 Custom M3U & Xtream Codes Support:** Load your own private M3U/M3U8 playlists or free community feeds with 1-click **Favorites (`★`)**.
+13. **📱 Zero-Install Mobile Web Remote:** Scan a TV QR code with your phone to use a mobile keyboard and trackpad over local Wi-Fi without installing any app.
 11. **🛡️ 100% Reversible & Safe:** Uses Samsung's official Developer Mode API. No firmware flashing, no rooting, and no brick risk.
 
 ---
@@ -172,6 +178,40 @@ Samsung charges **\$4.99/month** for the Art Store on "The Frame". CleanYourTV b
 
 ---
 
+## 🕹️ Retro Arcade 4K & Gamepad Drift Hub (Youth Gaming)
+
+Samsung TVs strictly ban gaming emulators from the Tizen App Store, and in 2024 Samsung permanently removed the Steam Link app. CleanYourTV turns any Samsung Smart TV into a native **60fps Retro Arcade & Controller Command Center**:
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Gamepad%20Support-PS5%20%7C%20Xbox%20%7C%208BitDo%20%7C%20Switch%20Pro-6366f1?style=for-the-badge&logo=gamepad&labelColor=15181e" alt="Gamepad Support">
+  <img src="https://img.shields.io/badge/Display-60fps%20Locked%20Canvas-10b981?style=for-the-badge&logo=target&labelColor=15181e" alt="60fps Display">
+  <img src="https://img.shields.io/badge/Audio-8--Bit%20Web%20Audio%20Synth-ec4899?style=for-the-badge&logo=audio&labelColor=15181e" alt="Web Audio Synth">
+</p>
+
+### 🎮 5 Built-in Playable 60fps Retro Games:
+1. **🧱 Brick Breaker 4K:** High-velocity neon Arkanoid action with angular bounce physics, multi-colored brick tiers, particle sparks, and combo multipliers.
+2. **👾 Space Defenders (1984):** Full arcade alien shooter with descending mystery ships, destructible bunkers, and speed progression.
+3. **🐍 Cyber Snake:** 60fps grid movement, glowing cyber pellets, and local high score tracking.
+4. **🏓 Retro Pong Pro:** 1-Player vs adaptive AI or **2-Player Local Co-Op** (Player 1 remote / gamepad 1 vs Player 2 gamepad 2).
+5. **🧩 Falling Blocks 8-Bit:** Classic 7-tetromino stacking puzzle with ghost drop projection, line clear effects, and level speeds.
+
+*Includes CRT scanline filter toggle (`📺 CRT Filter`) for authentic 90s arcade monitor nostalgia and zero-latency Web Audio sound synthesis.*
+
+### 🎯 Zero-Latency Gamepad & Stick Drift Radar
+- **The Problem:** PS5 DualSense and Xbox controllers suffer from potentiometer analog stick drift. Usually, gamers have to connect their controller to a PC or laptop to calibrate it.
+- **The CleanYourTV Solution:** Connect your controller to your Samsung TV via Bluetooth or USB. CleanYourTV provides a real-time **dual 360° analog stick radar**:
+  - Plots precise $(X, Y)$ stick coordinates with $\pm0.001$ accuracy.
+  - Measures resting drift percentage: **Green** ($<5\%$ Pristine), **Amber** ($5\%-15\%$ Mild drift), or **Red** ($>15\%$ Stick drift).
+  - Visual 5% and 15% circular deadzone rings.
+  - Linear analog trigger pressure gauges (L2/LT, R2/RT $0\%-100\%$).
+  - **📳 Dual-Rumble Haptic Test:** Actuates controller vibration motors with 1 click.
+
+### 🛋️ Couch Gamepad Navigation
+- Plug in or pair any controller (Xbox Wireless, PS5 DualSense, PS4 DualShock, 8BitDo, Switch Pro).
+- CleanYourTV automatically translates controller inputs (**D-pad, Left Stick, A/Cross, B/Circle**) into TV navigation events so you can control your entire TV without ever searching for the remote!
+
+---
+
 ## 🛠️ Essential TV Power Tools (Built-in)
 
 CleanYourTV bundles the four most requested TV daily-driver features that Samsung left out or buried:
@@ -199,16 +239,16 @@ CleanYourTV bundles the four most requested TV daily-driver features that Samsun
 
 ---
 
-## 🎮 Samsung Remote Navigation Cheat Sheet
+## 🎮 Samsung Remote & Gamepad Navigation Cheat Sheet
 
-| Button | Home Dashboard | Live IPTV Player | Ambient Art Mode | Lo-Fi Radio |
+| Button / Input | Home Dashboard | Live IPTV Player | Retro Arcade 4K | Gamepad Drift Radar |
 | :--- | :--- | :--- | :--- | :--- |
-| **◄ / ► (Left / Right)** | Move across Dock / Top Bar | Open EPG Guide / Column switch | Previous / Next painting | Change station / Adjust volume |
-| **▲ / ▼ (Up / Down)** | Switch Top Bar ↔ Dock ↔ Grid | Surf Channels (`CH ▲/▼`) | Toggle Clock & HUD plaque | Select control button |
-| **OK / Enter** | Launch focused application | Show stream info banner (OSD) | Pause / Resume slideshow | Play / Pause / Screen Off |
+| **◄ / ► (Left / Right)** | Move across Dock / Top Bar | Open EPG Guide / Column switch | Steer Paddle / Ship / Move Block | Select action button |
+| **▲ / ▼ (Up / Down)** | Switch Top Bar ↔ Dock ↔ Grid | Surf Channels (`CH ▲/▼`) | Rotate Tetromino / Steer Snake | Select action button |
+| **OK / Enter / Gamepad A** | Launch focused application | Show stream info banner (OSD) | Fire Laser / Launch Game / Jump | Test Haptic Vibration |
 | **Yellow / F / Tools** | — | **Toggle Favorite (★)** | — | — |
-| **Green / B** | — | — | — | **Instant OLED Screen Blank** |
-| **Return / Back** | Close modal / return to dock | Exit Live TV mode | Exit Art Mode to home screen | Stop audio / Close radio |
+| **Green / B** | — | — | Toggle CRT Monitor Filter | Instant Vibration Pulse |
+| **Return / Back / Gamepad B** | Close modal / return to dock | Exit Live TV mode | Exit Game / Return to Arcade | Close Gamepad Diagnostic |
 
 ---
 
@@ -273,9 +313,11 @@ cleanyourtv-samsung/
 ├── launcher/                  # Native Tizen Web Application
 │   ├── config.xml             # Tizen W3C Widget manifest & permissions
 │   ├── index.html             # High-performance 4K 60fps interface
-│   ├── css/style.css          # Glassmorphism, dock, ambient glow & art mode
+│   ├── css/style.css          # Glassmorphism, dock, ambient glow & retro arcade
 │   ├── js/
 │   │   ├── app.js             # Spatial D-pad navigation, clock, screensaver
+│   │   ├── retro-arcade.js    # 60fps retro arcade engine & 8-bit sound synthesizer
+│   │   ├── gamepad-manager.js # HTML5 gamepad engine & stick drift diagnostic radar
 │   │   ├── art-mode.js        # 4K Art Mode, museum plaque, OLED pixel-shift
 │   │   ├── iptv-player.js     # HLS live video player, sliding EPG guide
 │   │   ├── iptv-catalog.js    # 350+ curated channels, favorites, custom M3U

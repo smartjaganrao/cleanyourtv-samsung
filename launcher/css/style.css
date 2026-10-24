@@ -1490,5 +1490,416 @@ body {
     margin-top: 4px;
 }
 
+/* ==========================================================================
+   Retro Arcade & Gamepad Hub (Youth Gaming)
+   ========================================================================== */
+.arcade-card {
+    max-width: 900px;
+    width: 92%;
+    padding: 30px 36px;
+}
 
+.arcade-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+}
 
+.arcade-title-box h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 4px 0 0 0;
+}
+
+.arcade-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #ec4899;
+    background: rgba(236, 72, 153, 0.15);
+    border: 1px solid rgba(236, 72, 153, 0.35);
+    padding: 3px 10px;
+    border-radius: 9999px;
+}
+
+.arcade-tabs {
+    display: flex;
+    gap: 8px;
+}
+
+.arcade-tab-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.75);
+    border-radius: 9999px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.arcade-tab-btn:hover, .arcade-tab-btn.active {
+    background: rgba(236, 72, 153, 0.25);
+    border-color: #ec4899;
+    color: #ffffff;
+}
+
+.arcade-games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    max-height: 460px;
+    overflow-y: auto;
+    padding: 4px;
+}
+
+.arcade-game-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 18px 20px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.arcade-game-card.focused, .arcade-game-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #ec4899;
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(236, 72, 153, 0.25);
+}
+
+.game-badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    margin-bottom: 8px;
+}
+
+.game-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 2px;
+}
+
+.game-genre {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 8px;
+}
+
+.game-desc {
+    font-size: 12px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.65);
+    flex-grow: 1;
+    margin-bottom: 12px;
+}
+
+.game-play-btn {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.arcade-play-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.arcade-active-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #38bdf8;
+}
+
+.arcade-play-hint {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.arcade-canvas-wrap {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+}
+
+.arcade-canvas-wrap canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.crt-scanlines::after {
+    content: " ";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 4px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.roms-guide-box {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.roms-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 18px 0 24px 0;
+}
+
+.rom-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.step-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #ec4899;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Gamepad Diagnostic & Stick Drift HUD
+   ========================================================================== */
+.gamepad-card {
+    max-width: 720px;
+    width: 90%;
+    padding: 30px 36px;
+}
+
+.gamepad-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.gamepad-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #6366f1;
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    padding: 3px 10px;
+    border-radius: 9999px;
+    margin-bottom: 6px;
+}
+
+.gamepad-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 4px 0;
+    color: #ffffff;
+}
+
+.gamepad-id-sub {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.radars-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.radar-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 18px;
+    text-align: center;
+}
+
+.radar-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 12px;
+}
+
+.radar-box {
+    position: relative;
+    width: 170px;
+    height: 170px;
+    margin: 0 auto 12px auto;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.8);
+    border: 2px solid rgba(99, 102, 241, 0.4);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.radar-grid {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.radar-ring {
+    position: absolute;
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.radar-ring.deadzone-5 {
+    width: 10%;
+    height: 10%;
+    border-color: rgba(16, 185, 129, 0.4);
+}
+
+.radar-ring.deadzone-15 {
+    width: 30%;
+    height: 30%;
+    border-color: rgba(245, 158, 11, 0.35);
+}
+
+.radar-cross-h {
+    position: absolute;
+    top: 50%; left: 0; right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.radar-cross-v {
+    position: absolute;
+    top: 0; bottom: 0; left: 50%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.radar-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #10b981;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px #10b981;
+    transition: background 0.15s, box-shadow 0.15s;
+}
+
+.radar-meta {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.radar-drift-val {
+    font-weight: 700;
+}
+
+.radar-coords {
+    font-size: 11px;
+    font-family: monospace;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.gamepad-controls-hud {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.trigger-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.trigger-label {
+    width: 90px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.trigger-bar-wrap {
+    flex-grow: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.trigger-bar-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1, #a855f7);
+    transition: width 0.05s linear;
+}
+
+.gp-buttons-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 8px 0;
+}
+
+.gp-key {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.65);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    transition: all 0.1s ease;
+}
+
+.gp-key.btn-active {
+    background: #6366f1;
+    border-color: #818cf8;
+    color: #ffffff;
+    box-shadow: 0 0 12px #6366f1;
+    transform: scale(1.08);
+}
+
+.gamepad-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}

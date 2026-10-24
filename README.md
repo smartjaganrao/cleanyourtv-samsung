@@ -1,42 +1,54 @@
-<p align="center">
-  <a href="https://github.com/smartjaganrao/cleanyourtv-samsung/releases/latest"><img src="https://img.shields.io/badge/Download%20.WGT-v1.4.0%20Latest-10b981?style=for-the-badge&logo=samsung&labelColor=15181e" alt="Download .WGT"></a>
-  <a href="#-retro-arcade-4k--gamepad-drift-hub"><img src="https://img.shields.io/badge/Youth%20Gaming-Retro%20Arcade%20%26%20Drift%20Radar-ec4899?style=for-the-badge&logo=gamepad&labelColor=15181e" alt="Retro Arcade"></a>
-  <a href="docs/ADFREE_YOUTUBE.md"><img src="https://img.shields.io/badge/Ad--Free%20YouTube-SponsorBlock-e11d48?style=for-the-badge&logo=youtube&labelColor=15181e" alt="Ad-Free YouTube"></a>
-  <a href="docs/ART_MODE.md"><img src="https://img.shields.io/badge/The%20Frame-Art%20Mode-f59e0b?style=for-the-badge&logo=artstation&labelColor=15181e" alt="Art Mode"></a>
-  <a href="docs/LIVETV.md"><img src="https://img.shields.io/badge/Free%20IPTV-350%2B%20Channels-ec4899?style=for-the-badge&logo=tv&labelColor=15181e" alt="Free Live IPTV"></a>
-  <a href="#-essential-tv-power-tools"><img src="https://img.shields.io/badge/Power%20Tools-Sleep%20%7C%20LoFi%20%7C%20Speed-8b5cf6?style=for-the-badge&logo=target&labelColor=15181e" alt="Power Tools"></a>
-  <a href="https://github.com/smartjaganrao/cleanyourtv-samsung/stargazers"><img src="https://img.shields.io/github/stars/smartjaganrao/cleanyourtv-samsung?style=for-the-badge&color=facc15&labelColor=15181e" alt="GitHub Stars"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge&labelColor=15181e" alt="License"></a>
-</p>
+<div align="center">
 
-<p align="center">
-  <img src="docs/card.svg" alt="CleanYourTV for Samsung TV OS (Tizen) - Before &amp; After Comparison" width="850">
-</p>
+# 📺 CleanYourTV (Samsung TV Edition)
+### Transform Any Samsung Smart TV into a Bloat-Free, Ad-Free, 60fps Display over Wi-Fi
 
-<h1 align="center">CleanYourTV (Samsung TV Edition)</h1>
+[![Download .WGT](https://img.shields.io/badge/Download_.WGT-v1.4.0_Latest-10b981?style=for-the-badge&logo=samsung&logoColor=white&labelColor=0d1117)](https://github.com/smartjaganrao/cleanyourtv-samsung/releases/latest)
+[![Youth Gaming](https://img.shields.io/badge/Youth_Gaming-Retro_Arcade_&_Drift_Radar-ec4899?style=for-the-badge&logo=gamepad&logoColor=white&labelColor=0d1117)](#-retro-arcade-4k--gamepad-drift-hub)
+[![Ad-Free YouTube](https://img.shields.io/badge/Ad--Free_YouTube-SponsorBlock-e11d48?style=for-the-badge&logo=youtube&logoColor=white&labelColor=0d1117)](docs/ADFREE_YOUTUBE.md)
+[![The Frame](https://img.shields.io/badge/The_Frame-4K_Art_Mode-f59e0b?style=for-the-badge&logo=artstation&logoColor=white&labelColor=0d1117)](docs/ART_MODE.md)
+[![Free IPTV](https://img.shields.io/badge/Free_IPTV-350+_Channels-38bdf8?style=for-the-badge&logo=tv&logoColor=white&labelColor=0d1117)](docs/LIVETV.md)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge&labelColor=0d1117)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/smartjaganrao/cleanyourtv-samsung?style=for-the-badge&color=facc15&labelColor=0d1117)](https://github.com/smartjaganrao/cleanyourtv-samsung/stargazers)
 
-<p align="center">
-  <strong>Transform any Samsung Smart TV into a bloat-free, ad-free, 60fps Apple TV-style display over Wi-Fi.</strong><br>
-  Includes <strong>Built-in 60fps Retro Arcade (5 games)</strong>, <strong>Zero-Latency Gamepad &amp; Stick Drift Radar</strong>, <strong>Ad-Free YouTube with SponsorBlock</strong>, free <strong>"The Frame" 4K Ambient Art Mode</strong>, <strong>350+ Free Live World IPTV channels</strong>, <strong>1-Click Bedtime Sleep Timer</strong>, <strong>24/7 Lo-Fi &amp; Background Music (with OLED screen blanking)</strong>, <strong>TV Speed Diagnostics</strong>, and <strong>zero-install Phone Remote</strong>.
-</p>
+<br>
 
-<p align="center">
-  <em>Works on any Samsung Smart TV running Tizen OS (2016–2026+) · Neo QLED · OLED · The Frame · Crystal UHD · Series 6–9 · Zero Root Required</em>
-</p>
+<img src="docs/card.svg" alt="CleanYourTV for Samsung TV OS (Tizen) - Before &amp; After Comparison" width="100%">
+
+<br>
+<br>
+
+**CleanYourTV** replaces Samsung's sluggish, ad-bloated Smart Hub with a native, ultra-lightweight **Apple TV-style glass interface** running at a locked **60fps**.<br>
+Includes **Built-in 60fps Retro Arcade**, **Zero-Latency Gamepad Stick Drift Radar**, **Ad-Free YouTube with SponsorBlock**, free **"The Frame" 4K Ambient Art Mode**, **350+ Free Live World IPTV Channels**, **1-Click Bedtime Sleep Timer**, **24/7 Lo-Fi Radio with OLED Screen-Off**, and **TV Speed Diagnostics**.
+
+*Runs on any Samsung Smart TV running Tizen OS (2016–2026+) · Neo QLED · OLED · The Frame · Crystal UHD · Series 6–9 · Zero Root Required*
+
+<br>
+
+[⚡ Why CleanYourTV](#-why-cleanyourtv-save-450year) •
+[🚀 2-Min Install](#-2-minute-quick-start) •
+[🕹️ Retro Arcade](#-retro-arcade-4k--gamepad-drift-hub) •
+[📺 Ad-Free YouTube](#-ad-free-youtube--sponsorblock) •
+[📡 Live IPTV](#-free-live-world-iptv--custom-m3u) •
+[🖼️ Art Mode](#️-the-frame-ambient-art-mode) •
+[🛠️ Power Tools](#️-essential-tv-power-tools) •
+[🎮 Remote Cheat Sheet](#-remote--gamepad-navigation-cheat-sheet)
+
+</div>
 
 ---
 
 ## ⚡ Why CleanYourTV? (Save \$450+/Year)
 
-Retail Samsung Smart TVs inject banner ads into the home menu, auto-play sponsored trailers, secretly log every HDMI input via ACR (Automatic Content Recognition), bury the sleep timer in 6 submenus, forbid retro game emulators, and charge \$4.99/month for art subscriptions. Third-party IPTV apps charge \$15–\$35 activation fees, Spotify/Apple Music apps burn OLED pixels without pure black blanking, and YouTube Premium costs \$13.99/month.
+Retail Samsung Smart TVs inject banner advertisements into the home dashboard, auto-play sponsored trailers with sound, secretly track every HDMI input using Automatic Content Recognition (ACR), bury the sleep timer 6 submenus deep, forbid retro emulators, and charge \$4.99/month for art subscriptions. Third-party IPTV apps charge \$15–\$35 activation fees, while YouTube Premium costs \$13.99/month.
 
-**CleanYourTV replaces the bloated Smart Hub with an open-source, private, native experience:**
+**CleanYourTV eliminates the bloat and provides an open-source, private, hardware-accelerated dashboard:**
 
 | Feature / Paid Service | Typical Paid Solution | CleanYourTV Samsung | Annual Savings |
 | :--- | :--- | :--- | :--- |
-| 🕹️ **Retro Arcade & Game Engine** | Raspberry Pi 4 / Retro Box (\$60 – \$120) | **100% Free Built-in** (5 games + 60fps canvas + 8-bit synth + custom ROM loader) | **\$60 – \$120** |
-| 🎯 **Gamepad & Stick Drift Radar** | Third-party PC calibration software | **100% Free** (Zero-latency drift radar, trigger gauge & dual rumble test) | **Priceless** |
-| 📺 **Ad-Free YouTube + SponsorBlock** | YouTube Premium (\$13.99/mo) | **100% Free** (Zero video ads + auto SponsorBlock + 4K HDR) | **\$168 / yr** |
+| 🕹️ **Retro Arcade & Game Engine** | Raspberry Pi 4 / Retro Box (\$60 – \$120) | **100% Free Built-in** (5 games + 60fps canvas + 8-bit synth + ROM loader) | **\$60 – \$120** |
+| 🎯 **Gamepad & Stick Drift Radar** | Third-party PC calibration software | **100% Free** (Zero-latency drift radar, trigger gauges & dual rumble) | **Priceless** |
+| 📺 **Ad-Free YouTube + SponsorBlock** | YouTube Premium (\$13.99/mo) | **100% Free** (Zero video ads + auto SponsorBlock + 4K HDR 60fps) | **\$168 / yr** |
 | 📡 **Live World IPTV Player** | Smart IPTV / IBO Player (\$8 – \$35 activation) | **100% Free** (350+ global streams + Custom M3U + Favorites) | **\$15 – \$35** |
 | 🖼️ **Ambient Art Mode** | Samsung Art Store on The Frame (\$4.99/mo) | **100% Free** (4K Museum Masterpieces + OLED Burn-in Protection) | **\$60 / yr** |
 | 🎵 **24/7 Lo-Fi & Background Music** | Spotify / Apple Music TV (\$10.99/mo) | **100% Free** (5 commercial-free radio streams + OLED screen-off) | **\$132 / yr** |
@@ -47,9 +59,12 @@ Retail Samsung Smart TVs inject banner ads into the home menu, auto-play sponsor
 | 📱 **Smartphone Web Remote** | Paid App Store TV Remotes (\$9.99 – \$29.99) | **Included Free** (Scan QR code on TV for instant mobile trackpad) | **\$10 – \$30** |
 | 💰 **Total Annual Cost** | **\$470 – \$570 / year** | **\$0.00 (Free & Open Source)** | **Save \$450+/yr** |
 
+> [!NOTE]
+> CleanYourTV installs as an authorized user-space application via Samsung's official Developer Mode API. It requires **no rooting**, **no hardware flashing**, and does **not void your warranty**.
+
 ---
 
-## ✨ Key Features
+## ✨ Features at a Glance
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────┐
@@ -66,27 +81,33 @@ Retail Samsung Smart TVs inject banner ads into the home menu, auto-play sponsor
 └──────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-1. **🎮 60fps Web Retro Arcade Engine:** 5 built-in playable retro classics (Brick Breaker 4K, Space Defenders 1984, Cyber Snake, Retro Pong Pro 2-player, Falling Blocks Tetriminos) with Web Audio 8-bit sound synth and CRT monitor filter.
-2. **🎯 Gamepad Input & Stick Drift Radar:** Zero-latency HTML5 Gamepad HUD for PS5 DualSense, PS4, Xbox Wireless, and 8BitDo controllers. Detects analog stick drift in seconds with deadzone radar rings (5%, 15%) and dual-rumble vibration tests.
-3. **🛋️ Couch Gamepad Navigation:** Browse the entire CleanYourTV interface using your Xbox or PlayStation controller's D-pad and Left Stick without touching the Samsung remote.
-4. **🚀 60fps Native Tizen Web App (`.wgt`):** Sub-50ms cold-start written in pure vanilla HTML5/CSS3/ES6. Zero bloated npm frameworks. Runs at a locked 60fps even on entry-level Samsung Crystal UHD chipsets.
-5. **📺 Ad-Free YouTube (TizenTube + SponsorBlock):** Blocks all video ads, auto-skips sponsored promotions, and provides 4K HDR 60fps playback with background audio support.
-6. **🖼️ "The Frame" Ambient Art Mode:** Transforms your living room into an art gallery with 4K public domain museum masterpieces (Van Gogh, Monet, Vermeer, Hokusai, NASA JWST) and active OLED pixel-shift burn-in protection.
-7. **📡 Free Live World IPTV (iptv-org):** 350+ curated, tested, geo-unblocked live streams across 26 countries (News, Sports, Movies, Animation, Kids).
-8. **⏱️ 1-Click Bedtime Sleep Timer:** Replaces Samsung's 6-step buried menu with a simple 1-click toggle (`15m` · `30m` · `45m` · `60m` · `90m` · `120m`) featuring on-screen countdown and soft screen shutdown.
-9. **🎵 24/7 Lo-Fi & Background Music:** Commercial-free stream radio stations with real-time audio visualizer and **OLED Screen-Off mode** (turns off all panel pixels while keeping sound playing).
-10. **⚡ TV Network Speed & Buffer Diagnostic:** Direct Cloudflare CDN edge speed test measuring actual download bandwidth, ping latency, and 4K HDR buffer health in seconds.
-11. **🎬 Free Cinema & VOD Hub:** 1-tap fast access to legal free on-demand movie & TV services (Pluto TV, Tubi, FilmRise, Crackle, Freevee).
-12. **📂 Custom M3U & Xtream Codes Support:** Load your own private M3U/M3U8 playlists or free community feeds with 1-click **Favorites (`★`)**.
-13. **📱 Zero-Install Mobile Web Remote:** Scan a TV QR code with your phone to use a mobile keyboard and trackpad over local Wi-Fi without installing any app.
-11. **🛡️ 100% Reversible & Safe:** Uses Samsung's official Developer Mode API. No firmware flashing, no rooting, and no brick risk.
+- **🚀 60fps Native Tizen Web App (`.wgt`):** Sub-50ms cold-start written in pure vanilla HTML5/CSS3/ES6. Zero npm runtime bloat. Runs at locked 60fps even on entry-level Samsung Crystal UHD chipsets.
+- **🕹️ 60fps Web Retro Arcade:** 5 built-in playable retro classics (Brick Breaker 4K, Space Defenders 1984, Cyber Snake, Retro Pong Pro 2-player, Falling Blocks Tetriminos) with Web Audio 8-bit synth and CRT monitor filter.
+- **🎯 Gamepad Input & Stick Drift Radar:** Zero-latency HTML5 Gamepad HUD for PS5 DualSense, PS4, Xbox Wireless, and 8BitDo controllers. Detects analog stick drift with deadzone radar rings (5%, 15%) and dual-rumble vibration tests.
+- **🛋️ Couch Gamepad Navigation:** Browse the entire CleanYourTV interface using your Xbox or PlayStation controller's D-pad and Left Stick without touching the Samsung remote.
+- **📺 Ad-Free YouTube (TizenTube + SponsorBlock):** Blocks all video ads, auto-skips sponsored segments, and provides 4K HDR 60fps playback with background audio support.
+- **🖼️ "The Frame" Ambient Art Mode:** Transforms your living room into an art gallery with 4K public domain museum masterpieces (Van Gogh, Monet, Vermeer, Hokusai, NASA JWST) and active OLED pixel-shift burn-in protection.
+- **📡 Free Live World IPTV (iptv-org):** 350+ curated, tested, geo-unblocked live streams across 26 countries (News, Sports, Movies, Animation, Kids).
+- **⏱️ 1-Click Bedtime Sleep Timer:** Replaces Samsung's 6-step buried menu with a simple 1-click toggle (`15m` · `30m` · `45m` · `60m` · `90m` · `120m`) featuring on-screen countdown and soft screen shutdown.
+- **🎵 24/7 Lo-Fi & Background Music:** Commercial-free stream radio stations with real-time audio visualizer and **OLED Screen-Off mode** (turns off 100% of panel pixels while keeping sound playing).
+- **⚡ TV Network Speed & Buffer Diagnostic:** Direct Cloudflare CDN edge speed test measuring actual download bandwidth, ping latency, and 4K HDR buffer health in seconds.
+- **🎬 Free Cinema & VOD Hub:** 1-tap fast access to legal free on-demand movie & TV services (Pluto TV, Tubi, FilmRise, Crackle, Freevee).
+- **📂 Custom M3U & Xtream Codes Support:** Load your own private M3U/M3U8 playlists or free community feeds with 1-click **Favorites (`★`)**.
+- **📱 Zero-Install Mobile Web Remote:** Scan a TV QR code with your phone to use a mobile keyboard and trackpad over local Wi-Fi without installing any app.
 
 ---
 
 ## 🚀 2-Minute Quick Start
 
-```
-[1. TV Remote: 1-2-3-4-5] ──► [2. Install .WGT over Wi-Fi] ──► [3. Enjoy Clean TV]
+```mermaid
+flowchart LR
+  A["1. Remote: 1-2-3-4-5<br>Enable Dev Mode"] --> B["2. Run Sideload Tool<br>python3 package & install"]
+  B --> C["3. Auto-Boot Bypass<br>Autorun Last App = ON"]
+  C --> D["✨ Clean 60fps TV<br>Zero Ads · Zero Bloat"]
+  style A fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#fff
+  style B fill:#1e293b,stroke:#ec4899,stroke-width:2px,color:#fff
+  style C fill:#1e293b,stroke:#f59e0b,stroke-width:2px,color:#fff
+  style D fill:#0f172a,stroke:#10b981,stroke-width:3px,color:#10b981
 ```
 
 ### Step 1: Turn on Developer Mode on your Samsung TV
@@ -120,6 +141,7 @@ python3 tools/install_tizentube.py <TV_IP>
 python3 tools/debloat_dns.py --check
 ```
 
+> [!TIP]
 > **Prefer pre-built binaries?** You can download the latest pre-compiled [`cleanyourtv-samsung.wgt`](https://github.com/smartjaganrao/cleanyourtv-samsung/releases/latest) directly from GitHub Releases and install with standard Tizen CLI or SDB.
 
 ### Step 3: Set Auto-Boot Bypass
@@ -132,12 +154,44 @@ Your Samsung TV will now boot straight into CleanYourTV every time you power it 
 
 ---
 
+## 🕹️ Retro Arcade 4K & Gamepad Drift Hub
+
+Samsung TVs strictly ban gaming emulators from the Tizen App Store, and in 2024 Samsung permanently removed the Steam Link app. CleanYourTV turns any Samsung Smart TV into a native **60fps Retro Arcade & Controller Command Center**:
+
+<p align="center">
+  <img src="docs/retro-arcade.svg" alt="Retro Arcade 4K and Gamepad Stick Drift Radar on Samsung TV" width="100%">
+</p>
+
+### 🎮 5 Built-in Playable 60fps Retro Games:
+1. **🧱 Brick Breaker 4K:** High-velocity neon Arkanoid action with angular bounce physics, multi-colored brick tiers, particle sparks, and combo multipliers.
+2. **👾 Space Defenders (1984):** Full arcade alien shooter with descending mystery ships, destructible bunkers, and speed progression.
+3. **🐍 Cyber Snake:** 60fps grid movement, glowing cyber pellets, and local high score tracking.
+4. **🏓 Retro Pong Pro:** 1-Player vs adaptive AI or **2-Player Local Co-Op** (Player 1 remote / gamepad 1 vs Player 2 gamepad 2).
+5. **🧩 Falling Blocks 8-Bit:** Classic 7-tetromino stacking puzzle with ghost drop projection, line clear effects, and level speeds.
+
+*Includes CRT scanline filter toggle (`📺 CRT Filter`) for authentic 90s arcade monitor nostalgia and zero-latency Web Audio sound synthesis.*
+
+### 🎯 Zero-Latency Gamepad & Stick Drift Radar
+- **The Problem:** PS5 DualSense and Xbox controllers suffer from potentiometer analog stick drift. Usually, gamers have to connect their controller to a PC or laptop to calibrate it.
+- **The CleanYourTV Solution:** Connect your controller to your Samsung TV via Bluetooth or USB. CleanYourTV provides a real-time **dual 360° analog stick radar**:
+  - Plots precise $(X, Y)$ stick coordinates with $\pm0.001$ accuracy.
+  - Measures resting drift percentage: **Green** ($<5\%$ Pristine), **Amber** ($5\%-15\%$ Mild drift), or **Red** ($>15\%$ Stick drift).
+  - Visual 5% and 15% circular deadzone rings.
+  - Linear analog trigger pressure gauges (L2/LT, R2/RT $0\%-100\%$).
+  - **📳 Dual-Rumble Haptic Test:** Actuates controller vibration motors with 1 click.
+
+### 🛋️ Couch Gamepad Navigation
+- Plug in or pair any controller (Xbox Wireless, PS5 DualSense, PS4 DualShock, 8BitDo, Switch Pro).
+- CleanYourTV automatically translates controller inputs (**D-pad, Left Stick, A/Cross, B/Circle**) into TV navigation events so you can control your entire TV without ever searching for the remote!
+
+---
+
 ## 📺 Free Live World IPTV & Custom M3U
 
 CleanYourTV comes with a built-in sliding EPG channel guide and native HLS streaming engine powered by [iptv-org](https://github.com/iptv-org/iptv):
 
 <p align="center">
-  <img src="docs/livetv-player.svg" alt="Live IPTV Player and EPG Guide on Samsung Smart TV" width="800">
+  <img src="docs/livetv-player.svg" alt="Live IPTV Player and EPG Guide on Samsung Smart TV" width="100%">
 </p>
 
 ### Built-in 24/7 Channels across 26 Countries:
@@ -178,40 +232,6 @@ Samsung charges **\$4.99/month** for the Art Store on "The Frame". CleanYourTV b
 
 ---
 
-## 🕹️ Retro Arcade 4K & Gamepad Drift Hub (Youth Gaming)
-
-Samsung TVs strictly ban gaming emulators from the Tizen App Store, and in 2024 Samsung permanently removed the Steam Link app. CleanYourTV turns any Samsung Smart TV into a native **60fps Retro Arcade & Controller Command Center**:
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Gamepad%20Support-PS5%20%7C%20Xbox%20%7C%208BitDo%20%7C%20Switch%20Pro-6366f1?style=for-the-badge&logo=gamepad&labelColor=15181e" alt="Gamepad Support">
-  <img src="https://img.shields.io/badge/Display-60fps%20Locked%20Canvas-10b981?style=for-the-badge&logo=target&labelColor=15181e" alt="60fps Display">
-  <img src="https://img.shields.io/badge/Audio-8--Bit%20Web%20Audio%20Synth-ec4899?style=for-the-badge&logo=audio&labelColor=15181e" alt="Web Audio Synth">
-</p>
-
-### 🎮 5 Built-in Playable 60fps Retro Games:
-1. **🧱 Brick Breaker 4K:** High-velocity neon Arkanoid action with angular bounce physics, multi-colored brick tiers, particle sparks, and combo multipliers.
-2. **👾 Space Defenders (1984):** Full arcade alien shooter with descending mystery ships, destructible bunkers, and speed progression.
-3. **🐍 Cyber Snake:** 60fps grid movement, glowing cyber pellets, and local high score tracking.
-4. **🏓 Retro Pong Pro:** 1-Player vs adaptive AI or **2-Player Local Co-Op** (Player 1 remote / gamepad 1 vs Player 2 gamepad 2).
-5. **🧩 Falling Blocks 8-Bit:** Classic 7-tetromino stacking puzzle with ghost drop projection, line clear effects, and level speeds.
-
-*Includes CRT scanline filter toggle (`📺 CRT Filter`) for authentic 90s arcade monitor nostalgia and zero-latency Web Audio sound synthesis.*
-
-### 🎯 Zero-Latency Gamepad & Stick Drift Radar
-- **The Problem:** PS5 DualSense and Xbox controllers suffer from potentiometer analog stick drift. Usually, gamers have to connect their controller to a PC or laptop to calibrate it.
-- **The CleanYourTV Solution:** Connect your controller to your Samsung TV via Bluetooth or USB. CleanYourTV provides a real-time **dual 360° analog stick radar**:
-  - Plots precise $(X, Y)$ stick coordinates with $\pm0.001$ accuracy.
-  - Measures resting drift percentage: **Green** ($<5\%$ Pristine), **Amber** ($5\%-15\%$ Mild drift), or **Red** ($>15\%$ Stick drift).
-  - Visual 5% and 15% circular deadzone rings.
-  - Linear analog trigger pressure gauges (L2/LT, R2/RT $0\%-100\%$).
-  - **📳 Dual-Rumble Haptic Test:** Actuates controller vibration motors with 1 click.
-
-### 🛋️ Couch Gamepad Navigation
-- Plug in or pair any controller (Xbox Wireless, PS5 DualSense, PS4 DualShock, 8BitDo, Switch Pro).
-- CleanYourTV automatically translates controller inputs (**D-pad, Left Stick, A/Cross, B/Circle**) into TV navigation events so you can control your entire TV without ever searching for the remote!
-
----
-
 ## 🛠️ Essential TV Power Tools (Built-in)
 
 CleanYourTV bundles the four most requested TV daily-driver features that Samsung left out or buried:
@@ -239,7 +259,7 @@ CleanYourTV bundles the four most requested TV daily-driver features that Samsun
 
 ---
 
-## 🎮 Samsung Remote & Gamepad Navigation Cheat Sheet
+## 🎮 Remote & Gamepad Navigation Cheat Sheet
 
 | Button / Input | Home Dashboard | Live IPTV Player | Retro Arcade 4K | Gamepad Drift Radar |
 | :--- | :--- | :--- | :--- | :--- |
@@ -348,7 +368,9 @@ cleanyourtv-samsung/
 │   ├── DEVELOPER_MODE.md      # Samsung TV Developer Mode unlock guide
 │   ├── BYPASS_SMART_HUB.md    # Auto-boot setup guide
 │   ├── TROUBLESHOOTING.md     # Common issues and solutions
-│   └── card.svg               # Before & After hero showcase
+│   ├── card.svg               # Before & After hero showcase
+│   ├── retro-arcade.svg       # Retro Arcade & Gamepad Radar showcase
+│   └── livetv-player.svg      # Live IPTV player & sliding EPG showcase
 └── examples/                  # Verified Samsung TV model debloat profiles
 ```
 

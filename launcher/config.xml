@@ -13,7 +13,7 @@
     <content src="index.html"/>
     <feature name="http://tizen.org/feature/screen.size.all"/>
     <icon src="assets/icon.png"/>
-    <name>Clean Your TV</name>
+    <name>CleanHub</name>
     <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
     <tizen:privilege name="http://tizen.org/privilege/application.info"/>
     <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>

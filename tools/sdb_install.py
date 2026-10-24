@@ -70,12 +70,21 @@ def show_tizen_guide(tv_ip, wgt_path):
     print("="*70)
 
 def main():
-    parser = argparse.ArgumentParser(description="Install CleanYourTV .wgt on Samsung Smart TV via SDB")
+    parser = argparse.ArgumentParser(description="Install CleanHub .wgt on Samsung Smart TV via SDB")
     parser.add_argument("ip", help="Samsung TV IP address")
-    parser.add_argument("--wgt", default="cleanyourtv-samsung.wgt", help="Path to .wgt file")
+    parser.add_argument("--wgt", default=None, help="Path to .wgt file (default: cleanhub-samsung.wgt or cleanyourtv-samsung.wgt)")
     args = parser.parse_args()
 
-    wgt_file = os.path.abspath(args.wgt)
+    target_wgt = args.wgt
+    if not target_wgt:
+        if os.path.exists("cleanhub-samsung.wgt"):
+            target_wgt = "cleanhub-samsung.wgt"
+        elif os.path.exists("cleanyourtv-samsung.wgt"):
+            target_wgt = "cleanyourtv-samsung.wgt"
+        else:
+            target_wgt = "cleanhub-samsung.wgt"
+
+    wgt_file = os.path.abspath(target_wgt)
     if not os.path.exists(wgt_file):
         # Auto-build if missing
         print(f"'{wgt_file}' not found. Building it automatically...")

@@ -1,7 +1,7 @@
 <div align="center">
 
-# 📺 CleanYourTV (Samsung TV Edition)
-### Transform Any Samsung Smart TV into a Bloat-Free, Ad-Free, 60fps Display over Wi-Fi
+# 📺 CleanHub (Samsung TV Edition)
+### The Open-Source, Ad-Free, 60fps Replacement for Samsung Smart Hub
 
 [![Download .WGT](https://img.shields.io/badge/Download_.WGT-v1.4.0_Latest-10b981?style=for-the-badge&logo=samsung&logoColor=white&labelColor=0d1117)](https://github.com/smartjaganrao/cleanyourtv-samsung/releases/latest)
 [![Youth Gaming](https://img.shields.io/badge/Youth_Gaming-Retro_Arcade_&_Drift_Radar-ec4899?style=for-the-badge&logo=gamepad&logoColor=white&labelColor=0d1117)](#-retro-arcade-4k--gamepad-drift-hub)
@@ -13,19 +13,19 @@
 
 <br>
 
-<img src="docs/card.svg" alt="CleanYourTV for Samsung TV OS (Tizen) - Before &amp; After Comparison" width="100%">
+<img src="docs/card.svg" alt="CleanHub for Samsung TV OS (Tizen) - Before &amp; After Comparison" width="100%">
 
 <br>
 <br>
 
-**CleanYourTV** replaces Samsung's sluggish, ad-bloated Smart Hub with a native, ultra-lightweight **Apple TV-style glass interface** running at a locked **60fps**.<br>
+**CleanHub** is the ultimate open-source alternative to Samsung's bloated Smart Hub. It replaces intrusive banner ads, sponsored video trailers, and system lag with a hardware-accelerated **Apple TV-style glass interface** running at a locked **60fps**.<br>
 Includes **Built-in 60fps Retro Arcade**, **Zero-Latency Gamepad Stick Drift Radar**, **Ad-Free YouTube with SponsorBlock**, free **"The Frame" 4K Ambient Art Mode**, **350+ Free Live World IPTV Channels**, **1-Click Bedtime Sleep Timer**, **24/7 Lo-Fi Radio with OLED Screen-Off**, and **TV Speed Diagnostics**.
 
 *Runs on any Samsung Smart TV running Tizen OS (2016–2026+) · Neo QLED · OLED · The Frame · Crystal UHD · Series 6–9 · Zero Root Required*
 
 <br>
 
-[⚡ Why CleanYourTV](#-why-cleanyourtv-save-450year) •
+[⚡ Why CleanHub](#-why-cleanhub-save-450year) •
 [🚀 2-Min Install](#-2-minute-quick-start) •
 [🕹️ Retro Arcade](#-retro-arcade-4k--gamepad-drift-hub) •
 [📺 Ad-Free YouTube](#-ad-free-youtube--sponsorblock) •
@@ -38,13 +38,13 @@ Includes **Built-in 60fps Retro Arcade**, **Zero-Latency Gamepad Stick Drift Rad
 
 ---
 
-## ⚡ Why CleanYourTV? (Save \$450+/Year)
+## ⚡ Why CleanHub? (Save \$450+/Year)
 
 Retail Samsung Smart TVs inject banner advertisements into the home dashboard, auto-play sponsored trailers with sound, secretly track every HDMI input using Automatic Content Recognition (ACR), bury the sleep timer 6 submenus deep, forbid retro emulators, and charge \$4.99/month for art subscriptions. Third-party IPTV apps charge \$15–\$35 activation fees, while YouTube Premium costs \$13.99/month.
 
-**CleanYourTV eliminates the bloat and provides an open-source, private, hardware-accelerated dashboard:**
+**CleanHub eliminates the bloat and provides an open-source, private, hardware-accelerated dashboard:**
 
-| Feature / Paid Service | Typical Paid Solution | CleanYourTV Samsung | Annual Savings |
+| Feature / Paid Service | Typical Paid Solution | CleanHub Samsung | Annual Savings |
 | :--- | :--- | :--- | :--- |
 | 🕹️ **Retro Arcade & Game Engine** | Raspberry Pi 4 / Retro Box (\$60 – \$120) | **100% Free Built-in** (5 games + 60fps canvas + 8-bit synth + ROM loader) | **\$60 – \$120** |
 | 🎯 **Gamepad & Stick Drift Radar** | Third-party PC calibration software | **100% Free** (Zero-latency drift radar, trigger gauges & dual rumble) | **Priceless** |
@@ -117,7 +117,7 @@ flowchart LR
 4. In **Host PC IP**, enter your computer's local Wi-Fi IP address (e.g., `192.168.1.50`).
 5. **Crucial:** Hold down the remote's **Power** button for 3 seconds until the TV restarts and displays the Samsung startup logo. (This opens SDB port 26101).
 
-### Step 2: Install CleanYourTV from your computer
+### Step 2: Install CleanHub from your computer
 
 ```bash
 # 1. Clone the repository
@@ -130,7 +130,7 @@ python3 tools/samsung_tv.py --probe <TV_IP>
 # 3. Pair remote access (press 'Allow' on your TV screen)
 python3 tools/samsung_tv.py --pair <TV_IP>
 
-# 4. Package and sideload CleanYourTV to your TV
+# 4. Package and sideload CleanHub to your TV
 python3 tools/package_wgt.py
 python3 tools/sdb_install.py <TV_IP>
 
@@ -142,7 +142,7 @@ python3 tools/debloat_dns.py --check
 ```
 
 > [!TIP]
-> **Prefer pre-built binaries?** You can download the latest pre-compiled [`cleanyourtv-samsung.wgt`](https://github.com/smartjaganrao/cleanyourtv-samsung/releases/latest) directly from GitHub Releases and install with standard Tizen CLI or SDB.
+> **Prefer pre-built binaries?** You can download the latest pre-compiled [`cleanhub-samsung.wgt`](https://github.com/smartjaganrao/cleanyourtv-samsung/releases/latest) directly from GitHub Releases and install with standard Tizen CLI or SDB.
 
 ### Step 3: Set Auto-Boot Bypass
 On your TV:  
@@ -150,7 +150,7 @@ On your TV:
 - Set **Autorun Smart Hub = OFF**  
 - Set **Autorun Last App = ON**  
 
-Your Samsung TV will now boot straight into CleanYourTV every time you power it on!
+Your Samsung TV will now boot straight into CleanHub every time you power it on!
 
 ---
 
@@ -380,15 +380,15 @@ cleanyourtv-samsung/
 
 Help spread the word to fellow Samsung TV owners tired of Smart Hub bloatware! We've prepared ready-to-copy posts and video scripts for Reddit, Hacker News, and TikTok in [`docs/VIRAL_PLAYBOOK.md`](docs/VIRAL_PLAYBOOK.md).
 
-Contributions are welcome! If you've verified CleanYourTV on your Samsung TV model, submit a PR with your model profile in [`examples/`](examples/).
+Contributions are welcome! If you've verified CleanHub on your Samsung TV model, submit a PR with your model profile in [`examples/`](examples/).
 
 ---
 
 ## ⚖️ Legal & Disclaimer
 
-- **CleanYourTV Samsung Edition** is an independent, community-driven open-source project. It is not affiliated with, endorsed by, or sponsored by Samsung Electronics Co., Ltd.
+- **CleanHub Samsung Edition** is an independent, community-driven open-source project. It is not affiliated with, endorsed by, or sponsored by Samsung Electronics Co., Ltd.
 - Samsung, Tizen, Neo QLED, The Frame, Smart Hub, and related marks are trademarks of Samsung Electronics Co., Ltd.
-- Live IPTV streams are publicly broadcast and sourced from the open community project [iptv-org/iptv](https://github.com/iptv-org/iptv). CleanYourTV does not host or broadcast any media content directly.
+- Live IPTV streams are publicly broadcast and sourced from the open community project [iptv-org/iptv](https://github.com/iptv-org/iptv). CleanHub does not host or broadcast any media content directly.
 - Public domain art masterpieces are sourced from open access museum collections (MoMA, The Met, Louvre, Rijksmuseum, NASA).
 
 ---

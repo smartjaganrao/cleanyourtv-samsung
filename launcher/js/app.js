@@ -417,7 +417,7 @@ document.addEventListener('DOMContentLoaded', function() {
             LauncherConfig.settings.screensaverMinutes = times[(currIdx + 1) % times.length];
             LauncherConfig.save();
         } else if (key === 'autoboot') {
-            alert('To auto-boot into CleanYourTV on Samsung TV:\n\n1. Open TV Settings → General → Smart Features.\n2. Turn "Autorun Smart Hub" OFF.\n3. Turn "Autorun Last App" ON.\nNow whenever your TV turns on, it launches CleanYourTV!');
+            alert('To auto-boot into CleanHub on Samsung TV:\n\n1. Open TV Settings → General → Smart Features.\n2. Turn "Autorun Smart Hub" OFF.\n3. Turn "Autorun Last App" ON.\nNow whenever your TV turns on, it launches CleanHub!');
         }
         updateSettingsUI();
         updateFocus();

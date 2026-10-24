@@ -4,6 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     TizenAPI.init();
+    if (window.IPTVPlayer) IPTVPlayer.init();
     LauncherConfig.load();
 
     const state = {
@@ -132,9 +133,15 @@ document.addEventListener('DOMContentLoaded', function() {
             if (topActionBtns[state.topIndex]) {
                 focusedEl = topActionBtns[state.topIndex];
                 focusedEl.classList.add('focused');
+                const btnAction = focusedEl.getAttribute('data-action');
                 focusedAppNameEl.textContent = focusedEl.querySelector('span').textContent;
-                focusedAppDescEl.textContent = 'System Quick Action';
-                setAmbientGlow('rgba(255, 255, 255, 0.25)');
+                if (btnAction === 'livetv') {
+                    focusedAppDescEl.textContent = 'Free Public Broadcasts from All Countries · Press OK to watch';
+                    setAmbientGlow('rgba(56, 189, 248, 0.45)');
+                } else {
+                    focusedAppDescEl.textContent = 'System Quick Action';
+                    setAmbientGlow('rgba(255, 255, 255, 0.25)');
+                }
             }
         } else if (state.currentZone === 'DOCK') {
             contentViewportEl.classList.remove('show-grid');
@@ -198,6 +205,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (app) {
+            if (app.id === "cleanyourtv.livetv" || app.id === "livetv") {
+                if (window.IPTVPlayer) IPTVPlayer.open(0, 'ALL');
+                return;
+            }
             TizenAPI.launchApp(app.id);
         }
     }
@@ -205,7 +216,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function executeTopAction() {
         const btn = topActionBtns[state.topIndex];
         const action = btn.getAttribute('data-action');
-        if (action === 'inputs') {
+        if (action === 'livetv') {
+            if (window.IPTVPlayer) IPTVPlayer.open(0, 'ALL');
+        } else if (action === 'inputs') {
             openModal('inputs');
         } else if (action === 'settings') {
             openModal('settings');
@@ -245,6 +258,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const target = items[state.modalIndex];
             const inputId = target.getAttribute('data-input-id');
             closeModal();
+            if (inputId === 'TV') {
+                if (window.IPTVPlayer) IPTVPlayer.open(0, 'ALL');
+                return;
+            }
             // Switch HDMI input via Tizen system API or deep link
             TizenAPI.launchApp('com.samsung.tv.input.' + inputId.toLowerCase(), null, function() {
                 console.log('Switched to input:', inputId);
@@ -292,6 +309,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // 7. Navigation Controller (Spatial D-pad)
     function onKeyDown(e) {
         resetIdleTimer();
+
+        if (window.IPTVPlayer && IPTVPlayer.isOpen) {
+            if (IPTVPlayer.handleKeyDown(e)) {
+                return;
+            }
+        }
 
         if (state.isScreensaverActive) {
             wakeFromScreensaver();

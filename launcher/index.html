@@ -22,6 +22,14 @@
             </div>
 
             <div class="top-actions">
+                <button class="glass-pill-btn nav-item" id="btn-livetv" data-nav="action" data-action="livetv">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="2"></circle>
+                        <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path>
+                    </svg>
+                    <span>Live TV</span>
+                </button>
+
                 <button class="glass-pill-btn nav-item" id="btn-inputs" data-nav="action" data-action="inputs">
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
@@ -166,9 +174,68 @@
         <div class="screensaver-hint">Press any button to resume</div>
     </div>
 
+    <!-- Live IPTV Fullscreen Player & Guide -->
+    <div id="iptv-player-modal" class="iptv-player-modal" style="display:none;">
+        <video id="iptv-video" class="iptv-video" playsinline autoplay></video>
+
+        <!-- Loading Buffer Spinner -->
+        <div id="iptv-spinner" class="iptv-spinner" style="display:none;">
+            <div class="spinner-circle"></div>
+            <span>Connecting to Live Stream...</span>
+        </div>
+
+        <!-- On-Screen Display (OSD) Banner -->
+        <div id="iptv-osd" class="iptv-osd">
+            <div class="osd-left">
+                <div class="osd-channel-num" id="osd-channel-num">CH 01</div>
+                <img id="osd-channel-logo" class="osd-channel-logo" src="" alt="logo" style="display:none;">
+                <div class="osd-channel-info">
+                    <div class="osd-channel-name" id="osd-channel-name">ABC News Live</div>
+                    <div class="osd-channel-meta" id="osd-channel-meta">🇺🇸 United States · News · 1080p LIVE</div>
+                </div>
+            </div>
+            <div class="osd-right">
+                <span class="live-pill"><span class="live-dot"></span> LIVE</span>
+                <span class="osd-hint">Press ◄ for Guide · ▲/▼ to surf</span>
+            </div>
+        </div>
+
+        <!-- Sliding EPG Channel Guide Sidebar -->
+        <div id="iptv-sidebar" class="iptv-sidebar">
+            <div class="sidebar-header">
+                <h3>Live World Channels</h3>
+                <span class="sidebar-sub">Free Broadcasts from All Countries</span>
+            </div>
+            
+            <div class="sidebar-columns">
+                <!-- Countries Filter Column -->
+                <div class="sidebar-col countries-col">
+                    <div class="col-title">Countries</div>
+                    <div class="countries-list" id="iptv-countries-list">
+                        <!-- Injected by iptv-player.js -->
+                    </div>
+                </div>
+
+                <!-- Channels List Column -->
+                <div class="sidebar-col channels-col">
+                    <div class="col-title">Channels</div>
+                    <div class="channels-list" id="iptv-channels-list">
+                        <!-- Injected by iptv-player.js -->
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-footer">
+                <span>▲/▼ Navigate · ◄/► Columns · OK Select · Back Return</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
+    <script src="js/hls.min.js"></script>
     <script src="js/tizen-api.js"></script>
     <script src="js/mock-apps.js"></script>
+    <script src="js/iptv-catalog.js"></script>
+    <script src="js/iptv-player.js"></script>
     <script src="js/config.js"></script>
     <script src="js/app.js"></script>
 </body>

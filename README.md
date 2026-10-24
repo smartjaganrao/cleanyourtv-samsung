@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://github.com/smartjaganrao/cleanyourtv-samsung/pulls?q=is%3Amerged"><img src="https://img.shields.io/github/issues-search?query=repo%3Asmartjaganrao%2Fcleanyourtv-samsung%20is%3Apr%20is%3Amerged&style=flat&cacheSeconds=1800&label=merged%20PRs&color=cfffcf&labelColor=15181e" alt="Merged PRs"></a>
   <a href="https://github.com/smartjaganrao/cleanyourtv-samsung/network/members"><img src="https://img.shields.io/github/forks/smartjaganrao/cleanyourtv-samsung?style=flat&cacheSeconds=1800&color=cfffcf&labelColor=15181e" alt="Forks"></a>
-  <a href="https://github.com/smartjaganrao/cleanyourtv-samsung/graphs/contributors"><img src="https://img.shields.io/github/contributors/smartjaganrao/cleanyourtv-samsung?style=flat&cacheSeconds=1800&color=cfffcf&labelColor=15181e" alt="Contributors"></a>
+  <a href="docs/LIVETV.md"><img src="https://img.shields.io/badge/Live%20World%20IPTV-Free%20for%20All%20Countries-ec4899?style=flat&labelColor=15181e" alt="Free Live IPTV"></a>
   <a href="https://img.shields.io/badge/Tizen%20OS-2.4%20--%209.0%2B-38bdf8?style=flat&labelColor=15181e"><img src="https://img.shields.io/badge/Tizen%20OS-2.4%20--%209.0%2B-38bdf8?style=flat&labelColor=15181e" alt="Tizen OS Supported"></a>
   <a href="https://img.shields.io/badge/Resolution-4K%20HDR%2060fps-a855f7?style=flat&labelColor=15181e"><img src="https://img.shields.io/badge/Resolution-4K%20HDR%2060fps-a855f7?style=flat&labelColor=15181e" alt="4K 60fps"></a>
   <a href="https://img.shields.io/badge/Root%20Required-NO-10b981?style=flat&labelColor=15181e"><img src="https://img.shields.io/badge/Root%20Required-NO-10b981?style=flat&labelColor=15181e" alt="No Root"></a>
@@ -87,8 +87,33 @@ A home screen that looks and feels like an Apple TV and gets completely out of y
 | **One floating glass highlight** | Springs from tile to tile with smooth physics. The focused tile gently zooms and lifts. |
 | **Three frosted buttons** | Inputs (HDMI 1, HDMI 2 eARC, HDMI 3, HDMI 4, Live TV), Wi-Fi / Ethernet status, and Settings. |
 | **A greeting, a thin clock and date** | In crisp Outfit typography, with matching anti-burn-in Clock screensaver that drifts every 60 seconds. |
+| **Free Live World IPTV** | 100% free legal broadcast channels from all countries (News, Sports, Movies, Science, Kids). Remote channel surfing with `CH ▲/▼` and sliding EPG guide. |
 | **Themes and customization** | Switch themes (OLED Pitch Black, Northern Aurora, Midnight Glass, Minimal Quiet) without rebuilding. |
 | **Zero sponsored rows** | No sponsored banners, no forced video trailers, and no tracking. |
+
+---
+
+## Free Live World IPTV for Everyone (All Countries)
+
+CleanYourTV includes a built-in **Free Live IPTV Player &amp; Electronic Program Guide (EPG)** providing instant access to 100% legal, public domain, and free-to-air broadcast channels from over 100+ countries, with zero fees, subscriptions, or ads.
+
+<p align="center">
+  <img src="docs/livetv-player.svg" alt="Live IPTV Player and EPG Guide on Samsung Smart TV" width="800">
+</p>
+
+| Country | Sample Live 24/7 Broadcasts Included |
+|---|---|
+| 🇺🇸 **USA** | ABC News Live, CBS News 24/7, NASA TV, WeatherNation, Cheddar, Red Bull TV, Pluto Movies, FilmRise |
+| 🇬🇧 **UK** | Sky News Live, GB News, TalkTV, Euronews English, Rakuten Action Movies |
+| 🇮🇳 **India** | NDTV 24x7, India Today, Aaj Tak, WION, DD Sports, DD National |
+| 🇫🇷 **France** | France 24 (FR &amp; EN), BFM TV, CNews, Euronews |
+| 🇩🇪 **Germany** | DW English, DW Deutsch, Tagesschau24, Welt |
+| 🇯🇵 **Japan** | NHK World-Japan, Nippon TV News24 |
+| 🇨🇦 **Canada** | CBC News, CTV News Live, CP24 |
+| 🇦🇺 **Australia** | ABC News Australia, Sky News Australia |
+| 🌍 **All Countries** | Dynamic Country Switcher loads live HLS feeds from the community [iptv-org](https://github.com/iptv-org/iptv) database |
+
+*Press **`CH ∧ / ∨`** on your Samsung remote to surf channels, or press **Left (`◄`)** to open the sliding EPG Country &amp; Channel Guide. Full guide in [docs/LIVETV.md](docs/LIVETV.md).*
 
 ---
 

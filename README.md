@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://github.com/smartjaganrao/cleanyourtv-samsung/pulls?q=is%3Amerged"><img src="https://img.shields.io/github/issues-search?query=repo%3Asmartjaganrao%2Fcleanyourtv-samsung%20is%3Apr%20is%3Amerged&style=flat&cacheSeconds=1800&label=merged%20PRs&color=cfffcf&labelColor=15181e" alt="Merged PRs"></a>
-  <a href="https://github.com/smartjaganrao/cleanyourtv-samsung/network/members"><img src="https://img.shields.io/github/forks/smartjaganrao/cleanyourtv-samsung?style=flat&cacheSeconds=1800&color=cfffcf&labelColor=15181e" alt="Forks"></a>
+  <a href="https://github.com/smartjaganrao/cleanyourtv-samsung/releases"><img src="https://img.shields.io/badge/Download%20.WGT-Latest%20Release-10b981?style=flat&labelColor=15181e" alt="Download .WGT"></a>
+  <a href="docs/ART_MODE.md"><img src="https://img.shields.io/badge/Art%20Mode-Free%20The%20Frame-f59e0b?style=flat&labelColor=15181e" alt="Art Mode"></a>
   <a href="docs/LIVETV.md"><img src="https://img.shields.io/badge/Live%20World%20IPTV-Free%20for%20All%20Countries-ec4899?style=flat&labelColor=15181e" alt="Free Live IPTV"></a>
   <a href="https://img.shields.io/badge/Tizen%20OS-2.4%20--%209.0%2B-38bdf8?style=flat&labelColor=15181e"><img src="https://img.shields.io/badge/Tizen%20OS-2.4%20--%209.0%2B-38bdf8?style=flat&labelColor=15181e" alt="Tizen OS Supported"></a>
   <a href="https://img.shields.io/badge/Resolution-4K%20HDR%2060fps-a855f7?style=flat&labelColor=15181e"><img src="https://img.shields.io/badge/Resolution-4K%20HDR%2060fps-a855f7?style=flat&labelColor=15181e" alt="4K 60fps"></a>
@@ -85,11 +85,26 @@ A home screen that looks and feels like an Apple TV and gets completely out of y
 | **A top shelf** | Names the focused app in large 72px [Outfit](https://fonts.google.com/specimen/Outfit) typography, with an ambient radial glow in a color sampled from the app's brand artwork. |
 | **The rest of your apps in a grid** | Slides up smoothly when you press **Down** on your remote to reveal all installed apps in a 6-column grid. |
 | **One floating glass highlight** | Springs from tile to tile with smooth physics. The focused tile gently zooms and lifts. |
-| **Three frosted buttons** | Inputs (HDMI 1, HDMI 2 eARC, HDMI 3, HDMI 4, Live TV), Wi-Fi / Ethernet status, and Settings. |
-| **A greeting, a thin clock and date** | In crisp Outfit typography, with matching anti-burn-in Clock screensaver that drifts every 60 seconds. |
-| **Free Live World IPTV** | 100% free legal broadcast channels from all countries (News, Sports, Movies, Science, Kids). Remote channel surfing with `CH ▲/▼` and sliding EPG guide. |
+| **Top Action Pills** | Live TV, Art Mode, Inputs (HDMI 1-4, eARC), Mobile Web Remote, and Settings. |
+| **"The Frame" Ambient Art Mode** | Turn any Samsung TV into a digital museum. 4K public domain masterpieces (Van Gogh, Monet, Hokusai, NASA) with OLED pixel-shift burn-in protection. |
+| **Free Live World IPTV & Custom M3U** | 350+ free curated channels from 26 countries synced from iptv-org, plus support for custom M3U playlists and channel favorites (`★`). |
+| **Mobile Web Remote** | Zero-install phone controller. Scan a QR code on your TV to use a mobile keyboard and trackpad over Wi-Fi. |
 | **Themes and customization** | Switch themes (OLED Pitch Black, Northern Aurora, Midnight Glass, Minimal Quiet) without rebuilding. |
 | **Zero sponsored rows** | No sponsored banners, no forced video trailers, and no tracking. |
+
+---
+
+## 💰 Free vs. Paid Smart TV Apps (\$120+/Year Saved)
+
+Why pay for subscriptions and activation fees when CleanYourTV is 100% free and open-source?
+
+| App / Feature | Typical Paid Solution | CleanYourTV Samsung | Annual Savings |
+| :--- | :--- | :--- | :--- |
+| **IPTV Player & EPG** | Smart IPTV / IBO Player (\$8 – \$35 activation) | **100% Free** (350+ streams + Custom M3U + Favorites) | **\$15 – \$35** |
+| **Ambient Art Mode** | Samsung Art Store on The Frame (\$4.99/mo) | **100% Free** (4K Museum Masterpieces + OLED anti-burn) | **\$60 / yr** |
+| **Ad & Telemetry Blocker** | AdGuard DNS VIP / NextDNS Pro (\$20 – \$40/yr) | **Included free** (`blocklists/samsung-ads-blocklist.txt`) | **\$20 – \$40** |
+| **Phone Remote Controller** | Paid App Store Remotes (\$9.99 – \$29.99) | **Included free** (Local Wi-Fi Web Remote QR) | **\$10 – \$30** |
+| **Total Annual Cost** | **\$115 – \$165 / year** | **\$0.00 (Free & Open Source)** | **Save \$120+/yr** |
 
 ---
 
@@ -238,6 +253,7 @@ cleanyourtv-samsung/
 │   ├── samsung_tv.py          # Discovery, pairing, remote keys, app launch
 │   ├── package_wgt.py         # Packages launcher into .wgt archive
 │   ├── sdb_install.py         # SDB connector and package installer
+│   ├── update_iptv.py         # Automated IPTV synchronizer from iptv-org
 │   ├── debloat_dns.py         # Verifies and exports DNS ad blocklists
 │   ├── theme.py               # Theme switcher CLI
 │   ├── backup.py              # Backs up TV state & installed apps
@@ -252,6 +268,10 @@ cleanyourtv-samsung/
 │   ├── samsung-crystal-uhd-cu8000-2023/
 │   └── samsung-qled-q60a-2021/
 ├── docs/                      # Technical guides & graphics
+│   ├── ART_MODE.md            # Ambient Art Mode & OLED burn-in protection guide
+│   ├── CUSTOM_IPTV.md         # Custom M3U playlists and channel favorites guide
+│   ├── VIRAL_PLAYBOOK.md      # Ready-to-post Reddit/HN/TikTok viral promotion kit
+│   ├── LIVETV.md              # Live World IPTV player documentation
 │   ├── DEVELOPER_MODE.md      # Samsung TV Developer Mode unlock guide
 │   ├── BYPASS_SMART_HUB.md    # Auto-boot setup guide
 │   ├── TIZEN_APP_IDS.md       # Reference list of Tizen App IDs
@@ -259,9 +279,7 @@ cleanyourtv-samsung/
 │   ├── SHOWCASE.md            # Verified TV lineups and community themes
 │   ├── ARCHITECTURE.md        # Technical architecture comparison
 │   ├── card.svg               # Before & After hero showcase
-│   ├── focus-shelf.svg        # Top shelf preview
-│   ├── inputs-menu.svg        # Inputs modal preview
-│   ├── clock-screensaver.svg  # Drift clock screensaver preview
+│   ├── livetv-player.svg      # Live IPTV player preview
 │   └── app-grid.svg           # 6-column app grid preview
 └── themes/                    # Visual themes (OLED black, aurora, midnight, minimal)
 ```

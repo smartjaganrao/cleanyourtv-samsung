@@ -860,3 +860,221 @@ body {
     color: rgba(255, 255, 255, 0.35);
     text-align: center;
 }
+
+/* Favorites Indicator */
+.fav-star, .fav-icon {
+    color: #fbbf24;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.6);
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+/* ==========================================================================
+   Ambient Art Mode ("The Frame" Alternative)
+   ========================================================================== */
+.artmode-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+    background: #000000;
+    z-index: 9500;
+    overflow: hidden;
+    user-select: none;
+    outline: none;
+}
+
+.artmode-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.8s ease-in-out, transform 45s linear;
+    transform: scale(1.04);
+}
+
+.artmode-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%),
+                linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 25%),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 20%);
+    pointer-events: none;
+}
+
+.artmode-hud {
+    position: absolute;
+    top: 60px;
+    left: 80px;
+    right: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    pointer-events: none;
+    transition: opacity 0.6s ease, transform 0.4s ease;
+    z-index: 9550;
+}
+
+.artmode-plaque {
+    background: rgba(15, 17, 23, 0.65);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    padding: 22px 30px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    max-width: 600px;
+}
+
+.artmode-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+}
+
+.artmode-artist {
+    font-size: 20px;
+    font-weight: 500;
+    color: #38bdf8;
+    margin-top: 6px;
+}
+
+.artmode-meta {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.65);
+    margin-top: 6px;
+}
+
+.artmode-museum {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.45);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.artmode-timebox {
+    text-align: right;
+    background: rgba(15, 17, 23, 0.65);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    padding: 18px 28px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.artmode-clock {
+    font-size: 46px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.artmode-date {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 6px;
+}
+
+.artmode-bottom-bar {
+    position: absolute;
+    bottom: 40px;
+    left: 80px;
+    right: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+    z-index: 9550;
+}
+
+.artmode-pill {
+    background: rgba(15, 17, 23, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: #38bdf8;
+    padding: 8px 20px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.artmode-hint {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 18px;
+    border-radius: 9999px;
+}
+
+/* ==========================================================================
+   Mobile Remote Modal
+   ========================================================================== */
+.remote-card {
+    max-width: 680px;
+    padding: 40px;
+}
+
+.remote-body {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    margin: 28px 0;
+}
+
+.remote-qr-box {
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+}
+
+.remote-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.remote-instruction {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
+}
+
+.remote-feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.remote-url-badge {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    color: #38bdf8;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    margin-top: 6px;
+}
+

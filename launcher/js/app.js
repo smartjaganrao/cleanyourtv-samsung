@@ -138,6 +138,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (btnAction === 'livetv') {
                     focusedAppDescEl.textContent = 'Free Public Broadcasts from All Countries · Press OK to watch';
                     setAmbientGlow('rgba(56, 189, 248, 0.45)');
+                } else if (btnAction === 'artmode') {
+                    focusedAppDescEl.textContent = 'The Frame Mode · 4K Museum Masterpieces & Ambient Clock · Press OK';
+                    setAmbientGlow('rgba(245, 158, 11, 0.45)');
+                } else if (btnAction === 'remote') {
+                    focusedAppDescEl.textContent = 'Scan QR to control TV from your phone browser · No app needed';
+                    setAmbientGlow('rgba(52, 211, 153, 0.45)');
                 } else {
                     focusedAppDescEl.textContent = 'System Quick Action';
                     setAmbientGlow('rgba(255, 255, 255, 0.25)');
@@ -218,14 +224,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const action = btn.getAttribute('data-action');
         if (action === 'livetv') {
             if (window.IPTVPlayer) IPTVPlayer.open(0, 'ALL');
+        } else if (action === 'artmode') {
+            if (window.ArtMode) ArtMode.open(0);
+        } else if (action === 'remote') {
+            openModal('remote');
         } else if (action === 'inputs') {
             openModal('inputs');
         } else if (action === 'settings') {
             openModal('settings');
-        } else if (action === 'network') {
-            TizenAPI.launchApp('org.tizen.setting.network', null, function() {
-                alert('Samsung Network Settings');
-            });
         }
     }
 
@@ -240,6 +246,9 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (type === 'settings') {
             settingsModalEl.style.display = 'flex';
             updateSettingsUI();
+        } else if (type === 'remote') {
+            const remoteEl = document.getElementById('remote-modal');
+            if (remoteEl) remoteEl.style.display = 'flex';
         }
         updateFocus();
     }
@@ -247,6 +256,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function closeModal() {
         inputsModalEl.style.display = 'none';
         settingsModalEl.style.display = 'none';
+        const remoteEl = document.getElementById('remote-modal');
+        if (remoteEl) remoteEl.style.display = 'none';
         state.currentModal = null;
         state.currentZone = 'TOP';
         updateFocus();
@@ -312,6 +323,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (window.IPTVPlayer && IPTVPlayer.isOpen) {
             if (IPTVPlayer.handleKeyDown(e)) {
+                return;
+            }
+        }
+
+        if (window.ArtMode && ArtMode.isOpen) {
+            if (ArtMode.handleKeyDown(e)) {
                 return;
             }
         }
@@ -485,5 +502,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     LauncherConfig.applyTheme(LauncherConfig.settings.theme);
     initApps();
+    if (window.ArtMode) ArtMode.init();
     resetIdleTimer();
 });

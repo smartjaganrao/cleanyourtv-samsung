@@ -134,8 +134,9 @@ const IPTVPlayer = {
         const logoEl = document.getElementById('osd-channel-logo');
 
         const chNumber = String(this.currentIndex + 1).padStart(2, '0');
+        const isFav = (window.IPTVService && IPTVService.isFavorite) ? IPTVService.isFavorite(channel.url) : false;
         numEl.textContent = `CH ${chNumber}`;
-        nameEl.textContent = channel.name;
+        nameEl.innerHTML = `${isFav ? '<span class="fav-star">★ </span>' : ''}${channel.name}`;
         metaEl.textContent = `${channel.flag || '📺'} ${channel.country || ''} · ${channel.category || 'General'} · 1080p LIVE`;
 
         if (channel.logo) {
@@ -143,6 +144,11 @@ const IPTVPlayer = {
             logoEl.style.display = 'block';
         } else {
             logoEl.style.display = 'none';
+        }
+
+        const hintEl = document.querySelector('.osd-hint');
+        if (hintEl) {
+            hintEl.textContent = isFav ? '★ Favorited · Press F/Yellow to remove · ◄ Guide' : 'Press F/Yellow to ★ Favorite · ◄ Guide · ▲/▼ surf';
         }
 
         osdEl.classList.add('visible');
@@ -231,9 +237,10 @@ const IPTVPlayer = {
             item.className = 'sidebar-ch-item';
             item.setAttribute('data-index', idx);
             const num = String(idx + 1).padStart(2, '0');
+            const isFav = (window.IPTVService && IPTVService.isFavorite) ? IPTVService.isFavorite(ch.url) : false;
             item.innerHTML = `
                 <span class="ch-num">${num}</span>
-                <span class="ch-title">${ch.name}</span>
+                <span class="ch-title">${isFav ? '<span class="fav-icon">★</span> ' : ''}${ch.name}</span>
                 <span class="ch-tag">${ch.category || 'Live'}</span>
             `;
             item.addEventListener('click', () => {
@@ -422,6 +429,18 @@ const IPTVPlayer = {
                 this.showOSD(this.channels[this.currentIndex]);
                 e.preventDefault();
                 return true;
+            case 70: // 'F' Key
+            case 405: // Samsung ColorF2Yellow
+            case 404: // Samsung ColorF1Green
+            case 10140: // Samsung Tools
+                if (this.channels && this.channels[this.currentIndex]) {
+                    window.IPTVService && IPTVService.toggleFavorite(this.channels[this.currentIndex]);
+                    this.showOSD(this.channels[this.currentIndex]);
+                    this.renderSidebarChannels();
+                    e.preventDefault();
+                    return true;
+                }
+                break;
         }
 
         return false;

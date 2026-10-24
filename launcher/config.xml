@@ -20,5 +20,6 @@
     <tizen:privilege name="http://tizen.org/privilege/systeminfo"/>
     <tizen:privilege name="http://tizen.org/privilege/internet"/>
     <tizen:profile name="tv"/>
+    <access origin="*" subdomains="true"/>
     <tizen:setting screen-orientation="landscape" context-menu="enable" background-support="disable" encryption="disable" install-location="auto"/>
 </widget>

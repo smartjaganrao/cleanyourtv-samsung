@@ -5,6 +5,8 @@
  */
 
 const IPTV_COUNTRIES = [
+    { code: "FAVORITES", name: "★ Favorites", flag: "⭐" },
+    { code: "CUSTOM", name: "Custom M3U", flag: "📁" },
     { code: "ALL", name: "Global Highlights", flag: "🌍" },
     { code: "US", name: "United States", flag: "🇺🇸" },
     { code: "GB", name: "United Kingdom", flag: "🇬🇧" },
@@ -2910,7 +2912,86 @@ const IPTVService = {
         return channels;
     },
 
+    getFavorites: function() {
+        try {
+            const data = localStorage.getItem('cleanyourtv_iptv_favorites');
+            return data ? JSON.parse(data) : [];
+        } catch(e) {
+            return [];
+        }
+    },
+
+    isFavorite: function(url) {
+        if (!url) return false;
+        return this.getFavorites().some(c => c.url === url);
+    },
+
+    toggleFavorite: function(channel) {
+        if (!channel || !channel.url) return false;
+        let favs = this.getFavorites();
+        const idx = favs.findIndex(c => c.url === channel.url);
+        let isNowFav = false;
+        if (idx >= 0) {
+            favs.splice(idx, 1);
+            isNowFav = false;
+        } else {
+            favs.unshift(channel);
+            isNowFav = true;
+        }
+        try {
+            localStorage.setItem('cleanyourtv_iptv_favorites', JSON.stringify(favs));
+        } catch(e) {}
+        return isNowFav;
+    },
+
+    getCustomPlaylists: function() {
+        try {
+            const data = localStorage.getItem('cleanyourtv_custom_playlists');
+            return data ? JSON.parse(data) : [];
+        } catch(e) {
+            return [];
+        }
+    },
+
+    addCustomPlaylist: function(name, url) {
+        if (!url) return;
+        const list = this.getCustomPlaylists();
+        list.push({ name: name || 'Custom M3U', url: url, addedAt: new Date().toISOString() });
+        try {
+            localStorage.setItem('cleanyourtv_custom_playlists', JSON.stringify(list));
+        } catch(e) {}
+    },
+
     loadCountryChannels: function(countryCode, onSuccess, onError) {
+        if (countryCode === "FAVORITES") {
+            const favs = this.getFavorites();
+            console.log(`[IPTV] Loaded ${favs.length} favorite channels`);
+            onSuccess(favs.length > 0 ? favs : DEFAULT_IPTV_CHANNELS.slice(0, 10));
+            return;
+        }
+
+        if (countryCode === "CUSTOM") {
+            const customLists = this.getCustomPlaylists();
+            if (customLists.length > 0) {
+                const targetUrl = customLists[0].url;
+                console.log(`[IPTV] Loading custom M3U: ${targetUrl}`);
+                fetch(targetUrl)
+                    .then(res => res.text())
+                    .then(text => {
+                        const parsed = this.parseM3U(text, "Custom");
+                        onSuccess(parsed.length > 0 ? parsed : DEFAULT_IPTV_CHANNELS);
+                    })
+                    .catch(err => {
+                        console.warn("[IPTV] Failed to fetch custom M3U:", err);
+                        onSuccess(DEFAULT_IPTV_CHANNELS);
+                    });
+            } else {
+                console.log("[IPTV] No custom M3U configured, using default channels");
+                onSuccess(DEFAULT_IPTV_CHANNELS);
+            }
+            return;
+        }
+
         if (countryCode === "ALL") {
             onSuccess(DEFAULT_IPTV_CHANNELS);
             return;

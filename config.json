@@ -1,0 +1,14 @@
+{
+  "tv_platform": "samsung_tizen",
+  "theme": "default",
+  "dock_size": 4,
+  "ambient_glow": true,
+  "reduced_motion": false,
+  "screensaver_minutes": 5,
+  "default_dock_apps": [
+    "11101200001",
+    "111299001912",
+    "3201512006785",
+    "3201907018807"
+  ]
+}

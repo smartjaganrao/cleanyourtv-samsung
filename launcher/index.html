@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1920, height=1080, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Clean Your TV - Samsung TV Edition</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-default">
+    <!-- Ambient Glow Background -->
+    <div id="ambient-glow" class="ambient-glow"></div>
+    <div id="wallpaper" class="wallpaper"></div>
+
+    <div class="launcher-container" id="launcher-container">
+        <!-- Top Status Bar: Clock, Date, Inputs, Network, Settings -->
+        <header class="top-bar">
+            <div class="greeting-section">
+                <div class="clock" id="digital-clock">12:00</div>
+                <div class="date" id="current-date">Friday, October 24</div>
+                <div class="sys-stats" id="sys-stats" style="display:none;">RAM: 68% free · TV OS 9.0</div>
+            </div>
+
+            <div class="top-actions">
+                <button class="glass-pill-btn nav-item" id="btn-inputs" data-nav="action" data-action="inputs">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M17 2l-5 5-5-5"></path>
+                    </svg>
+                    <span>Inputs</span>
+                </button>
+
+                <button class="glass-pill-btn nav-item" id="btn-network" data-nav="action" data-action="network">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                        <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                        <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                        <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                    </svg>
+                    <span id="network-name">Wi-Fi</span>
+                </button>
+
+                <button class="glass-pill-btn nav-item" id="btn-settings" data-nav="action" data-action="settings">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                    <span>Settings</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Top Shelf: Names focused app with large typography -->
+        <section class="top-shelf">
+            <div class="shelf-brand" id="shelf-brand">Clean Your TV</div>
+            <div class="shelf-app-name" id="focused-app-name">Netflix</div>
+            <div class="shelf-subtitle" id="focused-app-desc">Press OK to launch</div>
+        </section>
+
+        <!-- Main Content Area: Dock & Scrollable App Grid -->
+        <main class="content-viewport" id="content-viewport">
+            <!-- Dock: 4-6 pinned favorite apps in glass band -->
+            <section class="dock-section">
+                <div class="dock-container" id="dock-container">
+                    <!-- Dock items injected dynamically by app.js -->
+                </div>
+            </section>
+
+            <!-- All Apps Grid: Revealed on scroll down -->
+            <section class="grid-section" id="grid-section">
+                <div class="section-title">All Applications</div>
+                <div class="app-grid" id="app-grid">
+                    <!-- Grid items injected dynamically by app.js -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Glass Focus Highlight element that springs between items -->
+    <div id="floating-focus" class="floating-focus"></div>
+
+    <!-- Inputs Selection Modal -->
+    <div id="inputs-modal" class="modal-overlay" style="display:none;">
+        <div class="glass-modal">
+            <h2>Inputs</h2>
+            <div class="inputs-grid" id="inputs-list">
+                <button class="input-card modal-nav-item" data-input-id="HDMI1">
+                    <span class="input-title">HDMI 1</span>
+                    <span class="input-label" id="label-hdmi1">Apple TV 4K / Console</span>
+                </button>
+                <button class="input-card modal-nav-item" data-input-id="HDMI2">
+                    <span class="input-title">HDMI 2 (eARC)</span>
+                    <span class="input-label" id="label-hdmi2">Soundbar / Receiver</span>
+                </button>
+                <button class="input-card modal-nav-item" data-input-id="HDMI3">
+                    <span class="input-title">HDMI 3</span>
+                    <span class="input-label" id="label-hdmi3">PlayStation / Xbox</span>
+                </button>
+                <button class="input-card modal-nav-item" data-input-id="HDMI4">
+                    <span class="input-title">HDMI 4</span>
+                    <span class="input-label" id="label-hdmi4">PC / Streaming Stick</span>
+                </button>
+                <button class="input-card modal-nav-item" data-input-id="TV">
+                    <span class="input-title">Live TV</span>
+                    <span class="input-label">Antenna / Cable</span>
+                </button>
+            </div>
+            <div class="modal-hint">Press Back to close</div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal-overlay" style="display:none;">
+        <div class="glass-modal settings-card">
+            <h2>Launcher Settings</h2>
+            <div class="settings-list">
+                <div class="setting-row">
+                    <div class="setting-info">
+                        <span class="setting-title">Theme</span>
+                        <span class="setting-desc">Visual appearance of dock and background</span>
+                    </div>
+                    <button class="setting-btn modal-nav-item" id="setting-theme-btn" data-setting="theme">Default (Dark)</button>
+                </div>
+
+                <div class="setting-row">
+                    <div class="setting-info">
+                        <span class="setting-title">Ambient Glow</span>
+                        <span class="setting-desc">Tint background with focused app's brand color</span>
+                    </div>
+                    <button class="setting-btn modal-nav-item" id="setting-glow-btn" data-setting="glow">Enabled</button>
+                </div>
+
+                <div class="setting-row">
+                    <div class="setting-info">
+                        <span class="setting-title">Dock Size</span>
+                        <span class="setting-desc">Number of favorite apps in the bottom dock</span>
+                    </div>
+                    <button class="setting-btn modal-nav-item" id="setting-dock-btn" data-setting="dock">4 Apps</button>
+                </div>
+
+                <div class="setting-row">
+                    <div class="setting-info">
+                        <span class="setting-title">OLED Screensaver</span>
+                        <span class="setting-desc">Drifting clock prevents burn-in when idle</span>
+                    </div>
+                    <button class="setting-btn modal-nav-item" id="setting-screensaver-btn" data-setting="screensaver">5 Minutes</button>
+                </div>
+
+                <div class="setting-row">
+                    <div class="setting-info">
+                        <span class="setting-title">Auto-Boot Setup</span>
+                        <span class="setting-desc">Set TV to launch CleanYourTV on power up</span>
+                    </div>
+                    <button class="setting-btn modal-nav-item" id="setting-autoboot-btn" data-setting="autoboot">Instructions</button>
+                </div>
+            </div>
+            <div class="modal-hint">Press Back to close</div>
+        </div>
+    </div>
+
+    <!-- Drift Clock OLED Screensaver -->
+    <div id="screensaver" class="screensaver" style="display:none;">
+        <div class="screensaver-glow"></div>
+        <div class="screensaver-clock" id="ss-clock">12:00</div>
+        <div class="screensaver-date" id="ss-date">Friday, October 24</div>
+        <div class="screensaver-hint">Press any button to resume</div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/tizen-api.js"></script>
+    <script src="js/mock-apps.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

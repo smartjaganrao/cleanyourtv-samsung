@@ -1,0 +1,39 @@
+# ==============================================================================
+# CleanYourTV: Samsung Smart TV Ad & Telemetry Domain Blocklist
+# Blocks Smart Hub sponsored tiles, ACR viewing tracking, and ad delivery
+# Compatible with Pi-hole, AdGuard Home, pfSense, OpenWrt, and dnsmasq
+# ==============================================================================
+
+# Samsung Ads & Sponsored Content Engines
+samsungads.com
+*.samsungads.com
+config.samsungads.com
+gpm.samsungqbe.com
+osb.samsungqbe.com
+osb-auth.samsungqbe.com
+osb-version.samsungqbe.com
+upu.samsungqbe.com
+cdn.samsungcloudsolution.com
+notice.samsungcloudsolution.com
+opm.samsungcloudsolution.com
+noticefile.samsungcloudsolution.com
+lcprd1.samsungcloudsolution.net
+
+# Automated Content Recognition (ACR) & Viewing Telemetry
+samsungacr.com
+*.samsungacr.com
+log-config.samsungacr.com
+acr0.samsungcloudsolution.com
+log-config.samsungcloudsolution.com
+log-ingestion.samsungacr.com
+
+# Samsung OTN & Analytics Trackers
+samsungotn.net
+*.samsungotn.net
+diag.samsungotn.net
+events.samsungotn.net
+
+# Preloaded Promotions & Ad Media
+samsung.adgrx.com
+ad.samsungadhub.com
+b2c.samsungcloudsolution.com

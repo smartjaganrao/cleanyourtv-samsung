@@ -1,0 +1,24 @@
+# CleanYourTV - Samsung TV Pi-hole Adlist format (one domain per line)
+samsungads.com
+config.samsungads.com
+gpm.samsungqbe.com
+osb.samsungqbe.com
+osb-auth.samsungqbe.com
+osb-version.samsungqbe.com
+upu.samsungqbe.com
+cdn.samsungcloudsolution.com
+notice.samsungcloudsolution.com
+opm.samsungcloudsolution.com
+noticefile.samsungcloudsolution.com
+lcprd1.samsungcloudsolution.net
+samsungacr.com
+log-config.samsungacr.com
+acr0.samsungcloudsolution.com
+log-config.samsungcloudsolution.com
+log-ingestion.samsungacr.com
+samsungotn.net
+diag.samsungotn.net
+events.samsungotn.net
+samsung.adgrx.com
+ad.samsungadhub.com
+b2c.samsungcloudsolution.com

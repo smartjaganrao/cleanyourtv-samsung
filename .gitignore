@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Samsung TV Tokens & Backups
+tools/.samsung_token
+backups/
+
+# Operating Systems
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.wgt

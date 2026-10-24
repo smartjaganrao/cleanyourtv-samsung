@@ -1,0 +1,12 @@
+{
+  "name": "Northern Aurora",
+  "id": "aurora",
+  "background_color": "#050c14",
+  "wallpaper": "linear-gradient(135deg, #0b1d28 0%, #03080e 100%)",
+  "dock_size": 4,
+  "ambient_glow": true,
+  "glow_style": "horizon",
+  "glass_style": "glass",
+  "reduced_motion": false,
+  "show_stats": true
+}

@@ -1,0 +1,14 @@
+# Samsung QLED Q60A (Tizen 6.0) Debloat & Privacy Configuration
+
+# 1. Native Settings
+# Settings → General → Smart Features:
+#   Autorun Smart Hub: OFF
+#   Autorun Last App: ON
+
+# 2. Blocked Domains
+samsungads.com
+config.samsungads.com
+gpm.samsungqbe.com
+log-config.samsungacr.com
+samsungacr.com
+samsungotn.net

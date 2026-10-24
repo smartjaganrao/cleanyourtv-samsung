@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <rect width="800" height="480" fill="#07080b"/>
+  
+  <text x="50" y="60" font-family="'Outfit', -apple-system, sans-serif" font-size="28" font-weight="600" fill="#ffffff">All Applications</text>
+
+  <!-- 6 Column Grid -->
+  <g transform="translate(50, 90)">
+    <!-- Tile 1 (Focused: Plex) -->
+    <g transform="translate(0, 0)">
+      <rect width="102" height="110" rx="20" fill="#2d3240" stroke="#ffffff" stroke-width="2.5"/>
+      <rect x="21" y="14" width="60" height="60" rx="14" fill="#282A2D"/>
+      <path d="M42 28l15 20-15 20h12l15-20-15-20z" fill="#E5A00D"/>
+      <text x="51" y="96" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Plex</text>
+    </g>
+
+    <!-- Tile 2 (Spotify) -->
+    <g transform="translate(118, 6)">
+      <rect width="98" height="104" rx="18" fill="#141720" stroke="rgba(255,255,255,0.06)"/>
+      <rect x="22" y="14" width="54" height="54" rx="12" fill="#1ED760"/>
+      <circle cx="49" cy="41" r="14" fill="#000" fill-opacity="0.2"/>
+      <text x="49" y="88" font-family="-apple-system, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Spotify</text>
+    </g>
+
+    <!-- Tile 3 (Apple TV) -->
+    <g transform="translate(236, 6)">
+      <rect width="98" height="104" rx="18" fill="#141720" stroke="rgba(255,255,255,0.06)"/>
+      <rect x="22" y="14" width="54" height="54" rx="12" fill="#1C1C1E"/>
+      <text x="49" y="47" font-family="-apple-system, sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">tv</text>
+      <text x="49" y="88" font-family="-apple-system, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Apple TV</text>
+    </g>
+
+    <!-- Tile 4 (Twitch) -->
+    <g transform="translate(354, 6)">
+      <rect width="98" height="104" rx="18" fill="#141720" stroke="rgba(255,255,255,0.06)"/>
+      <rect x="22" y="14" width="54" height="54" rx="12" fill="#9146FF"/>
+      <path d="M38 32h22v16l-6 6h-6l-4 4v-4h-6z" fill="#fff"/>
+      <text x="49" y="88" font-family="-apple-system, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Twitch</text>
+    </g>
+
+    <!-- Tile 5 (Jellyfin) -->
+    <g transform="translate(472, 6)">
+      <rect width="98" height="104" rx="18" fill="#141720" stroke="rgba(255,255,255,0.06)"/>
+      <rect x="22" y="14" width="54" height="54" rx="12" fill="#000B25"/>
+      <path d="M49 26c-10 0-15 10-15 20 4-4 9-6 15-6s11 2 15 6c0-10-5-20-15-20z" fill="#00A4DC"/>
+      <text x="49" y="88" font-family="-apple-system, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Jellyfin</text>
+    </g>
+
+    <!-- Tile 6 (Moonlight) -->
+    <g transform="translate(590, 6)">
+      <rect width="98" height="104" rx="18" fill="#141720" stroke="rgba(255,255,255,0.06)"/>
+      <rect x="22" y="14" width="54" height="54" rx="12" fill="#1B2838"/>
+      <circle cx="49" cy="41" r="14" fill="#58A6FF"/>
+      <text x="49" y="88" font-family="-apple-system, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Moonlight</text>
+    </g>
+  </g>
+
+  <!-- Row 2 -->
+  <g transform="translate(50, 220)">
+    <g transform="translate(0, 6)"><rect width="98" height="104" rx="18" fill="#141720" stroke="rgba(255,255,255,0.06)"/><text x="49" y="88" font-family="-apple-system, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Browser</text></g>
+    <g transform="translate(118, 6)"><rect width="98" height="104" rx="18" fill="#141720" stroke="rgba(255,255,255,0.06)"/><text x="49" y="88" font-family="-apple-system, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Max</text></g>
+    <g transform="translate(236, 6)"><rect width="98" height="104" rx="18" fill="#141720" stroke="rgba(255,255,255,0.06)"/><text x="49" y="88" font-family="-apple-system, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Paramount+</text></g>
+    <g transform="translate(354, 6)"><rect width="98" height="104" rx="18" fill="#141720" stroke="rgba(255,255,255,0.06)"/><text x="49" y="88" font-family="-apple-system, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Hulu</text></g>
+    <g transform="translate(472, 6)"><rect width="98" height="104" rx="18" fill="#141720" stroke="rgba(255,255,255,0.06)"/><text x="49" y="88" font-family="-apple-system, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Peacock</text></g>
+    <g transform="translate(590, 6)"><rect width="98" height="104" rx="18" fill="#141720" stroke="rgba(255,255,255,0.06)"/><text x="49" y="88" font-family="-apple-system, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Settings</text></g>
+  </g>
+</svg>

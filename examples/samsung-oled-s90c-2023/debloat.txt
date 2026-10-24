@@ -1,0 +1,14 @@
+# Samsung OLED S90C (Tizen 7.0) Debloat & Privacy Configuration
+
+# 1. Native Settings
+# Settings → General & Privacy → Start Screen Option:
+#   Start with Smart Hub Home: OFF
+#   Autorun Last App: ON
+
+# 2. Blocked Domains
+samsungads.com
+config.samsungads.com
+gpm.samsungqbe.com
+log-config.samsungacr.com
+samsungacr.com
+samsungotn.net

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <radialGradient id="redGlow" cx="50%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#E50914" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#07080b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="480" fill="#07080b"/>
+  <ellipse cx="400" cy="180" rx="350" ry="200" fill="url(#redGlow)"/>
+  
+  <text x="60" y="70" font-family="-apple-system, sans-serif" font-size="14" font-weight="700" fill="#718096" letter-spacing="3">CLEAN YOUR TV · SAMSUNG TIZEN</text>
+  <text x="60" y="145" font-family="'Outfit', -apple-system, sans-serif" font-size="64" font-weight="600" fill="#ffffff" letter-spacing="-1">Netflix</text>
+  <text x="60" y="180" font-family="-apple-system, sans-serif" font-size="18" fill="#a0aec0">Watch TV Shows &amp; Movies Anytime, Anywhere · Press OK to launch</text>
+
+  <!-- Dock with Netflix focused -->
+  <g transform="translate(60, 240)">
+    <rect width="680" height="180" rx="36" fill="rgba(20, 22, 28, 0.65)" stroke="rgba(255,255,255,0.14)" stroke-width="1.5"/>
+    
+    <!-- Focused Netflix Card -->
+    <g transform="translate(32, 20)">
+      <rect width="130" height="140" rx="24" fill="#222530" stroke="#ffffff" stroke-width="2.5"/>
+      <rect x="25" y="18" width="80" height="80" rx="18" fill="#000000"/>
+      <path d="M50 34h10v48h-10z" fill="#E50914"/>
+      <path d="M74 34h10v48h-10z" fill="#E50914"/>
+      <path d="M50 34h10l24 48h-10z" fill="#B81D24"/>
+      <text x="65" y="122" font-family="-apple-system, sans-serif" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">Netflix</text>
+    </g>
+
+    <!-- YouTube -->
+    <g transform="translate(194, 28)">
+      <rect width="120" height="124" rx="22" fill="#14161e" stroke="rgba(255,255,255,0.06)"/>
+      <rect x="25" y="16" width="70" height="70" rx="16" fill="#FF0000"/>
+      <path d="M55 41l20 10-20 10z" fill="#fff"/>
+      <text x="60" y="106" font-family="-apple-system, sans-serif" font-size="14" fill="#a0aec0" text-anchor="middle">YouTube</text>
+    </g>
+
+    <!-- Prime Video -->
+    <g transform="translate(346, 28)">
+      <rect width="120" height="124" rx="22" fill="#14161e" stroke="rgba(255,255,255,0.06)"/>
+      <rect x="25" y="16" width="70" height="70" rx="16" fill="#00A8E1"/>
+      <path d="M43 56c12 7 24 7 34 0" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <text x="60" y="106" font-family="-apple-system, sans-serif" font-size="14" fill="#a0aec0" text-anchor="middle">Prime</text>
+    </g>
+
+    <!-- Disney+ -->
+    <g transform="translate(498, 28)">
+      <rect width="120" height="124" rx="22" fill="#14161e" stroke="rgba(255,255,255,0.06)"/>
+      <rect x="25" y="16" width="70" height="70" rx="16" fill="#113CCF"/>
+      <circle cx="60" cy="51" r="18" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="60" y="106" font-family="-apple-system, sans-serif" font-size="14" fill="#a0aec0" text-anchor="middle">Disney+</text>
+    </g>
+  </g>
+</svg>

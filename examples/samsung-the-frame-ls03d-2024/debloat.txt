@@ -1,0 +1,17 @@
+# Samsung The Frame LS03D (Tizen 8.0) Debloat & Privacy Configuration
+
+# Note: Art Mode is a hardware/firmware subsystem that stays intact.
+# When waking from Art Mode, TV opens CleanYourTV instead of ad-loaded Smart Hub.
+
+# 1. TV Settings
+# Settings → General & Privacy → Start Screen Option:
+#   Start with Smart Hub Home: OFF
+#   Autorun Last App: ON
+
+# 2. Blocked Ad & Telemetry Domains
+samsungads.com
+config.samsungads.com
+gpm.samsungqbe.com
+log-config.samsungacr.com
+samsungacr.com
+samsungotn.net

@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c10"/>
+      <stop offset="100%" stop-color="#050608"/>
+    </linearGradient>
+    <radialGradient id="shelfGlow" cx="68%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#e50914" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glassPill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="dockGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c202a" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#0d0f14" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  
+  <!-- Left Side: BEFORE (Stock Samsung Smart Hub Bloat) -->
+  <g transform="translate(40, 50)" filter="url(#cardShadow)">
+    <rect width="520" height="530" rx="20" fill="#14171f" stroke="#252b38" stroke-width="2"/>
+    
+    <!-- Top Pill: Before Badge -->
+    <rect x="24" y="24" width="130" height="32" rx="16" fill="#e50914" fill-opacity="0.2" stroke="#e50914" stroke-width="1.5"/>
+    <text x="89" y="45" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="700" fill="#ff4d58" text-anchor="middle" letter-spacing="1">STOCK TIZEN</text>
+
+    <!-- Sponsored Banner Ad -->
+    <rect x="24" y="74" width="472" height="180" rx="12" fill="#1b202c" stroke="#323a4c" stroke-width="1"/>
+    <rect x="36" y="86" width="90" height="22" rx="4" fill="#ffb400"/>
+    <text x="81" y="101" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="800" fill="#000" text-anchor="middle">SPONSORED</text>
+    <text x="36" y="145" font-family="-apple-system, system-ui, sans-serif" font-size="22" font-weight="700" fill="#ffffff">Samsung TV Plus · Auto-Play</text>
+    <text x="36" y="175" font-family="-apple-system, system-ui, sans-serif" font-size="14" fill="#8c97ad">Featured Live Stream playing in 1080p with audio...</text>
+    <rect x="36" y="196" width="120" height="36" rx="6" fill="#2d3748"/>
+    <text x="96" y="219" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="600" fill="#fff" text-anchor="middle">Watch Now</text>
+
+    <!-- Intrusive Universal Guide & Content Rows -->
+    <text x="24" y="285" font-family="-apple-system, system-ui, sans-serif" font-size="15" font-weight="600" fill="#718096">Recommended Free Movies &amp; Trends</text>
+    <g transform="translate(24, 300)">
+      <rect x="0" y="0" width="108" height="130" rx="8" fill="#1e2433"/>
+      <rect x="120" y="0" width="108" height="130" rx="8" fill="#1e2433"/>
+      <rect x="240" y="0" width="108" height="130" rx="8" fill="#1e2433"/>
+      <rect x="360" y="0" width="108" height="130" rx="8" fill="#1e2433"/>
+    </g>
+
+    <text x="24" y="475" font-family="-apple-system, system-ui, sans-serif" font-size="13" fill="#e53e3e">⚠️ ACR Telemetry Active · Samsung Ads Engine · Slow Navigation</text>
+  </g>
+
+  <!-- Right Side: AFTER (Clean Your TV Samsung Edition) -->
+  <g transform="translate(620, 50)" filter="url(#cardShadow)">
+    <!-- Deep OLED Frame -->
+    <rect width="540" height="530" rx="20" fill="#07080b" stroke="#3b82f6" stroke-width="2.5"/>
+    
+    <!-- Ambient Radial Glow behind Focused App -->
+    <ellipse cx="270" cy="180" rx="240" ry="160" fill="url(#shelfGlow)"/>
+
+    <!-- Top Pill: After Badge -->
+    <rect x="28" y="24" width="145" height="32" rx="16" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="1.5"/>
+    <text x="100" y="45" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="700" fill="#34d399" text-anchor="middle" letter-spacing="1">CLEAN YOUR TV</text>
+
+    <!-- Top Bar Clock & Glass Pills -->
+    <text x="495" y="48" font-family="'Outfit', -apple-system, sans-serif" font-size="28" font-weight="300" fill="#ffffff" text-anchor="end">12:00</text>
+    
+    <!-- Top Shelf Title -->
+    <text x="28" y="125" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="700" fill="#718096" letter-spacing="2">TOP SHELF</text>
+    <text x="28" y="175" font-family="'Outfit', -apple-system, sans-serif" font-size="52" font-weight="700" fill="#ffffff" letter-spacing="-1">Netflix</text>
+    <text x="28" y="206" font-family="-apple-system, system-ui, sans-serif" font-size="15" fill="#a0aec0">Watch Movies &amp; TV Series Anytime · Press OK to launch</text>
+
+    <!-- Apple TV Glass Dock -->
+    <rect x="28" y="270" width="484" height="150" rx="28" fill="url(#dockGrad)" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+    
+    <!-- Focused Dock Tile (Netflix) with Glowing Rim -->
+    <g transform="translate(46, 285)">
+      <rect width="102" height="120" rx="18" fill="#1a1d26" stroke="#ffffff" stroke-width="2"/>
+      <rect x="21" y="18" width="60" height="60" rx="14" fill="#000000"/>
+      <!-- Netflix 'N' -->
+      <path d="M41 33h7v30h-7z" fill="#E50914"/>
+      <path d="M60 33h7v30h-7z" fill="#E50914"/>
+      <path d="M41 33h7l19 30h-7z" fill="#B81D24"/>
+      <text x="51" y="105" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Netflix</text>
+    </g>
+
+    <!-- Other Dock Tiles (YouTube, Prime, Disney+) -->
+    <g transform="translate(162, 292)">
+      <rect width="94" height="106" rx="16" fill="#12141a" stroke="rgba(255,255,255,0.06)"/>
+      <rect x="22" y="15" width="50" height="50" rx="12" fill="#FF0000"/>
+      <path d="M43 32l14 8-14 8z" fill="#ffffff"/>
+      <text x="47" y="88" font-family="-apple-system, system-ui, sans-serif" font-size="12" fill="#a0aec0" text-anchor="middle">YouTube</text>
+    </g>
+
+    <g transform="translate(268, 292)">
+      <rect width="94" height="106" rx="16" fill="#12141a" stroke="rgba(255,255,255,0.06)"/>
+      <rect x="22" y="15" width="50" height="50" rx="12" fill="#00A8E1"/>
+      <path d="M35 48c8 5 18 5 24 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <text x="47" y="88" font-family="-apple-system, system-ui, sans-serif" font-size="12" fill="#a0aec0" text-anchor="middle">Prime</text>
+    </g>
+
+    <g transform="translate(374, 292)">
+      <rect width="94" height="106" rx="16" fill="#12141a" stroke="rgba(255,255,255,0.06)"/>
+      <rect x="22" y="15" width="50" height="50" rx="12" fill="#113CCF"/>
+      <circle cx="47" cy="40" r="14" fill="none" stroke="#fff" stroke-width="2.5"/>
+      <text x="47" y="88" font-family="-apple-system, system-ui, sans-serif" font-size="12" fill="#a0aec0" text-anchor="middle">Disney+</text>
+    </g>
+
+    <!-- Bottom Feature Badges -->
+    <text x="28" y="475" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="600" fill="#38bdf8">⚡ Pure OLED Pitch Black · 0 Ads · Instant Boot · D-Pad Nav</text>
+    <text x="28" y="500" font-family="-apple-system, system-ui, sans-serif" font-size="12" fill="#64748b">Samsung Tizen 2.4 – 9.0+ · Smart Development Bridge (SDB) · No Root</text>
+  </g>
+</svg>

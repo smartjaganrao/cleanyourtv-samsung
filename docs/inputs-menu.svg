@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <rect width="800" height="480" fill="#07080b"/>
+  <!-- Backdrop blur simulation -->
+  <rect width="800" height="480" fill="rgba(0,0,0,0.6)"/>
+
+  <!-- Frosted Glass Modal -->
+  <g transform="translate(150, 40)">
+    <rect width="500" height="400" rx="30" fill="rgba(26, 28, 36, 0.92)" stroke="rgba(255, 255, 255, 0.16)" stroke-width="1.5"/>
+    <text x="40" y="55" font-family="'Outfit', -apple-system, sans-serif" font-size="32" font-weight="600" fill="#ffffff">Inputs</text>
+
+    <!-- HDMI 1 (Focused) -->
+    <g transform="translate(40, 80)">
+      <rect width="420" height="58" rx="16" fill="rgba(255,255,255,0.16)" stroke="#ffffff" stroke-width="2"/>
+      <text x="24" y="37" font-family="-apple-system, sans-serif" font-size="18" font-weight="600" fill="#ffffff">HDMI 1</text>
+      <text x="396" y="37" font-family="-apple-system, sans-serif" font-size="15" fill="#e2e8f0" text-anchor="end">Apple TV 4K / Console</text>
+    </g>
+
+    <!-- HDMI 2 (eARC) -->
+    <g transform="translate(40, 150)">
+      <rect width="420" height="58" rx="16" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+      <text x="24" y="37" font-family="-apple-system, sans-serif" font-size="18" font-weight="500" fill="#e2e8f0">HDMI 2 (eARC)</text>
+      <text x="396" y="37" font-family="-apple-system, sans-serif" font-size="15" fill="#94a3b8" text-anchor="end">Soundbar / Audio System</text>
+    </g>
+
+    <!-- HDMI 3 -->
+    <g transform="translate(40, 220)">
+      <rect width="420" height="58" rx="16" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+      <text x="24" y="37" font-family="-apple-system, sans-serif" font-size="18" font-weight="500" fill="#e2e8f0">HDMI 3</text>
+      <text x="396" y="37" font-family="-apple-system, sans-serif" font-size="15" fill="#94a3b8" text-anchor="end">PlayStation 5</text>
+    </g>
+
+    <!-- Live TV -->
+    <g transform="translate(40, 290)">
+      <rect width="420" height="58" rx="16" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+      <text x="24" y="37" font-family="-apple-system, sans-serif" font-size="18" font-weight="500" fill="#e2e8f0">Live TV</text>
+      <text x="396" y="37" font-family="-apple-system, sans-serif" font-size="15" fill="#94a3b8" text-anchor="end">Antenna / DVB Tuner</text>
+    </g>
+
+    <text x="250" y="380" font-family="-apple-system, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Press Back on remote to close</text>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+# Samsung Neo QLED QN90D (Tizen 8.0) Debloat & Privacy Configuration
+
+# 1. Native Settings Toggles (In-TV Menu)
+# Settings → General & Privacy → Start Screen Option:
+#   Start with Smart Hub Home: OFF
+#   Autorun Last App: ON
+# Settings → General & Privacy → Privacy Terms:
+#   Viewing Information Services (ACR): OFF
+#   Interest-Based Advertisements: OFF
+#   Voice Recognition Data Recording: OFF
+
+# 2. Blocked Network Ad & Tracking Domains
+samsungads.com
+config.samsungads.com
+gpm.samsungqbe.com
+osb.samsungqbe.com
+log-config.samsungacr.com
+samsungacr.com
+samsungotn.net
+lcprd1.samsungcloudsolution.net
+
+# 3. Installed Launcher Package
+# Package: VIBEHACK01 (CleanYourTV)
+# Installed via: SDB port 26101

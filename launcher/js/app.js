@@ -141,6 +141,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else if (btnAction === 'artmode') {
                     focusedAppDescEl.textContent = 'The Frame Mode · 4K Museum Masterpieces & Ambient Clock · Press OK';
                     setAmbientGlow('rgba(245, 158, 11, 0.45)');
+                } else if (btnAction === 'music') {
+                    focusedAppDescEl.textContent = '24/7 Commercial-Free Lo-Fi, Piano & Ambient Beats · Press OK';
+                    setAmbientGlow('rgba(217, 119, 6, 0.45)');
+                } else if (btnAction === 'sleep') {
+                    focusedAppDescEl.textContent = '1-Click Bedtime Sleep Timer · Powers off TV automatically';
+                    setAmbientGlow('rgba(147, 51, 234, 0.45)');
                 } else if (btnAction === 'remote') {
                     focusedAppDescEl.textContent = 'Scan QR to control TV from your phone browser · No app needed';
                     setAmbientGlow('rgba(52, 211, 153, 0.45)');
@@ -171,6 +177,8 @@ document.addEventListener('DOMContentLoaded', function() {
             else if (state.currentModal === 'settings') activeModalEl = settingsModalEl;
             else if (state.currentModal === 'adfree-yt') activeModalEl = document.getElementById('adfree-yt-modal');
             else if (state.currentModal === 'remote') activeModalEl = document.getElementById('remote-modal');
+            else if (state.currentModal === 'cinema') activeModalEl = document.getElementById('cinema-modal');
+            else if (state.currentModal === 'diag') activeModalEl = document.getElementById('diag-modal');
 
             if (activeModalEl) {
                 const modalItems = activeModalEl.querySelectorAll('.modal-nav-item');
@@ -222,6 +230,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (window.IPTVPlayer) IPTVPlayer.open(0, 'ALL');
                 return;
             }
+            if (app.id === "cleanyourtv.freecinema" || app.aliasId === "freecinema") {
+                openModal('cinema');
+                return;
+            }
+            if (app.id === "cleanyourtv.lofiradio" || app.aliasId === "lofiradio") {
+                if (window.AmbientMusic) AmbientMusic.open();
+                return;
+            }
             if (app.id === "cleanyourtv.adfreeyt" || app.aliasId === "tizentube") {
                 // Try launching native TizenTube package if installed
                 TizenAPI.launchApp("k78Z2j0mY1.TizenTube", null, function(success) {
@@ -246,6 +262,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (window.IPTVPlayer) IPTVPlayer.open(0, 'ALL');
         } else if (action === 'artmode') {
             if (window.ArtMode) ArtMode.open(0);
+        } else if (action === 'music') {
+            if (window.AmbientMusic) AmbientMusic.open();
+        } else if (action === 'sleep') {
+            if (window.SleepTimer) SleepTimer.cycle();
         } else if (action === 'remote') {
             openModal('remote');
         } else if (action === 'inputs') {
@@ -272,6 +292,11 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (type === 'adfree-yt') {
             const ytModal = document.getElementById('adfree-yt-modal');
             if (ytModal) ytModal.style.display = 'flex';
+        } else if (type === 'cinema') {
+            const cinemaEl = document.getElementById('cinema-modal');
+            if (cinemaEl) cinemaEl.style.display = 'flex';
+        } else if (type === 'diag') {
+            if (window.NetworkDiagnostic) NetworkDiagnostic.open();
         }
         updateFocus();
     }
@@ -283,6 +308,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (remoteEl) remoteEl.style.display = 'none';
         const ytModal = document.getElementById('adfree-yt-modal');
         if (ytModal) ytModal.style.display = 'none';
+        const cinemaEl = document.getElementById('cinema-modal');
+        if (cinemaEl) cinemaEl.style.display = 'none';
+        if (window.NetworkDiagnostic) NetworkDiagnostic.close();
         state.currentModal = null;
         state.currentZone = 'TOP';
         updateFocus();
@@ -306,7 +334,30 @@ document.addEventListener('DOMContentLoaded', function() {
             const items = settingsModalEl.querySelectorAll('.modal-nav-item');
             const target = items[state.modalIndex];
             const settingKey = target.getAttribute('data-setting');
-            cycleSetting(settingKey);
+            if (settingKey === 'diag') {
+                closeModal();
+                openModal('diag');
+            } else if (settingKey === 'remote') {
+                closeModal();
+                openModal('remote');
+            } else {
+                cycleSetting(settingKey);
+            }
+        } else if (state.currentModal === 'cinema') {
+            const cinemaModal = document.getElementById('cinema-modal');
+            const items = cinemaModal.querySelectorAll('.modal-nav-item');
+            const target = items[state.modalIndex];
+            const cinemaType = target ? target.getAttribute('data-cinema') : null;
+            closeModal();
+            if (cinemaType === 'pluto') {
+                TizenAPI.launchApp('org.tizen.browser', 'https://pluto.tv/on-demand');
+            } else if (cinemaType === 'tubi') {
+                TizenAPI.launchApp('org.tizen.browser', 'https://tubitv.com');
+            } else if (cinemaType === 'filmrise') {
+                TizenAPI.launchApp('org.tizen.browser', 'https://filmrise-free-movies-tv.en.aptoide.com');
+            } else if (cinemaType === 'samsung') {
+                TizenAPI.launchApp('com.samsung.tv.tvplus');
+            }
         } else if (state.currentModal === 'adfree-yt') {
             const ytModal = document.getElementById('adfree-yt-modal');
             const items = ytModal.querySelectorAll('.modal-nav-item');
@@ -367,6 +418,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (window.ArtMode && ArtMode.isOpen) {
             if (ArtMode.handleKeyDown(e)) {
+                return;
+            }
+        }
+
+        if (window.AmbientMusic && AmbientMusic.isOpen) {
+            if (AmbientMusic.handleKeyDown(e)) {
                 return;
             }
         }
@@ -555,5 +612,8 @@ document.addEventListener('DOMContentLoaded', function() {
     LauncherConfig.applyTheme(LauncherConfig.settings.theme);
     initApps();
     if (window.ArtMode) ArtMode.init();
+    if (window.SleepTimer) SleepTimer.init();
+    if (window.AmbientMusic) AmbientMusic.init();
+    if (window.NetworkDiagnostic) NetworkDiagnostic.init();
     resetIdleTimer();
 });

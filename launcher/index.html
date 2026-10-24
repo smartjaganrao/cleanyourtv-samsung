@@ -39,20 +39,29 @@
                     <span>Art Mode</span>
                 </button>
 
+                <button class="glass-pill-btn nav-item" id="btn-music" data-nav="action" data-action="music">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="5.5" cy="17.5" r="3.5"></circle>
+                        <circle cx="17.5" cy="15.5" r="3.5"></circle>
+                        <path d="M9 17.5V5l12-2v12.5"></path>
+                    </svg>
+                    <span>Lo-Fi Radio</span>
+                </button>
+
+                <button class="glass-pill-btn nav-item" id="btn-sleep" data-nav="action" data-action="sleep">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span>Sleep Timer</span>
+                </button>
+
                 <button class="glass-pill-btn nav-item" id="btn-inputs" data-nav="action" data-action="inputs">
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                         <path d="M17 2l-5 5-5-5"></path>
                     </svg>
                     <span>Inputs</span>
-                </button>
-
-                <button class="glass-pill-btn nav-item" id="btn-remote" data-nav="action" data-action="remote">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                    </svg>
-                    <span>Remote</span>
                 </button>
 
                 <button class="glass-pill-btn nav-item" id="btn-settings" data-nav="action" data-action="settings">
@@ -163,10 +172,18 @@
 
                 <div class="setting-row">
                     <div class="setting-info">
-                        <span class="setting-title">Auto-Boot Setup</span>
-                        <span class="setting-desc">Set TV to launch CleanYourTV on power up</span>
+                        <span class="setting-title">Network Diagnostics</span>
+                        <span class="setting-desc">Test Wi-Fi download speed, latency & 4K buffer</span>
                     </div>
-                    <button class="setting-btn modal-nav-item" id="setting-autoboot-btn" data-setting="autoboot">Instructions</button>
+                    <button class="setting-btn modal-nav-item" id="setting-diag-btn" data-setting="diag">Speed Test</button>
+                </div>
+
+                <div class="setting-row">
+                    <div class="setting-info">
+                        <span class="setting-title">Phone Remote Control</span>
+                        <span class="setting-desc">Scan QR to control TV from your mobile browser</span>
+                    </div>
+                    <button class="setting-btn modal-nav-item" id="setting-remote-btn" data-setting="remote">Show QR</button>
                 </div>
             </div>
             <div class="modal-hint">Press Back to close</div>
@@ -261,6 +278,98 @@
                 <code>python3 tools/install_tizentube.py &lt;TV_IP&gt;</code>
             </div>
 
+            <div class="modal-hint">Press Back to close</div>
+        </div>
+    </div>
+
+    <!-- 24/7 Ambient Lo-Fi & Background Music Player -->
+    <div id="music-modal" class="modal-overlay" style="display:none;" tabindex="0">
+        <audio id="music-audio" playsinline></audio>
+        <div class="glass-modal music-card">
+            <div class="music-header">
+                <span class="music-pill" id="music-status-pill">▶ STREAMING LIVE (COMMERCIAL-FREE)</span>
+                <h2 id="music-station-name">☕ Lofi Chillhop Beats</h2>
+                <p id="music-station-genre" class="music-genre">Lofi / Study / Beats · 24/7 Chillhop & Downtempo</p>
+            </div>
+
+            <!-- Animated Audio Spectrum Visualizer -->
+            <div class="music-visualizer" id="music-visualizer">
+                <div class="vbar"></div><div class="vbar"></div><div class="vbar"></div><div class="vbar"></div>
+                <div class="vbar"></div><div class="vbar"></div><div class="vbar"></div><div class="vbar"></div>
+                <div class="vbar"></div><div class="vbar"></div><div class="vbar"></div><div class="vbar"></div>
+            </div>
+
+            <div class="music-stations-title">Stations (▲/▼ Switch · OK Pause/Play)</div>
+            <div class="music-stations-list" id="music-stations-list">
+                <!-- Injected dynamically by ambient-music.js -->
+            </div>
+
+            <div class="music-actions">
+                <button class="setting-btn modal-nav-item" id="btn-screen-blank" onclick="AmbientMusic.toggleBlankScreen()">
+                    🌙 Blank Screen (OLED Audio-Only Mode)
+                </button>
+            </div>
+
+            <div class="modal-hint">Press Back to close (music continues playing in background)</div>
+        </div>
+
+        <!-- Full black overlay for OLED audio-only screen off mode -->
+        <div id="music-screen-blank" class="music-screen-blank" style="display:none;">
+            <div class="screen-blank-hint">🌙 Screen-Off Audio Mode · Press any remote button to wake</div>
+        </div>
+    </div>
+
+    <!-- Speed & Buffer Diagnostics Modal -->
+    <div id="diag-modal" class="modal-overlay" style="display:none;" tabindex="0">
+        <div class="glass-modal diag-card">
+            <h2>⚡ TV Network & Buffer Diagnostics</h2>
+            <div class="diag-meter-wrap">
+                <div class="diag-meter-bar"><div class="diag-meter-fill" id="diag-meter-fill"></div></div>
+            </div>
+            <div class="diag-grid">
+                <div class="diag-stat">
+                    <span class="stat-label">Download Speed</span>
+                    <span class="stat-val" id="diag-speed-val">Measuring...</span>
+                </div>
+                <div class="diag-stat">
+                    <span class="stat-label">Latency (Ping)</span>
+                    <span class="stat-val" id="diag-ping-val">Measuring...</span>
+                </div>
+            </div>
+            <div class="diag-status" id="diag-status-val">Testing Wi-Fi connection...</div>
+            <div class="diag-actions">
+                <button class="setting-btn modal-nav-item" onclick="NetworkDiagnostic.runTest()">🔄 Re-test Speed</button>
+            </div>
+            <div class="modal-hint">Press Back to close</div>
+        </div>
+    </div>
+
+    <!-- Free Cinema & VOD Selector Modal -->
+    <div id="cinema-modal" class="modal-overlay" style="display:none;" tabindex="0">
+        <div class="glass-modal cinema-card">
+            <div class="cinema-header">
+                <span class="cinema-badge">100% FREE LEGAL ON-DEMAND</span>
+                <h2>Free Cinema &amp; Movies</h2>
+                <p class="cinema-sub">Stream 10,000+ full-length movies, sitcoms, and series with zero subscription fees.</p>
+            </div>
+            <div class="cinema-grid">
+                <button class="cinema-item modal-nav-item" data-cinema="pluto">
+                    <span class="cinema-name">🍿 Pluto TV Movies</span>
+                    <span class="cinema-desc">Hollywood blockbusters & action</span>
+                </button>
+                <button class="cinema-item modal-nav-item" data-cinema="tubi">
+                    <span class="cinema-name">🎬 Tubi TV</span>
+                    <span class="cinema-desc">Cult classics, anime & series</span>
+                </button>
+                <button class="cinema-item modal-nav-item" data-cinema="filmrise">
+                    <span class="cinema-name">📽️ FilmRise Cinema</span>
+                    <span class="cinema-desc">Crime, drama & documentaries</span>
+                </button>
+                <button class="cinema-item modal-nav-item" data-cinema="samsung">
+                    <span class="cinema-name">📺 Samsung TV Plus VOD</span>
+                    <span class="cinema-desc">Built-in on-demand channels</span>
+                </button>
+            </div>
             <div class="modal-hint">Press Back to close</div>
         </div>
     </div>
@@ -368,6 +477,9 @@
     <script src="js/iptv-catalog.js"></script>
     <script src="js/iptv-player.js"></script>
     <script src="js/art-mode.js"></script>
+    <script src="js/sleep-timer.js"></script>
+    <script src="js/ambient-music.js"></script>
+    <script src="js/network-diagnostic.js"></script>
     <script src="js/config.js"></script>
     <script src="js/app.js"></script>
 </body>

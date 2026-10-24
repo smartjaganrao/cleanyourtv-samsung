@@ -18,7 +18,9 @@ const APP_ICONS = {
     jellyfin: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%23000B25"/><path d="M50 22C32 22 22 42 22 62c8-8 18-12 28-12s20 4 28 12c0-20-10-40-28-40z" fill="%2300A4DC"/></svg>',
     moonlight: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%231B2838"/><circle cx="50" cy="50" r="28" fill="%2358A6FF"/></svg>',
     browser: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%231A73E8"/><circle cx="50" cy="50" r="26" fill="none" stroke="%23FFF" stroke-width="4"/><ellipse cx="50" cy="50" rx="14" ry="26" fill="none" stroke="%23FFF" stroke-width="4"/><line x1="24" y1="50" x2="76" y2="50" stroke="%23FFF" stroke-width="4"/></svg>',
-    hdmi: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%2330363D"/><rect x="28" y="38" width="44" height="26" rx="4" fill="none" stroke="%23FFF" stroke-width="4"/><text x="50" y="56" font-family="-apple-system, sans-serif" font-size="14" font-weight="700" fill="%23FFF" text-anchor="middle">HDMI</text></svg>'
+    hdmi: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%2330363D"/><rect x="28" y="38" width="44" height="26" rx="4" fill="none" stroke="%23FFF" stroke-width="4"/><text x="50" y="56" font-family="-apple-system, sans-serif" font-size="14" font-weight="700" fill="%23FFF" text-anchor="middle">HDMI</text></svg>',
+    cinema: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%237C3AED"/><path d="M26 26h48v48H26z" fill="none" stroke="%23FFF" stroke-width="4"/><path d="M26 38h48M26 62h48M38 26v12M50 26v12M62 26v12M38 62v12M50 62v12M62 62v12" stroke="%23FFF" stroke-width="4"/></svg>',
+    lofi: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%23D97706"/><circle cx="50" cy="50" r="26" fill="none" stroke="%23FFF" stroke-width="4"/><circle cx="50" cy="50" r="10" fill="%23FFF"/><path d="M72 28l-8 8" stroke="%23FFF" stroke-width="4" stroke-linecap="round"/></svg>'
 };
 
 const DEFAULT_CATALOG = [
@@ -38,6 +40,24 @@ const DEFAULT_CATALOG = [
         desc: "Zero Ads · SponsorBlock · 4K 60fps · Press OK to launch",
         icon: APP_ICONS.youtubefree,
         color: "rgba(225, 29, 72, 0.45)",
+        isDock: true
+    },
+    {
+        id: "cleanyourtv.freecinema",
+        aliasId: "freecinema",
+        name: "Free Cinema (VOD)",
+        desc: "10,000+ Free On-Demand Movies & TV Series · Tubi, Pluto & FilmRise",
+        icon: APP_ICONS.cinema,
+        color: "rgba(124, 58, 237, 0.45)",
+        isDock: true
+    },
+    {
+        id: "cleanyourtv.lofiradio",
+        aliasId: "lofiradio",
+        name: "Ambient Lo-Fi Radio",
+        desc: "24/7 Commercial-Free Chillhop, Piano & Ambient Beats",
+        icon: APP_ICONS.lofi,
+        color: "rgba(217, 119, 6, 0.45)",
         isDock: true
     },
     {

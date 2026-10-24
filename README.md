@@ -1,8 +1,9 @@
 <p align="center">
-  <a href="https://github.com/smartjaganrao/cleanyourtv-samsung/releases/latest"><img src="https://img.shields.io/badge/Download%20.WGT-v1.1.0%20Latest-10b981?style=for-the-badge&logo=samsung&labelColor=15181e" alt="Download .WGT"></a>
+  <a href="https://github.com/smartjaganrao/cleanyourtv-samsung/releases/latest"><img src="https://img.shields.io/badge/Download%20.WGT-v1.3.0%20Latest-10b981?style=for-the-badge&logo=samsung&labelColor=15181e" alt="Download .WGT"></a>
   <a href="docs/ADFREE_YOUTUBE.md"><img src="https://img.shields.io/badge/Ad--Free%20YouTube-SponsorBlock-e11d48?style=for-the-badge&logo=youtube&labelColor=15181e" alt="Ad-Free YouTube"></a>
   <a href="docs/ART_MODE.md"><img src="https://img.shields.io/badge/The%20Frame-Art%20Mode-f59e0b?style=for-the-badge&logo=artstation&labelColor=15181e" alt="Art Mode"></a>
   <a href="docs/LIVETV.md"><img src="https://img.shields.io/badge/Free%20IPTV-350%2B%20Channels-ec4899?style=for-the-badge&logo=tv&labelColor=15181e" alt="Free Live IPTV"></a>
+  <a href="#-essential-tv-power-tools"><img src="https://img.shields.io/badge/Power%20Tools-Sleep%20%7C%20LoFi%20%7C%20Speed-8b5cf6?style=for-the-badge&logo=target&labelColor=15181e" alt="Power Tools"></a>
   <a href="https://github.com/smartjaganrao/cleanyourtv-samsung/stargazers"><img src="https://img.shields.io/github/stars/smartjaganrao/cleanyourtv-samsung?style=for-the-badge&color=facc15&labelColor=15181e" alt="GitHub Stars"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge&labelColor=15181e" alt="License"></a>
 </p>
@@ -15,7 +16,7 @@
 
 <p align="center">
   <strong>Transform any Samsung Smart TV into a bloat-free, ad-free, 60fps Apple TV-style display over Wi-Fi.</strong><br>
-  Includes <strong>Ad-Free YouTube with SponsorBlock</strong>, free <strong>"The Frame" 4K Ambient Art Mode</strong>, <strong>350+ Free Live World IPTV channels</strong>, <strong>Custom M3U player</strong>, and <strong>zero-install Phone Remote</strong>.
+  Includes <strong>Ad-Free YouTube with SponsorBlock</strong>, free <strong>"The Frame" 4K Ambient Art Mode</strong>, <strong>350+ Free Live World IPTV channels</strong>, <strong>1-Click Bedtime Sleep Timer</strong>, <strong>24/7 Lo-Fi & Background Music (with OLED screen blanking)</strong>, <strong>TV Network Speed Diagnostic</strong>, <strong>Free Cinema Hub</strong>, and <strong>zero-install Phone Remote</strong>.
 </p>
 
 <p align="center">
@@ -24,9 +25,9 @@
 
 ---
 
-## ⚡ Why CleanYourTV? (Save \$280+/Year)
+## ⚡ Why CleanYourTV? (Save \$400+/Year)
 
-Retail Samsung Smart TVs inject banner ads into the home menu, auto-play sponsored trailers, secretly log every HDMI input via ACR (Automatic Content Recognition), and charge \$4.99/month for art subscriptions. Third-party IPTV apps on Tizen charge \$15–\$35 activation fees just to load an M3U stream, while YouTube Premium costs \$13.99/month.
+Retail Samsung Smart TVs inject banner ads into the home menu, auto-play sponsored trailers, secretly log every HDMI input via ACR (Automatic Content Recognition), bury the sleep timer in 6 submenus, and charge \$4.99/month for art subscriptions. Third-party IPTV apps charge \$15–\$35 activation fees, Spotify/Apple Music apps burn OLED pixels without pure black blanking, and YouTube Premium costs \$13.99/month.
 
 **CleanYourTV replaces the bloated Smart Hub with an open-source, private, native experience:**
 
@@ -35,36 +36,44 @@ Retail Samsung Smart TVs inject banner ads into the home menu, auto-play sponsor
 | 📺 **Ad-Free YouTube + SponsorBlock** | YouTube Premium (\$13.99/mo) | **100% Free** (Zero video ads + auto SponsorBlock + 4K HDR) | **\$168 / yr** |
 | 📡 **Live World IPTV Player** | Smart IPTV / IBO Player (\$8 – \$35 activation) | **100% Free** (350+ global streams + Custom M3U + Favorites) | **\$15 – \$35** |
 | 🖼️ **Ambient Art Mode** | Samsung Art Store on The Frame (\$4.99/mo) | **100% Free** (4K Museum Masterpieces + OLED Burn-in Protection) | **\$60 / yr** |
+| 🎵 **24/7 Lo-Fi & Background Music** | Spotify / Apple Music TV (\$10.99/mo) | **100% Free** (5 commercial-free radio streams + OLED screen-off) | **\$132 / yr** |
+| ⏱️ **1-Click Bedtime Sleep Timer** | Buried in 6 Samsung TV submenus | **1-Click Remote Toggle** (15m, 30m, 45m, 60m, 90m, 120m) | **Priceless** |
+| ⚡ **TV Network Speed & Buffer Test** | Sluggish TV browser / ad-filled apps | **Instant 1-Click Test** (Cloudflare edge CDN throughput & 4K latency) | **Included** |
+| 🎬 **Free Cinema & VOD Hub** | Scattered apps with slow loading | **One-Tap Access** (Curated Pluto, Tubi, FilmRise, Crackle) | **Included** |
 | 🛡️ **Ad & Telemetry Blocker** | AdGuard DNS VIP / NextDNS Pro (\$20 – \$40/yr) | **Included Free** (70+ Samsung ad domains blocked at DNS level) | **\$20 – \$40** |
 | 📱 **Smartphone Web Remote** | Paid App Store TV Remotes (\$9.99 – \$29.99) | **Included Free** (Scan QR code on TV for instant mobile trackpad) | **\$10 – \$30** |
-| 💰 **Total Annual Cost** | **\$280 – \$330 / year** | **\$0.00 (Free & Open Source)** | **Save \$280+/yr** |
+| 💰 **Total Annual Cost** | **\$410 – \$470 / year** | **\$0.00 (Free & Open Source)** | **Save \$400+/yr** |
 
 ---
 
 ## ✨ Key Features
 
 ```
-┌────────────────────────────────────────────────────────────────────────┐
-│  [Live TV]    [Art Mode]    [Inputs]    [Remote]    [Settings]  12:00  │
-│                                                                        │
-│                          NETFLIX                                       │
-│                    Press OK to launch                                  │
-│                                                                        │
-│    ╭──────╮     ╭──────╮     ╭──────╮     ╭──────╮     ╭──────╮        │
-│    │  N   │     │  YT  │     │PRIME │     │ PLEX │     │HDMI 1│        │
-│    ╰──────╯     ╰──────╯     ╰──────╯     ╰──────╯     ╰──────╯        │
-│       ▲            ▲            ▲            ▲            ▲            │
-│   (Apple TV-style glass dock with fluid floating physics highlight)    │
-└────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│ [Live TV]  [Art]  [Lo-Fi Radio]  [Sleep: Off]  [Inputs]  [Settings]      12:00   │
+│                                                                                  │
+│                                   NETFLIX                                        │
+│                             Press OK to launch                                   │
+│                                                                                  │
+│    ╭──────╮      ╭──────╮      ╭──────╮      ╭──────╮      ╭──────╮      ╭──────╮│
+│    │  N   │      │  YT  │      │PRIME │      │ PLEX │      │CINEMA│      │HDMI 1││
+│    ╰──────╯      ╰──────╯      ╰──────╯      ╰──────╯      ╰──────╯      ╰──────╯│
+│       ▲             ▲             ▲             ▲             ▲             ▲    │
+│   (Apple TV-style glass dock with fluid floating physics highlight)              │
+└──────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 1. **🚀 60fps Native Tizen Web App (`.wgt`):** Sub-50ms cold-start written in pure vanilla HTML5/CSS3/ES6. Zero bloated npm frameworks. Runs at a locked 60fps even on entry-level Samsung Crystal UHD chipsets.
 2. **📺 Ad-Free YouTube (TizenTube + SponsorBlock):** Blocks all video ads, auto-skips sponsored promotions, and provides 4K HDR 60fps playback with background audio support.
 3. **🖼️ "The Frame" Ambient Art Mode:** Transforms your living room into an art gallery with 4K public domain museum masterpieces (Van Gogh, Monet, Vermeer, Hokusai, NASA JWST) and active OLED pixel-shift burn-in protection.
 4. **📡 Free Live World IPTV (iptv-org):** 350+ curated, tested, geo-unblocked live streams across 26 countries (News, Sports, Movies, Animation, Kids).
-5. **📂 Custom M3U & Xtream Codes Support:** Load your own private M3U/M3U8 playlists or free community feeds (Pluto TV, Samsung TV Plus, Free-TV) with 1-click **Favorites (`★`)**.
-6. **📱 Zero-Install Mobile Web Remote:** Scan a TV QR code with your phone to use a mobile keyboard and trackpad over local Wi-Fi without installing any app.
-7. **🛡️ 100% Reversible & Safe:** Uses Samsung's official Developer Mode API. No firmware flashing, no rooting, and no brick risk.
+5. **⏱️ 1-Click Bedtime Sleep Timer:** Replaces Samsung's 6-step buried menu with a simple 1-click toggle (`15m` · `30m` · `45m` · `60m` · `90m` · `120m`) featuring on-screen countdown and soft screen shutdown.
+6. **🎵 24/7 Lo-Fi & Background Music:** Commercial-free stream radio stations with real-time audio visualizer and **OLED Screen-Off mode** (turns off all panel pixels while keeping sound playing).
+7. **⚡ TV Network Speed & Buffer Diagnostic:** Direct Cloudflare CDN edge speed test measuring actual download bandwidth, ping latency, and 4K HDR buffer health in seconds.
+8. **🎬 Free Cinema & VOD Hub:** 1-tap fast access to legal free on-demand movie & TV services (Pluto TV, Tubi, FilmRise, Crackle, Freevee).
+9. **📂 Custom M3U & Xtream Codes Support:** Load your own private M3U/M3U8 playlists or free community feeds with 1-click **Favorites (`★`)**.
+10. **📱 Zero-Install Mobile Web Remote:** Scan a TV QR code with your phone to use a mobile keyboard and trackpad over local Wi-Fi without installing any app.
+11. **🛡️ 100% Reversible & Safe:** Uses Samsung's official Developer Mode API. No firmware flashing, no rooting, and no brick risk.
 
 ---
 
@@ -163,15 +172,43 @@ Samsung charges **\$4.99/month** for the Art Store on "The Frame". CleanYourTV b
 
 ---
 
+## 🛠️ Essential TV Power Tools (Built-in)
+
+CleanYourTV bundles the four most requested TV daily-driver features that Samsung left out or buried:
+
+### ⏱️ 1-Click Bedtime Sleep Timer
+- **The Problem:** Samsung smart remotes have no physical sleep button. Setting a timer requires clicking through `Settings → General → Power & Energy Saving → Auto Power Off / Sleep Timer` (6 slow submenus).
+- **The CleanYourTV Solution:** A single dedicated top-bar button (`Sleep: Off`). Click it once to cycle `15m` ➔ `30m` ➔ `45m` ➔ `60m` ➔ `90m` ➔ `120m` ➔ `Off`.
+- **Bedtime Soft Fade:** When 60 seconds remain, a subtle bedside toast alerts you. At 0s, the screen fades to black and powers down via `tizen.power.turnOffScreen()` or standard HDMI CEC standby.
+
+### 🎵 24/7 Lo-Fi & Background Music (with OLED Screen-Off Mode)
+- **Zero Ads, Zero Subscriptions:** 5 curated, commercial-free streaming stations:
+  1. ☕ *Lofi Chill Beats* (Study & Relaxation)
+  2. 🎹 *Peaceful Piano* (Sleep & Focus)
+  3. 🌆 *Synthwave Chill* (Late Night Driving vibes)
+  4. 🎷 *Midnight Jazz* (Dinner & Lounge)
+  5. 🌌 *Deep Ambient* (Meditation & Soundscapes)
+- **🖤 True OLED Screen-Blanking:** Samsung TVs waste 70W–150W of electricity showing a static music album cover. Click **"Screen Off (Audio Only)"** or press **Green / B** to turn off 100% of panel pixels while continuing to stream audio through your TV speakers or soundbar. Any remote press immediately wakes the display back up.
+
+### ⚡ TV Network Speed & 4K Buffer Diagnostics
+- **Edge CDN Speed Test:** Tests direct download throughput and latency against Cloudflare's global edge network without needing a slow web browser.
+- **Buffer Health Assessment:** Instantly verifies if your TV's Wi-Fi or Ethernet connection can sustain high-bitrate 4K HDR Dolby Vision streaming without stuttering.
+
+### 🎬 Free Cinema & VOD Hub
+- Instant 1-tap launcher for top legal ad-supported streaming catalogs (Pluto TV, Tubi, FilmRise, Crackle, Freevee) directly from your dock.
+
+---
+
 ## 🎮 Samsung Remote Navigation Cheat Sheet
 
-| Button | Home Dashboard | Live IPTV Player | Ambient Art Mode |
-| :--- | :--- | :--- | :--- |
-| **◄ / ► (Left / Right)** | Move across Dock / Top Bar | Open EPG Guide / Column switch | Previous / Next painting |
-| **▲ / ▼ (Up / Down)** | Switch Top Bar ↔ Dock ↔ Grid | Surf Channels (`CH ▲/▼`) | Toggle Clock & HUD plaque |
-| **OK / Enter** | Launch focused application | Show stream info banner (OSD) | Pause / Resume slideshow |
-| **Yellow / F / Tools** | — | **Toggle Favorite (★)** | — |
-| **Return / Back** | Close modal / return to dock | Exit Live TV mode | Exit Art Mode to home screen |
+| Button | Home Dashboard | Live IPTV Player | Ambient Art Mode | Lo-Fi Radio |
+| :--- | :--- | :--- | :--- | :--- |
+| **◄ / ► (Left / Right)** | Move across Dock / Top Bar | Open EPG Guide / Column switch | Previous / Next painting | Change station / Adjust volume |
+| **▲ / ▼ (Up / Down)** | Switch Top Bar ↔ Dock ↔ Grid | Surf Channels (`CH ▲/▼`) | Toggle Clock & HUD plaque | Select control button |
+| **OK / Enter** | Launch focused application | Show stream info banner (OSD) | Pause / Resume slideshow | Play / Pause / Screen Off |
+| **Yellow / F / Tools** | — | **Toggle Favorite (★)** | — | — |
+| **Green / B** | — | — | — | **Instant OLED Screen Blank** |
+| **Return / Back** | Close modal / return to dock | Exit Live TV mode | Exit Art Mode to home screen | Stop audio / Close radio |
 
 ---
 
@@ -242,6 +279,10 @@ cleanyourtv-samsung/
 │   │   ├── art-mode.js        # 4K Art Mode, museum plaque, OLED pixel-shift
 │   │   ├── iptv-player.js     # HLS live video player, sliding EPG guide
 │   │   ├── iptv-catalog.js    # 350+ curated channels, favorites, custom M3U
+│   │   ├── sleep-timer.js     # 1-Click Bedtime Sleep Timer with auto-shutdown
+│   │   ├── ambient-music.js   # 24/7 Lo-Fi radio with OLED screen-off blanking
+│   │   ├── network-diagnostic.js # Cloudflare CDN edge throughput & buffer health
+│   │   ├── mock-apps.js       # App catalog, Free Cinema & streaming presets
 │   │   ├── hls.min.js         # Lightweight standalone HLS streaming engine
 │   │   └── tizen-api.js       # Samsung Tizen API (launchApp, remote keys)
 ├── tools/                     # Python CLI suite

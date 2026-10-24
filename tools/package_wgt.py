@@ -34,24 +34,25 @@ def package_wgt(src_dir, output_path):
     file_size_kb = os.path.getsize(output_path) / 1024
     print(f"✨ Successfully created '{output_path}' ({total_files} files, {file_size_kb:.1f} KB)")
     
-    # Also create backward compatibility copy if generating cleanhub-samsung.wgt
-    if os.path.basename(output_path) == "cleanhub-samsung.wgt":
-        legacy_path = os.path.join(os.path.dirname(output_path), "cleanyourtv-samsung.wgt")
-        try:
-            import shutil
-            shutil.copyfile(output_path, legacy_path)
-            print(f"🔗 Also created legacy '{legacy_path}' for backward compatibility.")
-        except Exception:
-            pass
+    # Also create backward compatibility copies if generating cleanhub-tv-samsung.wgt
+    if os.path.basename(output_path) == "cleanhub-tv-samsung.wgt":
+        import shutil
+        for legacy_name in ["cleanhub-samsung.wgt", "cleanyourtv-samsung.wgt"]:
+            legacy_path = os.path.join(os.path.dirname(output_path), legacy_name)
+            try:
+                shutil.copyfile(output_path, legacy_path)
+                print(f"🔗 Also created legacy '{legacy_path}' for backward compatibility.")
+            except Exception:
+                pass
 
     print("👉 Next step: Install to TV via 'python3 tools/sdb_install.py <TV_IP>'")
 
 def main():
-    parser = argparse.ArgumentParser(description="Package CleanHub into a Tizen .wgt file")
+    parser = argparse.ArgumentParser(description="Package CleanHub TV into a Tizen .wgt file")
     parser.add_argument("--src", default=os.path.join(os.path.dirname(os.path.dirname(__file__)), "launcher"),
                         help="Path to launcher directory (default: launcher/)")
-    parser.add_argument("--output", default="cleanhub-samsung.wgt",
-                        help="Output .wgt file name (default: cleanhub-samsung.wgt)")
+    parser.add_argument("--output", default="cleanhub-tv-samsung.wgt",
+                        help="Output .wgt file name (default: cleanhub-tv-samsung.wgt)")
     args = parser.parse_args()
 
     package_wgt(os.path.abspath(args.src), os.path.abspath(args.output))

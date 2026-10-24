@@ -64,7 +64,7 @@
 
     <!-- Top Pill: After Badge -->
     <rect x="28" y="24" width="145" height="32" rx="16" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="1.5"/>
-    <text x="100" y="45" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="700" fill="#34d399" text-anchor="middle" letter-spacing="1">CLEAN YOUR TV</text>
+    <text x="100" y="45" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="700" fill="#34d399" text-anchor="middle" letter-spacing="1">CLEANHUB TV</text>
 
     <!-- Top Bar Clock & Glass Pills -->
     <text x="495" y="48" font-family="'Outfit', -apple-system, sans-serif" font-size="28" font-weight="300" fill="#ffffff" text-anchor="end">12:00</text>

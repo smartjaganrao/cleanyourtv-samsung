@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📺 CleanHub (Samsung TV Edition)
+# 📺 CleanHub TV (Samsung Edition)
 ### The Open-Source, Ad-Free, 60fps Replacement for Samsung Smart Hub
 
 [![Download .WGT](https://img.shields.io/badge/Download_.WGT-v1.4.0_Latest-10b981?style=for-the-badge&logo=samsung&logoColor=white&labelColor=0d1117)](https://github.com/smartjaganrao/cleanyourtv-samsung/releases/latest)
@@ -13,19 +13,19 @@
 
 <br>
 
-<img src="docs/card.svg" alt="CleanHub for Samsung TV OS (Tizen) - Before &amp; After Comparison" width="100%">
+<img src="docs/card.svg" alt="CleanHub TV for Samsung TV OS (Tizen) - Before &amp; After Comparison" width="100%">
 
 <br>
 <br>
 
-**CleanHub** is the ultimate open-source alternative to Samsung's bloated Smart Hub. It replaces intrusive banner ads, sponsored video trailers, and system lag with a hardware-accelerated **Apple TV-style glass interface** running at a locked **60fps**.<br>
+**CleanHub TV** is the ultimate open-source alternative to Samsung's bloated Smart Hub. It replaces intrusive banner ads, sponsored video trailers, and system lag with a hardware-accelerated **Apple TV-style glass interface** running at a locked **60fps**.<br>
 Includes **Built-in 60fps Retro Arcade**, **Zero-Latency Gamepad Stick Drift Radar**, **Ad-Free YouTube with SponsorBlock**, free **"The Frame" 4K Ambient Art Mode**, **350+ Free Live World IPTV Channels**, **1-Click Bedtime Sleep Timer**, **24/7 Lo-Fi Radio with OLED Screen-Off**, and **TV Speed Diagnostics**.
 
 *Runs on any Samsung Smart TV running Tizen OS (2016–2026+) · Neo QLED · OLED · The Frame · Crystal UHD · Series 6–9 · Zero Root Required*
 
 <br>
 
-[⚡ Why CleanHub](#-why-cleanhub-save-450year) •
+[⚡ Why CleanHub TV](#-why-cleanhub-tv-save-450year) •
 [🚀 2-Min Install](#-2-minute-quick-start) •
 [🕹️ Retro Arcade](#-retro-arcade-4k--gamepad-drift-hub) •
 [📺 Ad-Free YouTube](#-ad-free-youtube--sponsorblock) •
@@ -38,13 +38,13 @@ Includes **Built-in 60fps Retro Arcade**, **Zero-Latency Gamepad Stick Drift Rad
 
 ---
 
-## ⚡ Why CleanHub? (Save \$450+/Year)
+## ⚡ Why CleanHub TV? (Save \$450+/Year)
 
 Retail Samsung Smart TVs inject banner advertisements into the home dashboard, auto-play sponsored trailers with sound, secretly track every HDMI input using Automatic Content Recognition (ACR), bury the sleep timer 6 submenus deep, forbid retro emulators, and charge \$4.99/month for art subscriptions. Third-party IPTV apps charge \$15–\$35 activation fees, while YouTube Premium costs \$13.99/month.
 
-**CleanHub eliminates the bloat and provides an open-source, private, hardware-accelerated dashboard:**
+**CleanHub TV eliminates the bloat and provides an open-source, private, hardware-accelerated dashboard:**
 
-| Feature / Paid Service | Typical Paid Solution | CleanHub Samsung | Annual Savings |
+| Feature / Paid Service | Typical Paid Solution | CleanHub TV Samsung | Annual Savings |
 | :--- | :--- | :--- | :--- |
 | 🕹️ **Retro Arcade & Game Engine** | Raspberry Pi 4 / Retro Box (\$60 – \$120) | **100% Free Built-in** (5 games + 60fps canvas + 8-bit synth + ROM loader) | **\$60 – \$120** |
 | 🎯 **Gamepad & Stick Drift Radar** | Third-party PC calibration software | **100% Free** (Zero-latency drift radar, trigger gauges & dual rumble) | **Priceless** |
@@ -117,12 +117,12 @@ flowchart LR
 4. In **Host PC IP**, enter your computer's local Wi-Fi IP address (e.g., `192.168.1.50`).
 5. **Crucial:** Hold down the remote's **Power** button for 3 seconds until the TV restarts and displays the Samsung startup logo. (This opens SDB port 26101).
 
-### Step 2: Install CleanHub from your computer
+### Step 2: Install CleanHub TV from your computer
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/smartjaganrao/cleanyourtv-samsung.git
-cd cleanyourtv-samsung
+git clone https://github.com/smartjaganrao/cleanhub-tv.git
+cd cleanhub-tv
 
 # 2. Probe TV connection on local Wi-Fi
 python3 tools/samsung_tv.py --probe <TV_IP>
@@ -130,7 +130,7 @@ python3 tools/samsung_tv.py --probe <TV_IP>
 # 3. Pair remote access (press 'Allow' on your TV screen)
 python3 tools/samsung_tv.py --pair <TV_IP>
 
-# 4. Package and sideload CleanHub to your TV
+# 4. Package and sideload CleanHub TV to your TV
 python3 tools/package_wgt.py
 python3 tools/sdb_install.py <TV_IP>
 
@@ -142,7 +142,7 @@ python3 tools/debloat_dns.py --check
 ```
 
 > [!TIP]
-> **Prefer pre-built binaries?** You can download the latest pre-compiled [`cleanhub-samsung.wgt`](https://github.com/smartjaganrao/cleanyourtv-samsung/releases/latest) directly from GitHub Releases and install with standard Tizen CLI or SDB.
+> **Prefer pre-built binaries?** You can download the latest pre-compiled [`cleanhub-tv-samsung.wgt`](https://github.com/smartjaganrao/cleanhub-tv/releases/latest) directly from GitHub Releases and install with standard Tizen CLI or SDB.
 
 ### Step 3: Set Auto-Boot Bypass
 On your TV:  
@@ -150,13 +150,13 @@ On your TV:
 - Set **Autorun Smart Hub = OFF**  
 - Set **Autorun Last App = ON**  
 
-Your Samsung TV will now boot straight into CleanHub every time you power it on!
+Your Samsung TV will now boot straight into CleanHub TV every time you power it on!
 
 ---
 
 ## 🕹️ Retro Arcade 4K & Gamepad Drift Hub
 
-Samsung TVs strictly ban gaming emulators from the Tizen App Store, and in 2024 Samsung permanently removed the Steam Link app. CleanYourTV turns any Samsung Smart TV into a native **60fps Retro Arcade & Controller Command Center**:
+Samsung TVs strictly ban gaming emulators from the Tizen App Store, and in 2024 Samsung permanently removed the Steam Link app. CleanHub TV turns any Samsung Smart TV into a native **60fps Retro Arcade & Controller Command Center**:
 
 <p align="center">
   <img src="docs/retro-arcade.svg" alt="Retro Arcade 4K and Gamepad Stick Drift Radar on Samsung TV" width="100%">
@@ -380,15 +380,15 @@ cleanyourtv-samsung/
 
 Help spread the word to fellow Samsung TV owners tired of Smart Hub bloatware! We've prepared ready-to-copy posts and video scripts for Reddit, Hacker News, and TikTok in [`docs/VIRAL_PLAYBOOK.md`](docs/VIRAL_PLAYBOOK.md).
 
-Contributions are welcome! If you've verified CleanHub on your Samsung TV model, submit a PR with your model profile in [`examples/`](examples/).
+Contributions are welcome! If you've verified CleanHub TV on your Samsung TV model, submit a PR with your model profile in [`examples/`](examples/).
 
 ---
 
 ## ⚖️ Legal & Disclaimer
 
-- **CleanHub Samsung Edition** is an independent, community-driven open-source project. It is not affiliated with, endorsed by, or sponsored by Samsung Electronics Co., Ltd.
+- **CleanHub TV Samsung Edition** is an independent, community-driven open-source project. It is not affiliated with, endorsed by, or sponsored by Samsung Electronics Co., Ltd.
 - Samsung, Tizen, Neo QLED, The Frame, Smart Hub, and related marks are trademarks of Samsung Electronics Co., Ltd.
-- Live IPTV streams are publicly broadcast and sourced from the open community project [iptv-org/iptv](https://github.com/iptv-org/iptv). CleanHub does not host or broadcast any media content directly.
+- Live IPTV streams are publicly broadcast and sourced from the open community project [iptv-org/iptv](https://github.com/iptv-org/iptv). CleanHub TV does not host or broadcast any media content directly.
 - Public domain art masterpieces are sourced from open access museum collections (MoMA, The Met, Louvre, Rijksmuseum, NASA).
 
 ---

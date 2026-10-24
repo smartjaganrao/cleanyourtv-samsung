@@ -7,6 +7,7 @@
 const APP_ICONS = {
     livetv: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%230F172A"/><circle cx="50" cy="50" r="8" fill="%2338BDF8"/><path d="M66 34a23 23 0 0 1 0 32m-32 0a23 23 0 0 1 0-32m44-11a38 38 0 0 1 0 54m-54 0a38 38 0 0 1 0-54" stroke="%2338BDF8" stroke-width="4.5" fill="none" stroke-linecap="round"/></svg>',
     netflix: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%23000"/><path d="M28 20h12v60H28z" fill="%23E50914"/><path d="M60 20h12v60H60z" fill="%23E50914"/><path d="M28 20h12l32 60H60z" fill="%23B81D24"/></svg>',
+    youtubefree: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%23E11D48"/><path d="M38 34l26 16-26 16z" fill="%23FFF"/><circle cx="76" cy="24" r="16" fill="%2310B981"/><path d="M70 24l4 4 8-8" stroke="%23FFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>',
     youtube: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%23FF0000"/><path d="M42 36l22 14-22 14z" fill="%23FFF"/></svg>',
     prime: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%2300A8E1"/><path d="M25 60c18 12 36 12 50 0M68 56l7 4-5 6" stroke="%23FFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>',
     disney: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%23113CCF"/><path d="M50 24c-14 0-24 12-24 26 0 16 14 26 24 26 10 0 24-10 24-26 0-14-10-26-24-26z" fill="none" stroke="%23FFF" stroke-width="4"/><path d="M36 50h28" stroke="%23FFF" stroke-width="4"/></svg>',
@@ -28,6 +29,15 @@ const DEFAULT_CATALOG = [
         desc: "Free Public Broadcasts from All Countries · News, Sports & Entertainment",
         icon: APP_ICONS.livetv,
         color: "rgba(56, 189, 248, 0.45)",
+        isDock: true
+    },
+    {
+        id: "cleanyourtv.adfreeyt",
+        aliasId: "tizentube",
+        name: "Ad-Free YouTube",
+        desc: "Zero Ads · SponsorBlock · 4K 60fps · Press OK to launch",
+        icon: APP_ICONS.youtubefree,
+        color: "rgba(225, 29, 72, 0.45)",
         isDock: true
     },
     {

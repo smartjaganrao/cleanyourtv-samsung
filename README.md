@@ -1,7 +1,8 @@
 <p align="center">
   <a href="https://github.com/smartjaganrao/cleanyourtv-samsung/releases/latest"><img src="https://img.shields.io/badge/Download%20.WGT-v1.1.0%20Latest-10b981?style=for-the-badge&logo=samsung&labelColor=15181e" alt="Download .WGT"></a>
+  <a href="docs/ADFREE_YOUTUBE.md"><img src="https://img.shields.io/badge/Ad--Free%20YouTube-SponsorBlock-e11d48?style=for-the-badge&logo=youtube&labelColor=15181e" alt="Ad-Free YouTube"></a>
   <a href="docs/ART_MODE.md"><img src="https://img.shields.io/badge/The%20Frame-Art%20Mode-f59e0b?style=for-the-badge&logo=artstation&labelColor=15181e" alt="Art Mode"></a>
-  <a href="docs/LIVETV.md"><img src="https://img.shields.io/badge/Free%20IPTV-350%2B%20Channels-ec4899?style=for-the-badge&logo=youtube&labelColor=15181e" alt="Free Live IPTV"></a>
+  <a href="docs/LIVETV.md"><img src="https://img.shields.io/badge/Free%20IPTV-350%2B%20Channels-ec4899?style=for-the-badge&logo=tv&labelColor=15181e" alt="Free Live IPTV"></a>
   <a href="https://github.com/smartjaganrao/cleanyourtv-samsung/stargazers"><img src="https://img.shields.io/github/stars/smartjaganrao/cleanyourtv-samsung?style=for-the-badge&color=facc15&labelColor=15181e" alt="GitHub Stars"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge&labelColor=15181e" alt="License"></a>
 </p>
@@ -14,7 +15,7 @@
 
 <p align="center">
   <strong>Transform any Samsung Smart TV into a bloat-free, ad-free, 60fps Apple TV-style display over Wi-Fi.</strong><br>
-  Includes free <strong>"The Frame" 4K Ambient Art Mode</strong>, <strong>350+ Free Live World IPTV channels</strong>, <strong>Custom M3U player</strong>, and <strong>zero-install Phone Remote</strong>.
+  Includes <strong>Ad-Free YouTube with SponsorBlock</strong>, free <strong>"The Frame" 4K Ambient Art Mode</strong>, <strong>350+ Free Live World IPTV channels</strong>, <strong>Custom M3U player</strong>, and <strong>zero-install Phone Remote</strong>.
 </p>
 
 <p align="center">
@@ -23,19 +24,20 @@
 
 ---
 
-## ⚡ Why CleanYourTV? (Save \$120+/Year)
+## ⚡ Why CleanYourTV? (Save \$280+/Year)
 
-Retail Samsung Smart TVs inject banner ads into the home menu, auto-play sponsored trailers, secretly log every HDMI input via ACR (Automatic Content Recognition), and charge \$4.99/month for art subscriptions. Third-party IPTV apps on Tizen charge \$15–\$35 activation fees just to load an M3U stream.
+Retail Samsung Smart TVs inject banner ads into the home menu, auto-play sponsored trailers, secretly log every HDMI input via ACR (Automatic Content Recognition), and charge \$4.99/month for art subscriptions. Third-party IPTV apps on Tizen charge \$15–\$35 activation fees just to load an M3U stream, while YouTube Premium costs \$13.99/month.
 
 **CleanYourTV replaces the bloated Smart Hub with an open-source, private, native experience:**
 
 | Feature / Paid Service | Typical Paid Solution | CleanYourTV Samsung | Annual Savings |
 | :--- | :--- | :--- | :--- |
-| 📺 **Live World IPTV Player** | Smart IPTV / IBO Player (\$8 – \$35 activation) | **100% Free** (350+ global streams + Custom M3U + Favorites) | **\$15 – \$35** |
+| 📺 **Ad-Free YouTube + SponsorBlock** | YouTube Premium (\$13.99/mo) | **100% Free** (Zero video ads + auto SponsorBlock + 4K HDR) | **\$168 / yr** |
+| 📡 **Live World IPTV Player** | Smart IPTV / IBO Player (\$8 – \$35 activation) | **100% Free** (350+ global streams + Custom M3U + Favorites) | **\$15 – \$35** |
 | 🖼️ **Ambient Art Mode** | Samsung Art Store on The Frame (\$4.99/mo) | **100% Free** (4K Museum Masterpieces + OLED Burn-in Protection) | **\$60 / yr** |
 | 🛡️ **Ad & Telemetry Blocker** | AdGuard DNS VIP / NextDNS Pro (\$20 – \$40/yr) | **Included Free** (70+ Samsung ad domains blocked at DNS level) | **\$20 – \$40** |
 | 📱 **Smartphone Web Remote** | Paid App Store TV Remotes (\$9.99 – \$29.99) | **Included Free** (Scan QR code on TV for instant mobile trackpad) | **\$10 – \$30** |
-| 💰 **Total Annual Cost** | **\$115 – \$165 / year** | **\$0.00 (Free & Open Source)** | **Save \$120+/yr** |
+| 💰 **Total Annual Cost** | **\$280 – \$330 / year** | **\$0.00 (Free & Open Source)** | **Save \$280+/yr** |
 
 ---
 
@@ -57,11 +59,12 @@ Retail Samsung Smart TVs inject banner ads into the home menu, auto-play sponsor
 ```
 
 1. **🚀 60fps Native Tizen Web App (`.wgt`):** Sub-50ms cold-start written in pure vanilla HTML5/CSS3/ES6. Zero bloated npm frameworks. Runs at a locked 60fps even on entry-level Samsung Crystal UHD chipsets.
-2. **🖼️ "The Frame" Ambient Art Mode:** Transforms your living room into an art gallery with 4K public domain museum masterpieces (Van Gogh, Monet, Vermeer, Hokusai, NASA JWST) and active OLED pixel-shift burn-in protection.
-3. **📺 Free Live World IPTV (iptv-org):** 350+ curated, tested, geo-unblocked live streams across 26 countries (News, Sports, Movies, Animation, Kids).
-4. **📂 Custom M3U & Xtream Codes Support:** Load your own private M3U/M3U8 playlists or free community feeds (Pluto TV, Samsung TV Plus, Free-TV) with 1-click **Favorites (`★`)**.
-5. **📱 Zero-Install Mobile Web Remote:** Scan a TV QR code with your phone to use a mobile keyboard and trackpad over local Wi-Fi without installing any app.
-6. **🛡️ 100% Reversible & Safe:** Uses Samsung's official Developer Mode API. No firmware flashing, no rooting, and no brick risk.
+2. **📺 Ad-Free YouTube (TizenTube + SponsorBlock):** Blocks all video ads, auto-skips sponsored promotions, and provides 4K HDR 60fps playback with background audio support.
+3. **🖼️ "The Frame" Ambient Art Mode:** Transforms your living room into an art gallery with 4K public domain museum masterpieces (Van Gogh, Monet, Vermeer, Hokusai, NASA JWST) and active OLED pixel-shift burn-in protection.
+4. **📡 Free Live World IPTV (iptv-org):** 350+ curated, tested, geo-unblocked live streams across 26 countries (News, Sports, Movies, Animation, Kids).
+5. **📂 Custom M3U & Xtream Codes Support:** Load your own private M3U/M3U8 playlists or free community feeds (Pluto TV, Samsung TV Plus, Free-TV) with 1-click **Favorites (`★`)**.
+6. **📱 Zero-Install Mobile Web Remote:** Scan a TV QR code with your phone to use a mobile keyboard and trackpad over local Wi-Fi without installing any app.
+7. **🛡️ 100% Reversible & Safe:** Uses Samsung's official Developer Mode API. No firmware flashing, no rooting, and no brick risk.
 
 ---
 
@@ -95,7 +98,10 @@ python3 tools/samsung_tv.py --pair <TV_IP>
 python3 tools/package_wgt.py
 python3 tools/sdb_install.py <TV_IP>
 
-# 5. Silence Samsung ads & telemetry tracking
+# 5. (Optional) Sideload Ad-Free YouTube (TizenTube + SponsorBlock)
+python3 tools/install_tizentube.py <TV_IP>
+
+# 6. Silence Samsung ads & telemetry tracking
 python3 tools/debloat_dns.py --check
 ```
 
@@ -241,6 +247,7 @@ cleanyourtv-samsung/
 ├── tools/                     # Python CLI suite
 │   ├── package_wgt.py         # Packages launcher into .wgt archive
 │   ├── sdb_install.py         # SDB connector and package sideload installer
+│   ├── install_tizentube.py   # 1-Click Ad-Free YouTube (TizenTube) installer
 │   ├── update_iptv.py         # Automated IPTV synchronizer from iptv-org
 │   ├── samsung_tv.py          # Discovery, pairing, remote keys, app launch
 │   ├── debloat_dns.py         # Verifies and exports DNS ad blocklists
@@ -250,6 +257,7 @@ cleanyourtv-samsung/
 │   ├── samsung-ads-telemetry.txt
 │   └── pihole-blocklist.txt
 ├── docs/                      # Technical guides & visual assets
+│   ├── ADFREE_YOUTUBE.md      # Ad-Free YouTube + SponsorBlock guide
 │   ├── ART_MODE.md            # Ambient Art Mode & custom photo guide
 │   ├── CUSTOM_IPTV.md         # Custom M3U playlists and favorites guide
 │   ├── VIRAL_PLAYBOOK.md      # Launch templates for Reddit, Hacker News, TikTok

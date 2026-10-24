@@ -166,11 +166,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 focusedApp = state.apps[state.gridIndex];
             }
         } else if (state.currentZone === 'MODAL') {
-            const activeModalEl = state.currentModal === 'inputs' ? inputsModalEl : settingsModalEl;
-            const modalItems = activeModalEl.querySelectorAll('.modal-nav-item');
-            if (modalItems[state.modalIndex]) {
-                focusedEl = modalItems[state.modalIndex];
-                focusedEl.classList.add('focused');
+            let activeModalEl = null;
+            if (state.currentModal === 'inputs') activeModalEl = inputsModalEl;
+            else if (state.currentModal === 'settings') activeModalEl = settingsModalEl;
+            else if (state.currentModal === 'adfree-yt') activeModalEl = document.getElementById('adfree-yt-modal');
+            else if (state.currentModal === 'remote') activeModalEl = document.getElementById('remote-modal');
+
+            if (activeModalEl) {
+                const modalItems = activeModalEl.querySelectorAll('.modal-nav-item');
+                if (modalItems[state.modalIndex]) {
+                    focusedEl = modalItems[state.modalIndex];
+                    focusedEl.classList.add('focused');
+                }
             }
         }
 
@@ -215,6 +222,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (window.IPTVPlayer) IPTVPlayer.open(0, 'ALL');
                 return;
             }
+            if (app.id === "cleanyourtv.adfreeyt" || app.aliasId === "tizentube") {
+                // Try launching native TizenTube package if installed
+                TizenAPI.launchApp("k78Z2j0mY1.TizenTube", null, function(success) {
+                    if (!success) {
+                        TizenAPI.launchApp("org.tizen.tizentube", null, function(s2) {
+                            if (!s2) {
+                                openModal('adfree-yt');
+                            }
+                        });
+                    }
+                });
+                return;
+            }
             TizenAPI.launchApp(app.id);
         }
     }
@@ -249,6 +269,9 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (type === 'remote') {
             const remoteEl = document.getElementById('remote-modal');
             if (remoteEl) remoteEl.style.display = 'flex';
+        } else if (type === 'adfree-yt') {
+            const ytModal = document.getElementById('adfree-yt-modal');
+            if (ytModal) ytModal.style.display = 'flex';
         }
         updateFocus();
     }
@@ -258,6 +281,8 @@ document.addEventListener('DOMContentLoaded', function() {
         settingsModalEl.style.display = 'none';
         const remoteEl = document.getElementById('remote-modal');
         if (remoteEl) remoteEl.style.display = 'none';
+        const ytModal = document.getElementById('adfree-yt-modal');
+        if (ytModal) ytModal.style.display = 'none';
         state.currentModal = null;
         state.currentZone = 'TOP';
         updateFocus();
@@ -282,6 +307,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const target = items[state.modalIndex];
             const settingKey = target.getAttribute('data-setting');
             cycleSetting(settingKey);
+        } else if (state.currentModal === 'adfree-yt') {
+            const ytModal = document.getElementById('adfree-yt-modal');
+            const items = ytModal.querySelectorAll('.modal-nav-item');
+            const target = items[state.modalIndex];
+            const ytAction = target ? target.getAttribute('data-yt-action') : null;
+            closeModal();
+            if (ytAction === 'web') {
+                // Open browser to ad-free Piped/Invidious streaming UI
+                TizenAPI.launchApp('org.tizen.browser', 'https://piped.video');
+            } else if (ytAction === 'stock') {
+                // Launch standard YouTube
+                TizenAPI.launchApp('111299001912');
+            }
         }
     }
 
@@ -384,9 +422,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     state.currentZone = 'TOP';
                     state.topIndex = 0;
                 } else if (state.currentZone === 'MODAL') {
-                    const activeModalEl = state.currentModal === 'inputs' ? inputsModalEl : settingsModalEl;
-                    const items = activeModalEl.querySelectorAll('.modal-nav-item');
-                    state.modalIndex = Math.max(0, state.modalIndex - 1);
+                    let activeModalEl = null;
+                    if (state.currentModal === 'inputs') activeModalEl = inputsModalEl;
+                    else if (state.currentModal === 'settings') activeModalEl = settingsModalEl;
+                    else if (state.currentModal === 'adfree-yt') activeModalEl = document.getElementById('adfree-yt-modal');
+                    else if (state.currentModal === 'remote') activeModalEl = document.getElementById('remote-modal');
+
+                    if (activeModalEl) {
+                        const items = activeModalEl.querySelectorAll('.modal-nav-item');
+                        state.modalIndex = Math.max(0, state.modalIndex - 1);
+                    }
                 }
                 updateFocus();
                 e.preventDefault();
@@ -404,9 +449,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         state.gridIndex += GRID_COLUMNS;
                     }
                 } else if (state.currentZone === 'MODAL') {
-                    const activeModalEl = state.currentModal === 'inputs' ? inputsModalEl : settingsModalEl;
-                    const items = activeModalEl.querySelectorAll('.modal-nav-item');
-                    state.modalIndex = Math.min(items.length - 1, state.modalIndex + 1);
+                    let activeModalEl = null;
+                    if (state.currentModal === 'inputs') activeModalEl = inputsModalEl;
+                    else if (state.currentModal === 'settings') activeModalEl = settingsModalEl;
+                    else if (state.currentModal === 'adfree-yt') activeModalEl = document.getElementById('adfree-yt-modal');
+                    else if (state.currentModal === 'remote') activeModalEl = document.getElementById('remote-modal');
+
+                    if (activeModalEl) {
+                        const items = activeModalEl.querySelectorAll('.modal-nav-item');
+                        state.modalIndex = Math.min(items.length - 1, state.modalIndex + 1);
+                    }
                 }
                 updateFocus();
                 e.preventDefault();

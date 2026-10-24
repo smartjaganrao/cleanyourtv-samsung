@@ -219,6 +219,52 @@
         </div>
     </div>
 
+    <!-- Ad-Free YouTube (TizenTube) Modal -->
+    <div id="adfree-yt-modal" class="modal-overlay" style="display:none;">
+        <div class="glass-modal adfree-card">
+            <div class="adfree-header">
+                <span class="adfree-badge">AD-FREE · SPONSORBLOCK</span>
+                <h2>YouTube without Ads</h2>
+                <p class="adfree-sub">TizenTube & Web Leanback Player for Samsung TV</p>
+            </div>
+
+            <div class="adfree-features">
+                <div class="adfree-feat">
+                    <span class="adfree-feat-icon">🚫</span>
+                    <div class="adfree-feat-text"><strong>Zero Ads</strong><span>Blocks pre-roll, mid-roll & banner ads</span></div>
+                </div>
+                <div class="adfree-feat">
+                    <span class="adfree-feat-icon">⏩</span>
+                    <div class="adfree-feat-text"><strong>SponsorBlock</strong><span>Auto-skips sponsor segments</span></div>
+                </div>
+                <div class="adfree-feat">
+                    <span class="adfree-feat-icon">🎬</span>
+                    <div class="adfree-feat-text"><strong>4K 60fps HDR</strong><span>Hardware-accelerated VP9 & AV1</span></div>
+                </div>
+                <div class="adfree-feat">
+                    <span class="adfree-feat-icon">🎵</span>
+                    <div class="adfree-feat-text"><strong>Background Play</strong><span>Audio playback with screen off</span></div>
+                </div>
+            </div>
+
+            <div class="adfree-actions">
+                <button class="setting-btn modal-nav-item" id="btn-yt-piped" data-yt-action="web">
+                    🌐 Launch Web Ad-Free Player (Piped)
+                </button>
+                <button class="setting-btn modal-nav-item" id="btn-yt-stock" data-yt-action="stock">
+                    ▶ Launch Standard YouTube
+                </button>
+            </div>
+
+            <div class="adfree-install-box">
+                <span class="adfree-install-title">To sideload the native 4K TizenTube app over Wi-Fi:</span>
+                <code>python3 tools/install_tizentube.py &lt;TV_IP&gt;</code>
+            </div>
+
+            <div class="modal-hint">Press Back to close</div>
+        </div>
+    </div>
+
     <!-- Ambient Art Mode Fullscreen Gallery ("The Frame" Alternative) -->
     <div id="artmode-modal" class="artmode-modal" style="display:none;" tabindex="0">
         <div id="artmode-image" class="artmode-image"></div>

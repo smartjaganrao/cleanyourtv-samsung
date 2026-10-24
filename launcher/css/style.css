@@ -699,11 +699,46 @@ body {
     display: block;
 }
 
+/* Genre Categories Bar */
+.sidebar-categories {
+    display: flex;
+    gap: 8px;
+    margin-top: 18px;
+    overflow-x: auto;
+    padding: 4px 2px;
+}
+
+.sidebar-categories::-webkit-scrollbar {
+    height: 3px;
+}
+
+.category-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.category-chip.active {
+    background: rgba(56, 189, 248, 0.2);
+    border-color: #38bdf8;
+    color: #38bdf8;
+}
+
 .sidebar-columns {
     display: flex;
     gap: 24px;
     flex: 1;
-    margin-top: 24px;
+    margin-top: 16px;
     overflow: hidden;
 }
 

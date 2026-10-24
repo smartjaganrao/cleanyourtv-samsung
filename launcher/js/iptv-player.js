@@ -1,6 +1,7 @@
 /**
  * CleanYourTV - Samsung TV Live IPTV Player Controller
  * Seamless HLS streaming with TV Remote Channel Surfing & Electronic Program Guide.
+ * Powered by https://github.com/iptv-org/iptv
  */
 
 const IPTVPlayer = {
@@ -8,12 +9,14 @@ const IPTVPlayer = {
     channels: [],
     currentIndex: 0,
     currentCountry: 'ALL',
+    currentCategory: 'ALL',
     hls: null,
     videoEl: null,
     playerModalEl: null,
     osdTimer: null,
     sidebarOpen: false,
-    sidebarFocus: 'CHANNELS', // 'COUNTRIES', 'CHANNELS'
+    sidebarFocus: 'CHANNELS', // 'CATEGORIES', 'COUNTRIES', 'CHANNELS'
+    selectedCategoryIndex: 0,
     selectedCountryIndex: 0,
     selectedChannelIndex: 0,
 
@@ -21,6 +24,7 @@ const IPTVPlayer = {
         this.videoEl = document.getElementById('iptv-video');
         this.playerModalEl = document.getElementById('iptv-player-modal');
         this.channels = window.DEFAULT_IPTV_CHANNELS || [];
+        this.renderSidebarCategories();
         this.renderSidebarCountries();
     },
 
@@ -28,11 +32,12 @@ const IPTVPlayer = {
         console.log('[IPTVPlayer] Opening Live TV mode...');
         this.isOpen = true;
         this.currentCountry = countryCode;
+        this.currentCategory = 'ALL';
         this.playerModalEl.style.display = 'block';
 
         IPTVService.loadCountryChannels(countryCode, (loaded) => {
             this.channels = loaded;
-            this.currentIndex = Math.min(channelIndex, this.channels.length - 1);
+            this.currentIndex = Math.min(channelIndex, Math.max(0, this.channels.length - 1));
             this.renderSidebarChannels();
             this.playChannel(this.currentIndex);
         });
@@ -171,16 +176,48 @@ const IPTVPlayer = {
         }
     },
 
+    renderSidebarCategories: function() {
+        const list = document.getElementById('iptv-categories-bar');
+        if (!list) return;
+        list.innerHTML = '';
+        const cats = (window.IPTVService && IPTVService.getCategories) ? IPTVService.getCategories() : [
+            { id: "ALL", name: "All Genres", icon: "📺" },
+            { id: "News", name: "News", icon: "📰" },
+            { id: "Sports", name: "Sports", icon: "⚽" },
+            { id: "Movies", name: "Movies", icon: "🎬" },
+            { id: "Music", name: "Music", icon: "🎵" },
+            { id: "Documentary", name: "Documentary", icon: "📚" }
+        ];
+
+        cats.forEach((c, idx) => {
+            const chip = document.createElement('div');
+            chip.className = 'category-chip';
+            chip.setAttribute('data-id', c.id);
+            chip.innerHTML = `<span class="c-icon">${c.icon}</span> <span>${c.name}</span>`;
+            if (c.id === this.currentCategory) chip.classList.add('active');
+
+            chip.addEventListener('click', () => {
+                this.selectCategory(idx);
+            });
+            list.appendChild(chip);
+        });
+    },
+
     renderSidebarCountries: function() {
         const list = document.getElementById('iptv-countries-list');
         if (!list) return;
         list.innerHTML = '';
-        window.IPTV_COUNTRIES.forEach((c, idx) => {
+        const countries = (window.IPTVService && IPTVService.getCountries) ? IPTVService.getCountries() : window.IPTV_COUNTRIES;
+        countries.forEach((c, idx) => {
             const pill = document.createElement('div');
             pill.className = 'country-pill';
             pill.setAttribute('data-code', c.code);
             pill.innerHTML = `<span class="flag">${c.flag}</span> <span class="cname">${c.name}</span>`;
             if (c.code === this.currentCountry) pill.classList.add('active');
+
+            pill.addEventListener('click', () => {
+                this.selectCountry(idx);
+            });
             list.appendChild(pill);
         });
     },
@@ -199,14 +236,60 @@ const IPTVPlayer = {
                 <span class="ch-title">${ch.name}</span>
                 <span class="ch-tag">${ch.category || 'Live'}</span>
             `;
+            item.addEventListener('click', () => {
+                this.playChannel(idx);
+                this.toggleSidebar();
+            });
             list.appendChild(item);
+        });
+    },
+
+    selectCategory: function(index) {
+        const cats = (window.IPTVService && IPTVService.getCategories) ? IPTVService.getCategories() : [];
+        if (!cats[index]) return;
+        this.selectedCategoryIndex = index;
+        this.currentCategory = cats[index].id;
+        this.renderSidebarCategories();
+
+        this.showSpinner(true);
+        IPTVService.loadCategoryChannels(this.currentCategory, (loaded) => {
+            this.channels = loaded;
+            this.renderSidebarChannels();
+            this.selectedChannelIndex = 0;
+            this.showSpinner(false);
+            this.sidebarFocus = 'CHANNELS';
+            this.updateSidebarFocus();
+        });
+    },
+
+    selectCountry: function(index) {
+        const countries = (window.IPTVService && IPTVService.getCountries) ? IPTVService.getCountries() : window.IPTV_COUNTRIES;
+        if (!countries[index]) return;
+        this.selectedCountryIndex = index;
+        this.currentCountry = countries[index].code;
+        this.renderSidebarCountries();
+
+        this.showSpinner(true);
+        IPTVService.loadCountryChannels(this.currentCountry, (loaded) => {
+            this.channels = loaded;
+            this.renderSidebarChannels();
+            this.selectedChannelIndex = 0;
+            this.showSpinner(false);
+            this.sidebarFocus = 'CHANNELS';
+            this.updateSidebarFocus();
         });
     },
 
     updateSidebarFocus: function() {
         document.querySelectorAll('.sidebar-focused').forEach(el => el.classList.remove('sidebar-focused'));
 
-        if (this.sidebarFocus === 'COUNTRIES') {
+        if (this.sidebarFocus === 'CATEGORIES') {
+            const chips = document.querySelectorAll('.category-chip');
+            if (chips[this.selectedCategoryIndex]) {
+                chips[this.selectedCategoryIndex].classList.add('sidebar-focused');
+                chips[this.selectedCategoryIndex].scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+            }
+        } else if (this.sidebarFocus === 'COUNTRIES') {
             const pills = document.querySelectorAll('.country-pill');
             if (pills[this.selectedCountryIndex]) {
                 pills[this.selectedCountryIndex].classList.add('sidebar-focused');
@@ -249,53 +332,69 @@ const IPTVPlayer = {
             return true;
         }
 
-        // If sidebar is open, navigate sidebar
+        // If sidebar is open, handle navigation
         if (this.sidebarOpen) {
+            const cats = (window.IPTVService && IPTVService.getCategories) ? IPTVService.getCategories() : [];
+            const countries = (window.IPTVService && IPTVService.getCountries) ? IPTVService.getCountries() : window.IPTV_COUNTRIES;
+
             switch (key) {
                 case 38: // Up
-                    if (this.sidebarFocus === 'COUNTRIES') {
-                        this.selectedCountryIndex = Math.max(0, this.selectedCountryIndex - 1);
-                    } else {
-                        this.selectedChannelIndex = Math.max(0, this.selectedChannelIndex - 1);
+                    if (this.sidebarFocus === 'CATEGORIES') {
+                        // Top reached
+                    } else if (this.sidebarFocus === 'COUNTRIES') {
+                        if (this.selectedCountryIndex === 0) {
+                            this.sidebarFocus = 'CATEGORIES';
+                        } else {
+                            this.selectedCountryIndex = Math.max(0, this.selectedCountryIndex - 1);
+                        }
+                    } else if (this.sidebarFocus === 'CHANNELS') {
+                        if (this.selectedChannelIndex === 0) {
+                            this.sidebarFocus = 'CATEGORIES';
+                        } else {
+                            this.selectedChannelIndex = Math.max(0, this.selectedChannelIndex - 1);
+                        }
                     }
                     this.updateSidebarFocus();
                     e.preventDefault();
                     return true;
 
                 case 40: // Down
-                    if (this.sidebarFocus === 'COUNTRIES') {
-                        this.selectedCountryIndex = Math.min(window.IPTV_COUNTRIES.length - 1, this.selectedCountryIndex + 1);
-                    } else {
+                    if (this.sidebarFocus === 'CATEGORIES') {
+                        this.sidebarFocus = 'CHANNELS';
+                    } else if (this.sidebarFocus === 'COUNTRIES') {
+                        this.selectedCountryIndex = Math.min(countries.length - 1, this.selectedCountryIndex + 1);
+                    } else if (this.sidebarFocus === 'CHANNELS') {
                         this.selectedChannelIndex = Math.min(this.channels.length - 1, this.selectedChannelIndex + 1);
                     }
                     this.updateSidebarFocus();
                     e.preventDefault();
                     return true;
 
-                case 37: // Left -> Move to Countries
-                    this.sidebarFocus = 'COUNTRIES';
+                case 37: // Left
+                    if (this.sidebarFocus === 'CATEGORIES') {
+                        this.selectedCategoryIndex = Math.max(0, this.selectedCategoryIndex - 1);
+                    } else if (this.sidebarFocus === 'CHANNELS') {
+                        this.sidebarFocus = 'COUNTRIES';
+                    }
                     this.updateSidebarFocus();
                     e.preventDefault();
                     return true;
 
-                case 39: // Right -> Move to Channels
-                    this.sidebarFocus = 'CHANNELS';
+                case 39: // Right
+                    if (this.sidebarFocus === 'CATEGORIES') {
+                        this.selectedCategoryIndex = Math.min(cats.length - 1, this.selectedCategoryIndex + 1);
+                    } else if (this.sidebarFocus === 'COUNTRIES') {
+                        this.sidebarFocus = 'CHANNELS';
+                    }
                     this.updateSidebarFocus();
                     e.preventDefault();
                     return true;
 
                 case 13: // Enter
-                    if (this.sidebarFocus === 'COUNTRIES') {
-                        const targetCountry = window.IPTV_COUNTRIES[this.selectedCountryIndex].code;
-                        this.currentCountry = targetCountry;
-                        this.renderSidebarCountries();
-                        IPTVService.loadCountryChannels(targetCountry, (loaded) => {
-                            this.channels = loaded;
-                            this.renderSidebarChannels();
-                            this.sidebarFocus = 'CHANNELS';
-                            this.selectedChannelIndex = 0;
-                            this.updateSidebarFocus();
-                        });
+                    if (this.sidebarFocus === 'CATEGORIES') {
+                        this.selectCategory(this.selectedCategoryIndex);
+                    } else if (this.sidebarFocus === 'COUNTRIES') {
+                        this.selectCountry(this.selectedCountryIndex);
                     } else if (this.sidebarFocus === 'CHANNELS') {
                         this.playChannel(this.selectedChannelIndex);
                         this.toggleSidebar();

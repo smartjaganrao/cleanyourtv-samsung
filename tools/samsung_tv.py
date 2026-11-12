@@ -26,6 +26,20 @@ import argparse
 
 TOKEN_FILE = os.path.join(os.path.dirname(__file__), ".samsung_token")
 
+def token_auth_support(data):
+    support = data.get("isSupport", {})
+    if isinstance(support, str):
+        try:
+            support = json.loads(support)
+        except json.JSONDecodeError:
+            return None
+    if not isinstance(support, dict):
+        return None
+    value = support.get("TokenAuthSupport", support.get("tokenAuthSupport"))
+    if isinstance(value, str):
+        value = value.lower() == "true" if value.lower() in ("true", "false") else None
+    return value if isinstance(value, bool) else None
+
 def probe_tv(ip):
     print(f"🔍 Probing Samsung TV at {ip}...")
     url = f"http://{ip}:8001/api/v2/"
@@ -40,14 +54,19 @@ def probe_tv(ip):
             model = device.get("modelName", device.get("model", "Unknown Model"))
             os_type = device.get("os", "Tizen OS")
             wifi_mac = device.get("wifiMac", "N/A")
-            token_auth = data.get("isSupport", {}).get("tokenAuthSupport", False)
+            token_auth = token_auth_support(data)
             
             print(f"✅ Found Samsung Smart TV!")
             print(f"   • Device Name:     {name}")
             print(f"   • Model Number:    {model}")
             print(f"   • Operating System: {os_type}")
             print(f"   • Wi-Fi MAC:       {wifi_mac}")
-            print(f"   • Token Auth:      {'Supported (WSS 8002)' if token_auth else 'Legacy (WS 8001)'}")
+            auth_status = "Unknown"
+            if token_auth is True:
+                auth_status = "Supported (WSS 8002)"
+            elif token_auth is False:
+                auth_status = "Legacy (WS 8001)"
+            print(f"   • Token Auth:      {auth_status}")
             
     except urllib.error.URLError as e:
         print(f"⚠️  Could not reach REST API on port 8001 ({e}). The TV might be off or on a different IP.")

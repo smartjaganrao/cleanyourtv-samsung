@@ -141,6 +141,17 @@ python3 tools/install_tizentube.py <TV_IP>
 python3 tools/debloat_dns.py --check
 ```
 
+For Docker-only signing and installation, follow the one-time
+[Samsung certificate setup](docs/DOCKER_INSTALL.md), then run:
+
+```bash
+./tools/tv-install.sh doctor <TV_IP>
+./tools/tv-install.sh deploy <TV_IP>
+```
+
+Deployment probes and backs up the TV, builds and signs a fresh widget, then
+checks installation and registration. Certificate passwords are entered interactively.
+
 > [!TIP]
 > **Prefer pre-built binaries?** You can download the latest pre-compiled [`cleanhub-tv-samsung.wgt`](https://github.com/smartjaganrao/cleanhub-tv/releases/latest) directly from GitHub Releases and install with standard Tizen CLI or SDB.
 

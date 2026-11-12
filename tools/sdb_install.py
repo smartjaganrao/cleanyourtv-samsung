@@ -12,6 +12,7 @@ import sys
 import shutil
 import subprocess
 import argparse
+import shlex
 
 def check_sdb_installed():
     return shutil.which("sdb") is not None
@@ -26,6 +27,9 @@ def run_cmd(cmd):
     return True, result.stdout
 
 def install_via_sdb(tv_ip, wgt_path):
+    if not shutil.which("tizen"):
+        show_tizen_guide(tv_ip, wgt_path)
+        return False
     print(f"🔌 Connecting SDB to Samsung TV at {tv_ip}:26101...")
     
     # 1. SDB connect
@@ -45,8 +49,9 @@ def install_via_sdb(tv_ip, wgt_path):
 
     # 3. SDB Install
     print(f"📦 Installing '{wgt_path}' to TV...")
-    ok, out = run_cmd(["sdb", "install", wgt_path])
-    if ok:
+    ok, out = run_cmd(["tizen", "install", "-s", f"{tv_ip}:26101",
+                       "-n", os.path.basename(wgt_path), "--", os.path.dirname(wgt_path)])
+    if ok and "Tizen application is successfully installed." in out:
         print("\n🎉 SUCCESS! CleanYourTV installed on your Samsung TV!")
         print("👉 You will find 'Clean Your TV' inside your TV's Apps bar.")
         print("👉 Next: To make it auto-launch on power up, see docs/BYPASS_SMART_HUB.md")
@@ -57,14 +62,21 @@ def show_tizen_guide(tv_ip, wgt_path):
     print("\n" + "="*70)
     print("ℹ️  SDB CLI (Smart Development Bridge) not found in system PATH.")
     print("="*70)
-    print("To install CleanYourTV onto your Samsung TV, you have two quick options:\n")
+    print("The widget must be signed with your Samsung TV certificate profile before installation.")
+    print("Probe and back up the TV before applying changes (see PROMPT.md).")
+    print("To install CleanYourTV onto your Samsung TV, you have three options:\n")
     print("Option 1: Using Official Tizen Studio CLI (Recommended)")
     print("   1. Download lightweight Tizen CLI from: https://developer.samsung.com/smarttv/develop/getting-started/setup-sdk.html")
     print("   2. Run: sdb connect " + tv_ip + ":26101")
-    print("   3. Run: sdb install " + wgt_path + "\n")
+    print("   3. Sign with your Samsung certificate profile, then install the signed widget:")
+    print("      " + shlex.join(["tizen", "install", "-s", f"{tv_ip}:26101", "-n",
+                                  os.path.basename(wgt_path), "--", os.path.dirname(os.path.abspath(wgt_path))]) + "\n")
     print("Option 2: Using Docker (Zero local install)")
-    print("   Run this single command:")
-    print(f"   docker run --rm -v $(pwd):/workspace ghcr.io/dweomer/tizen-studio sdb connect {tv_ip}:26101 && sdb install /workspace/{wgt_path}\n")
+    print("   One-time Samsung certificate setup: docs/DOCKER_INSTALL.md")
+    print("   From the repository root (builds, signs, backs up, installs and verifies):")
+    print("   " + shlex.join(["./tools/tv-install.sh", "doctor", tv_ip]))
+    print("   " + shlex.join(["./tools/tv-install.sh", "deploy", tv_ip]))
+    print("   Deploy rebuilds the launcher source; it does not install a custom --wgt file.\n")
     print("Option 3: Use Samsung Device Manager / Tizen Studio GUI")
     print("   Connect to TV IP, drag-and-drop the .wgt file.")
     print("="*70)
@@ -94,9 +106,9 @@ def main():
         subprocess.run([sys.executable, pkg_script, "--output", wgt_file], check=True)
 
     if check_sdb_installed():
-        install_via_sdb(args.ip, wgt_file)
+        sys.exit(0 if install_via_sdb(args.ip, wgt_file) else 1)
     else:
-        show_tizen_guide(args.ip, os.path.basename(wgt_file))
+        show_tizen_guide(args.ip, wgt_file)
 
 if __name__ == "__main__":
     main()

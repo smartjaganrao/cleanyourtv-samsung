@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" 
-        xmlns:tizen="http://tizen.org/pkg" 
+        xmlns:tizen="http://tizen.org/ns/widgets"
         id="http://cleanyour.tv/cleanyourtv" 
         version="1.0.0" 
         viewmodes="fullscreen">
     <tizen:application id="VIBEHACK01.CleanYourTV" 
-                       exec="index.html" 
-                       entry="index.html" 
-                       type="capp" 
                        package="VIBEHACK01" 
+                       required_version="2.3"
                        ambient_support="disable"/>
     <content src="index.html"/>
     <feature name="http://tizen.org/feature/screen.size.all"/>
@@ -19,7 +17,7 @@
     <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
     <tizen:privilege name="http://tizen.org/privilege/systeminfo"/>
     <tizen:privilege name="http://tizen.org/privilege/internet"/>
-    <tizen:profile name="tv"/>
+    <tizen:profile name="tv-samsung"/>
     <access origin="*" subdomains="true"/>
     <tizen:setting screen-orientation="landscape" context-menu="enable" background-support="disable" encryption="disable" install-location="auto"/>
 </widget>

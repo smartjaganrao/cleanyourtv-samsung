@@ -1,0 +1,22 @@
+# Samsung Neo QLED QN95B 55-inch (QE55QN95BATXXU, 2022)
+# Verification date: 2026-11-12
+# Scope: discovery and Developer Mode connectivity only.
+
+# Verified:
+# - tools/samsung_tv.py --probe discovers the TV via REST port 8001.
+# - isSupport is a JSON-encoded string, not a JSON object.
+# - TokenAuthSupport is the string "true" (capital T and A and S).
+# - Probe reports: Token Auth: Supported (WSS 8002).
+# - SDB port 26101 is reachable; SDB connects with the correct Host PC IP.
+# - Developer Mode must use the connecting computer's LAN IP; restart the TV
+#   after changing that setting.
+
+# Not verified:
+# - WebSocket pairing or remote-control commands.
+# - Installed Tizen version (the REST response does not report it).
+# - Privacy toggles, DNS blocking, or Smart Hub bypass.
+# - Installed app IDs. No app list has been verified for this profile.
+# - CleanHub launcher installation: attempted, rejected by certificate check.
+#   Do not interpret this profile as a successful launcher installation.
+
+# No debloat settings or blocklist entries are claimed as tested here.

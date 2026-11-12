@@ -1,0 +1,8 @@
+{
+  "tv": "Samsung Neo QLED 55\" QN95B 4K (2022)",
+  "os": "Tizen OS (installed version not verified)",
+  "brand": "Samsung",
+  "model_code": "QE55QN95BATXXU",
+  "notes": "REST discovery and token-auth support detection verified on 2026-11-12. isSupport is a JSON-encoded string containing TokenAuthSupport as the string true. SDB connection verified in Developer Mode. Launcher installation, pairing, Smart Hub bypass, and debloating are not verified.",
+  "model_reference": "https://www.samsung.com/uk/support/model/QE55QN95BATXXU/"
+}
